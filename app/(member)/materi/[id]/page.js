@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllMateri, getMateri } from '@/lib/materi';
-import { getYouTubeId } from '@/lib/youtube';
+import { getAllMateri, getMateri } from '@/lib/materi.js';
+import { getYouTubeId } from '@/lib/youtube.js';
 
 export function generateMetadata({ params }) {
   const m = getMateri(params.id);
