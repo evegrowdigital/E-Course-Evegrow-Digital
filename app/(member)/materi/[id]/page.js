@@ -85,12 +85,36 @@ export default async function MateriPage({ params }) {
       )}
 
       {teks && (
-        <section className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft sm:p-7">
-          <h2 className="text-lg font-bold text-ink sm:text-xl">Materi</h2>
-          <div className="mt-3 max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
-            {teks}
+        <details className="group mt-3 overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-soft">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 text-sm font-semibold text-brand-800 transition hover:bg-brand-100 sm:text-base [&::-webkit-details-marker]:hidden">
+            <span className="flex items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v14l-4-3H6a2 2 0 01-2-2V5z" />
+              </svg>
+              <span className="group-open:hidden">Lihat Materi</span>
+              <span className="hidden group-open:inline">Tutup Materi</span>
+            </span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="shrink-0 transition-transform duration-200 group-open:rotate-180"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <div className="border-t border-brand-100 px-5 py-5 sm:px-7">
+            <div className="max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
+              {teks}
+            </div>
           </div>
-        </section>
+        </details>
       )}
 
       <nav className="mt-8 grid grid-cols-2 gap-3">
@@ -123,4 +147,4 @@ export default async function MateriPage({ params }) {
       </nav>
     </article>
   );
-            }
+        }
