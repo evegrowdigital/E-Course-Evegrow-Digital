@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Footer from '@/components/Footer';
+import Footer from '@/components/Footer.js';
 
 const LOGO = 'https://i.ibb.co.com/v4vnDrZr/file-0000000095ac820695edea0b24952bb0.png';
 
