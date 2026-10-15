@@ -93,26 +93,34 @@ export default async function MateriPage({ params }) {
         </section>
       )}
 
-      <nav className="mt-6 flex items-center justify-between gap-3">
+      <nav className="mt-8 grid grid-cols-2 gap-3">
         {sebelumnya ? (
           <Link
             href={`/materi/${sebelumnya.id}`}
-            className="rounded-xl border border-brand-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-800 hover:bg-brand-100"
+            className="group flex items-center gap-2 rounded-2xl border border-brand-200 bg-white px-4 py-3.5 text-sm font-semibold text-brand-800 shadow-soft transition hover:-translate-y-0.5 hover:border-brand-400 hover:bg-brand-100"
           >
-            Materi sebelumnya
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 transition group-hover:-translate-x-0.5">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <span>Sebelumnya</span>
           </Link>
         ) : (
           <span />
         )}
-        {berikutnya && (
+        {berikutnya ? (
           <Link
             href={`/materi/${berikutnya.id}`}
-            className="rounded-xl border border-brand-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-800 hover:bg-brand-100"
+            className="group flex items-center justify-end gap-2 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 px-4 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:from-brand-700 hover:to-brand-600"
           >
-            Materi berikutnya
+            <span>Berikutnya</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 transition group-hover:translate-x-0.5">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </Link>
+        ) : (
+          <span />
         )}
       </nav>
-</article>
+    </article>
   );
-}
+            }
