@@ -1,6 +1,7 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": { "@/*": ["./*"] }
-  }
-}
+
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
