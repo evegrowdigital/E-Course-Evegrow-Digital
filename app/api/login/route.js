@@ -1,3 +1,4 @@
+
 import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase.js';
 import {
@@ -10,17 +11,8 @@ export const runtime = 'nodejs';
 
 export async function POST(request) {
   try {
-    let email = '';
-
-    try {
-      const body = await request.json();
-      email = String(body.email || '').trim().toLowerCase();
-    } catch {
-      return NextResponse.json(
-        { error: 'Permintaan tidak valid.' },
-        { status: 400 }
-      );
-    }
+    const body = await request.json().catch(() => null);
+    const email = String(body?.email || '').trim().toLowerCase();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json(
@@ -29,16 +21,23 @@ export async function POST(request) {
       );
     }
 
-    const { data, error } = await supabaseAdmin()
+    const supabase = supabaseAdmin();
+
+    const { data, error } = await supabase
       .from('members')
       .select('email, aktif')
       .eq('email', email)
       .maybeSingle();
 
+    // Tampilkan penyebab error database untuk sementara.
     if (error) {
       console.error('LOGIN DATABASE ERROR:', error);
+
       return NextResponse.json(
-        { error: 'Terjadi gangguan pada database.' },
+        {
+          error: `DEBUG DATABASE: ${error.message}`,
+          code: error.code || 'TIDAK ADA KODE',
+        },
         { status: 500 }
       );
     }
@@ -51,9 +50,9 @@ export async function POST(request) {
     }
 
     const token = await createSessionToken(data.email);
-    const res = NextResponse.json({ ok: true });
+    const response = NextResponse.json({ ok: true });
 
-    res.cookies.set({
+    response.cookies.set({
       name: COOKIE_NAME,
       value: token,
       httpOnly: true,
@@ -63,12 +62,14 @@ export async function POST(request) {
       maxAge: SESSION_SECONDS,
     });
 
-    return res;
+    return response;
   } catch (err) {
     console.error('LOGIN UNEXPECTED ERROR:', err);
 
     return NextResponse.json(
-      { error: 'Terjadi gangguan pada server.' },
+      {
+        error: `DEBUG SERVER: ${err instanceof Error ? err.message : 'Kesalahan tidak diketahui'}`,
+      },
       { status: 500 }
     );
   }
