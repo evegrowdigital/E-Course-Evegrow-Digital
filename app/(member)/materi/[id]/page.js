@@ -113,3 +113,6 @@ export default async function MateriPage({ params }) {
           </Link>
         )}
       </nav>
+</article>
+  );
+}
