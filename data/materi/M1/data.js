@@ -2,13 +2,13 @@
 // Foto cover: simpan di folder /public dengan nama M1.jpg
 
 const data = {
-  judul: 'Materi 1: Pengenalan Digital Marketing',
+  judul: '1. Pondasi Bisnis Digital',
 
-  video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+  video: 'https://youtu.be/idp22MnAq_k?si=_qkIEwMJeUaT0qYN',
 
-  tools: 'https://www.canva.com',
+  tools: '',
 
-  prompt: 'https://docs.google.com/document/d/ISI-ID-DOKUMEN',
+  prompt: '',
 
   materi: `
 Selamat datang di materi pertama!
