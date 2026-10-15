@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
+import { supabaseAdmin } from '@/lib/supabase.js';
 import {
   COOKIE_NAME,
   SESSION_SECONDS,
   createSessionToken,
-} from '@/lib/session';
+} from '@/lib/session.js';
 
 export const runtime = 'nodejs';
 
