@@ -1,0 +1,5 @@
+import { getAllMateri } from '@/lib/materi.js';
+
+export function GET() {
+  return Response.json(getAllMateri().map((m) => m.id));
+}
