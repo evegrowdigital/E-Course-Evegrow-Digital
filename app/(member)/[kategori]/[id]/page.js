@@ -28,6 +28,11 @@ export default async function MateriPage({ params }) {
     .join('\n')
     .trim();
 
+  // Foto: boleh berupa link saja, atau { src: 'link', caption: 'keterangan' }
+  const gambar = (materi.gambar || [])
+    .map((g) => (typeof g === 'string' ? { src: g, caption: '' } : g))
+    .filter((g) => g && g.src);
+
   return (
     <article>
       <Link
@@ -86,7 +91,7 @@ export default async function MateriPage({ params }) {
         </div>
       )}
 
-      {teks && (
+      {(teks || gambar.length > 0) && (
         <details className="group mt-3 overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-soft">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 text-sm font-semibold text-brand-800 transition hover:bg-brand-100 sm:text-base [&::-webkit-details-marker]:hidden">
             <span className="flex items-center gap-2">
@@ -111,10 +116,33 @@ export default async function MateriPage({ params }) {
               <path d="M6 9l6 6 6-6" />
             </svg>
           </summary>
+
           <div className="border-t border-brand-100 px-5 py-5 sm:px-7">
-            <div className="max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
-              {teks}
-            </div>
+            {teks && (
+              <div className="max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
+                {teks}
+              </div>
+            )}
+
+            {gambar.length > 0 && (
+              <div className={`${teks ? 'mt-5' : ''} flex flex-col gap-5`}>
+                {gambar.map((g, i) => (
+                  <figure key={`${g.src}-${i}`}>
+                    <img
+                      src={g.src}
+                      alt={g.caption || `${materi.judul} - gambar ${i + 1}`}
+                      loading="lazy"
+                      className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
+                    />
+                    {g.caption && (
+                      <figcaption className="mt-2 text-center text-xs text-brand-800/70 sm:text-sm">
+                        {g.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
           </div>
         </details>
       )}
@@ -149,4 +177,4 @@ export default async function MateriPage({ params }) {
       </nav>
     </article>
   );
-    }
+}
