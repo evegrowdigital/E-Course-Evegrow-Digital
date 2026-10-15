@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
-import { getMember } from '@/lib/auth';
-import Sidebar from '@/components/Sidebar';
-import Footer from '@/components/Footer';
+import { getMember } from '@/lib/auth.js';
+import Sidebar from '@/components/Sidebar.js';
+import Footer from '@/components/Footer.js';
 
 export const dynamic = 'force-dynamic';
 
