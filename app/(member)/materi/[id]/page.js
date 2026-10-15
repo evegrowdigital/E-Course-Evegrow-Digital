@@ -3,13 +3,15 @@ import { notFound } from 'next/navigation';
 import { getAllMateri, getMateri } from '@/lib/materi.js';
 import { getYouTubeId } from '@/lib/youtube.js';
 
-export function generateMetadata({ params }) {
-  const m = getMateri(params.id);
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const m = getMateri(id);
   return { title: m ? `${m.judul} | Evegrow.Digital` : 'Materi | Evegrow.Digital' };
 }
 
-export default function MateriPage({ params }) {
-  const materi = getMateri(params.id);
+export default async function MateriPage({ params }) {
+  const { id } = await params;
+  const materi = getMateri(id);
   if (!materi) notFound();
 
   const semua = getAllMateri();
@@ -111,6 +113,3 @@ export default function MateriPage({ params }) {
           </Link>
         )}
       </nav>
-    </article>
-  );
-          }
