@@ -77,10 +77,20 @@ Action Plan:
     ],
     tools: '',
     prompt: '',
+    prompts: [
+      {
+        judul: 'Prompt Membuat Cover Produk',
+        isi: `
+Buat Gambar sebuah cover Produk Digital rasio 1:1 tentang “[Nama Produk]”. Gunakan informasi utama berikut [ISI PRODUK]. Tujuan infografis: PROMOSI DAN INFORMASI. Gunakan visual yang relevan dengan topik, sederhana, informatif, dan mudah dipahami. Susun informasi dengan hirarki visual yang jelas: judul utama, informasi pendukung, visual utama, poin-poin penting, dan penutup. Gunakan layout yang rapi, proporsi seimbang, white space yang cukup, margin aman, safe area, serta typography yang mudah dibaca. Gunakan palet warna yang harmonis dan sesuai dengan topik: [PALET WARNA]. Gunakan elemen visual secukupnya dan hindari dekorasi yang tidak memiliki fungsi informasi. Pastikan semua teks menggunakan bahasa Indonesia yang jelas, singkat, dan sesuai dengan informasi sumber. Jangan menambahkan informasi, angka, klaim, atau teks yang tidak diberikan. Jika menampilkan manusia, tampilkan dengan anatomi natural dan pakaian yang sesuai konteks. Jika menampilkan perempuan Muslim, gunakan hijab dan pakaian yang menutup aurat. Gaya visual: [MODERN MINIMALIS / EDITORIAL / CORPORATE / FRIENDLY / DRAMATIC / DLL] Prioritaskan readability, hierarchy, clarity, dan visual storytelling daripada banyaknya elemen.
+Negative prompt:handwritten text sebagai ornamen, teks tidak terbaca, typo, teks acak, informasi tambahan yang tidak diminta, layout berantakan, cluttered, terlalu banyak elemen, visual berlebihan, hierarchy buruk, margin terpotong, cropped text, watermark, logo tidak diminta, signature, blurry, oversharpened, oversaturated, overexposed, plastic skin, bad anatomy, extra fingers, mutated hands, duplicate objects, distorted face, double shadows. Master Negative Prompt masterpiece, 8k resolution, tidak ada teks handwite sebagai ornamen, unreal engine 5, hyper-detailed, trending on artstation, CGI, 3D render, oversharpened, overexposed, oversaturated, airbrushed, plastic skin, flawless skin, perfectly symmetrical face, mannequin, doll, extra fingers, mutated hands, bad anatomy, deformed, cluttered, messy, busy background, chaotic layout, multiple lighting, double shadows, text, watermark, signature, cropped, blurry
+`,
+      },
+    ],
     panduan: [
       { judul: 'Animasi Bibir berbicara', url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk' },
-      { judul: 'Prompt Cover Produk', url: 'https://canva.link/wpzrb5enudlxqqg' },
     ],
     materi: ``,
   },
-    
+];
+
+export default data;  
