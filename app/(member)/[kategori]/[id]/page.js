@@ -3,20 +3,51 @@ import { notFound } from 'next/navigation';
 import { getAllMateri, getMateri } from '@/lib/materi.js';
 import { getKategori } from '@/lib/kategori.js';
 import { getYouTubeId } from '@/lib/youtube.js';
+import PromptBox from '@/components/PromptBox.js';
 
+// Aturan penulisan di dalam teks materi:
+//   **teks tebal**
+//   [foto: https://link-gambar.jpg]
+//   [foto: https://link-gambar.jpg | keterangan foto]
 function Teks({ children }) {
-  const bagian = String(children).split(/(\*\*[^*]+\*\*)/g);
+  const bagian = String(children).split(/(\*\*[^*]+\*\*|\[foto:[^\]]+\])/g);
+
   return (
     <>
-      {bagian.map((b, i) =>
-        b.startsWith('**') && b.endsWith('**') && b.length > 4 ? (
-          <strong key={i} className="font-bold text-ink">
-            {b.slice(2, -2)}
-          </strong>
-        ) : (
-          b
-        )
-      )}
+      {bagian.map((b, i) => {
+        if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
+          return (
+            <strong key={i} className="font-bold text-ink">
+              {b.slice(2, -2)}
+            </strong>
+          );
+        }
+
+        if (b.startsWith('[foto:') && b.endsWith(']')) {
+          const [src, ...sisa] = b.slice(6, -1).split('|');
+          const caption = sisa.join('|').trim();
+          const link = src.trim();
+          if (!link) return null;
+
+          return (
+            <span key={i} className="my-3 block">
+              <img
+                src={link}
+                alt={caption || 'Gambar materi'}
+                loading="lazy"
+                className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
+              />
+              {caption && (
+                <span className="mt-2 block text-center text-xs text-brand-800/70 sm:text-sm">
+                  {caption}
+                </span>
+              )}
+            </span>
+          );
+        }
+
+        return b;
+      })}
     </>
   );
 }
@@ -38,17 +69,40 @@ export default async function MateriPage({ params }) {
   const sebelumnya = semua[index - 1];
   const berikutnya = semua[index + 1];
 
-  const videoId = getYouTubeId(materi.video);
+  // Video: gabungan dari `video` (satu) dan `videos` (banyak).
+  // Boleh link saja, atau { judul: 'Tutorial 2', url: 'link' }
+  const daftarVideo = [materi.video, ...(materi.videos || [])]
+    .map((v) => (typeof v === 'string' ? { judul: '', url: v } : v))
+    .filter((v) => v && v.url)
+    .map((v) => ({ judul: v.judul || '', videoId: getYouTubeId(v.url) }))
+    .filter((v) => v.videoId);
+
+  // Panduan: boleh link saja, atau { judul: 'Panduan Canva', url: 'link' }
+  const panduan = (Array.isArray(materi.panduan) ? materi.panduan : [materi.panduan])
+    .map((p) => (typeof p === 'string' ? { judul: '', url: p } : p))
+    .filter((p) => p && p.url);
+
+  // Prompt dengan tombol salin: boleh teks saja, atau { judul: 'Prompt 1', isi: 'teks prompt' }
+  const daftarPrompt = (Array.isArray(materi.prompts) ? materi.prompts : [materi.prompts])
+    .map((p) => (typeof p === 'string' ? { judul: '', isi: p } : p))
+    .filter((p) => p && p.isi && String(p.isi).trim())
+    .map((p, i, arr) => ({
+      judul: p.judul || (arr.length > 1 ? `Prompt ${i + 1}` : 'Prompt'),
+      isi: String(p.isi).trim(),
+    }));
+
   const teks = (materi.materi || '')
     .split('\n')
     .map((l) => l.trim())
     .join('\n')
     .trim();
 
-  // Foto: boleh berupa link saja, atau { src: 'link', caption: 'keterangan' }
+  // Foto tambahan di bawah teks: link saja, atau { src: 'link', caption: 'keterangan' }
   const gambar = (materi.gambar || [])
     .map((g) => (typeof g === 'string' ? { src: g, caption: '' } : g))
     .filter((g) => g && g.src);
+
+  const adaTombol = materi.tools || materi.prompt || panduan.length > 0;
 
   return (
     <article>
@@ -64,27 +118,43 @@ export default async function MateriPage({ params }) {
 
       <h1 className="mt-3 text-2xl font-bold leading-tight text-ink sm:text-3xl">{materi.judul}</h1>
 
-      <div className="mt-5 overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
-        <div className="relative aspect-video">
-          {videoId ? (
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`}
-              title={materi.judul}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          ) : (
+      {daftarVideo.length === 0 ? (
+        <div className="mt-5 overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
+          <div className="relative aspect-video">
             <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-brand-100">
               Video belum tersedia untuk materi ini.
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="mt-5 flex flex-col gap-5">
+          {daftarVideo.map((v, i) => (
+            <div key={`${v.videoId}-${i}`}>
+              {daftarVideo.length > 1 && (
+                <p className="mb-2 text-sm font-semibold text-brand-800">
+                  {v.judul || `Video ${i + 1}`}
+                </p>
+              )}
+              <div className="overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
+                <div className="relative aspect-video">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${v.videoId}?rel=0&modestbranding=1&playsinline=1`}
+                    title={v.judul || `${materi.judul} - video ${i + 1}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
-      {(materi.tools || materi.prompt) && (
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+      {adaTombol && (
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           {materi.tools && (
             <a
               href={materi.tools}
@@ -105,6 +175,30 @@ export default async function MateriPage({ params }) {
               Akses Prompt
             </a>
           )}
+          {panduan.map((p, i) => (
+            <a
+              key={`${p.url}-${i}`}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-200 bg-brand-100 px-6 py-3 text-sm font-semibold text-brand-800 transition hover:border-brand-400 hover:bg-brand-200"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z" />
+                <path d="M14 3v5h5M9 13h6M9 17h6" />
+              </svg>
+              {p.judul ||
+                (panduan.length > 1 ? `Akses Panduan ${i + 1}` : 'Akses Panduan')}
+            </a>
+          ))}
+        </div>
+      )}
+
+      {daftarPrompt.length > 0 && (
+        <div className="mt-5 flex flex-col gap-3">
+          {daftarPrompt.map((p, i) => (
+            <PromptBox key={`${p.judul}-${i}`} judul={p.judul} isi={p.isi} />
+          ))}
         </div>
       )}
 
@@ -194,4 +288,4 @@ export default async function MateriPage({ params }) {
       </nav>
     </article>
   );
-}
+          }
