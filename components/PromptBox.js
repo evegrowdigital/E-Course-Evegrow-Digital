@@ -2,6 +2,28 @@
 
 import { useState } from 'react';
 
+// Tulisan di dalam kurung siku, misalnya [ISI BISNIS KAMU], diberi warna khusus
+function IsiPrompt({ teks }) {
+  const bagian = String(teks).split(/(\[[^\]\n]+\])/g);
+
+  return (
+    <>
+      {bagian.map((b, i) =>
+        b.startsWith('[') && b.endsWith(']') ? (
+          <span
+            key={i}
+            className="rounded bg-amber-100 px-1 font-semibold text-amber-800"
+          >
+            {b}
+          </span>
+        ) : (
+          b
+        )
+      )}
+    </>
+  );
+}
+
 export default function PromptBox({ judul, isi }) {
   const [tersalin, setTersalin] = useState(false);
 
@@ -55,7 +77,7 @@ export default function PromptBox({ judul, isi }) {
         </button>
       </div>
       <div className="max-h-64 overflow-y-auto whitespace-pre-wrap break-words px-4 py-3 text-[13px] leading-relaxed text-ink/90 sm:text-sm">
-        {isi}
+        <IsiPrompt teks={isi} />
       </div>
     </div>
   );
