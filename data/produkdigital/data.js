@@ -1,47 +1,45 @@
-// Cover: isi link gambar (https://...) atau nama file di folder /public (misal '/cover-affiliate-1.jpg').
-// Kosongkan ('') kalau tidak ada → otomatis memakai /affiliate-M1.jpg dari folder /public.
+// data/produkdigital/data.js
 
 const data = [
   {
     judul: '1. Pondasi Bisnis Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792107346641_1842633.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792107346641_1842633.png?width=630&quality=90&format=webp',
     video: 'https://youtu.be/idp22MnAq_k?si=YH86tGUgVF_b1wgN',
     tools: '',
     prompt: '',
     materi: `
 **Produk digital adalah solusi yang dikemas dalam bentuk digital.**
+
 Ini adalah salah satu mindset terpenting.
+
 Kesalahan pemula:
 "Aku mau bikin ebook. Isinya apa ya?"
+
 Seharusnya bukan begitu.
+
 Mulai dari:
 **SIAPA → MASALAH APA → SOLUSI APA → PRODUK APA**
 
 Semakin jelas siapa yang dibantu, semakin mudah menentukan isi produk. Produk harus bisa menyelesaikan masalah.
-Cara mencari Ide Produk :
-1. Dari skill, Tanyakan: "Apa yang aku bisa lakukan?"
-2. Dari pengalaman, Tanyakan: "Apa yang sudah pernah aku pelajari?"
-3. Dari masalah sendiri, Tanyakan: "Masalah apa yang pernah berhasil aku selesaikan?"
-4. Dari pertanyaan audience, Perhatikan pertanyaan yang sering muncul di: TikTok, Instagram, Facebook, Threads, YouTube dan Komunitas.
-5. Dari komentar, Komentar sering berisi masalah nyata.
-6. Dari kompetitor, Bukan untuk meniru. Tetapi untuk melihat:
-• Produk apa yang sudah ada?
-• Siapa targetnya?
-• Apa yang mereka tawarkan?
-• Apa yang masih kurang?
-• Bagaimana kamu bisa membuat versi yang lebih spesifik?
-7. Dari tren, Perhatikan teknologi dan tren baru.
-Contoh: AI berkembang sangat cepat.
-Muncul kebutuhan baru seperti:
-AI Content, AI Automation, AI Workflow, AI Marketing,AI Productivity
-8. Dari kebutuhan pekerjaan, Perhatikan pekerjaan yang berulang.
-Contoh: Membuat caption, Membuat laporan, Membuat desain, Membuat konten, Membuat proposal
-Pekerjaan berulang bisa dikemas menjadi:
-Template + SOP + Prompt + Tutorial.
 
-**Ingatlah:Orang tidak membeli produk digital. Mereka membeli solusi, hasil, dan transformasi.**
+**Cara mencari ide produk:**
+1. Dari skill. Tanyakan: "Apa yang aku bisa lakukan?"
+2. Dari pengalaman. Tanyakan: "Apa yang sudah pernah aku pelajari?"
+3. Dari masalah sendiri. Tanyakan: "Masalah apa yang pernah berhasil aku selesaikan?"
+4. Dari pertanyaan audiens. Perhatikan pertanyaan yang sering muncul di TikTok, Instagram, Facebook, Threads, YouTube, dan komunitas.
+5. Dari komentar. Komentar sering berisi masalah nyata.
+6. Dari kompetitor. Bukan untuk meniru, tetapi untuk melihat:
+   - Produk apa yang sudah ada?
+   - Siapa targetnya?
+   - Apa yang mereka tawarkan?
+   - Apa yang masih kurang?
+   - Bagaimana kamu bisa membuat versi yang lebih spesifik?
+7. Dari tren. Perhatikan teknologi dan tren baru. Contoh: AI berkembang sangat cepat. Muncul kebutuhan baru seperti AI Content, AI Automation, AI Workflow, AI Marketing, dan AI Productivity.
+8. Dari kebutuhan pekerjaan. Perhatikan pekerjaan yang berulang. Contoh: membuat caption, laporan, desain, konten, dan proposal. Pekerjaan berulang bisa dikemas menjadi template, SOP, prompt, atau tutorial.
 
-Action Plan:
+**Ingatlah: orang tidak membeli produk digital. Mereka membeli solusi, hasil, dan transformasi.**
+
+**Action Plan:**
 1. Tentukan satu target audiens yang paling spesifik.
 2. Tuliskan tiga masalah terbesar yang mereka hadapi.
 3. Jelaskan transformasi yang ingin mereka capai.
@@ -51,130 +49,388 @@ Action Plan:
   },
 
   {
-    judul: '2.Siapkan Toko Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&amp;quality=90&amp;format=webp',
+    judul: '2. Siapkan Toko Digital',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&quality=90&format=webp',
     video: '',
     videos: [
-      { judul: 'Tutorial daftar lynk.id', url: 'https://youtu.be/AOzI6AbmBAo?si=Zj7N4OrUN9rJNTcX' },
-      { judul: 'Tutorial merapikan toko', url: 'https://youtu.be/EovHV1vSums?si=CItJiheRVxC42VP0' },
-      { judul: 'Tutorial Upload Produk', url: 'https://youtu.be/XUvARSK2gOc?si=dyBFUxGoSDQMg4g3' },
-      { judul: 'Tutorial Affiliate Produk', url: 'https://youtu.be/bO8Ttx5D_gs?si=msyvyHW0XvpdLPDM' },
+      {
+        judul: 'Tutorial daftar lynk.id',
+        url: 'https://youtu.be/AOzI6AbmBAo?si=Zj7N4OrUN9rJNTcX',
+      },
+      {
+        judul: 'Tutorial merapikan toko',
+        url: 'https://youtu.be/EovHV1vSums?si=CItJiheRVxC42VP0',
+      },
+      {
+        judul: 'Tutorial Upload Produk',
+        url: 'https://youtu.be/XUvARSK2gOc?si=dyBFUxGoSDQMg4g3',
+      },
+      {
+        judul: 'Tutorial Affiliate Produk',
+        url: 'https://youtu.be/bO8Ttx5D_gs?si=msyvyHW0XvpdLPDM',
+      },
     ],
     tools: '',
     prompt: '',
     panduan: [
-      { judul: 'Panduan Landing Page Interaktif', url: 'https://drive.google.com/file/d/1EEVuoP9Mlx7tMIZa28_hA5kZN46xxWEk/view' },
-      { judul: 'Template Design Landing Page', url: 'https://canva.link/hkiwjrz2vl7k1fy' },
+      {
+        judul: 'Panduan Landing Page Interaktif',
+        url: 'https://drive.google.com/file/d/1EEVuoP9Mlx7tMIZa28_hA5kZN46xxWEk/view',
+      },
+      {
+        judul: 'Template Design Landing Page',
+        url: 'https://canva.link/hkiwjrz2vl7k1fy',
+      },
     ],
-    materi: ``,
+    materi: '',
   },
 
   {
     judul: '3. Aset Media Belajar',
     cover: '',
     video: '',
-    videos: [
-    ],
+    videos: [],
     tools: '',
     prompt: '',
     prompts: [
       {
         judul: 'Prompt Membuat Cover Produk',
         isi: `
-Buat Gambar sebuah cover Produk Digital rasio 1:1 tentang “[Nama Produk]”. Gunakan informasi utama berikut [ISI PRODUK]. Tujuan infografis: PROMOSI DAN INFORMASI. Gunakan visual yang relevan dengan topik, sederhana, informatif, dan mudah dipahami. Susun informasi dengan hirarki visual yang jelas: judul utama, informasi pendukung, visual utama, poin-poin penting, dan penutup. Gunakan layout yang rapi, proporsi seimbang, white space yang cukup, margin aman, safe area, serta typography yang mudah dibaca. Gunakan palet warna yang harmonis dan sesuai dengan topik: [PALET WARNA]. Gunakan elemen visual secukupnya dan hindari dekorasi yang tidak memiliki fungsi informasi. Pastikan semua teks menggunakan bahasa Indonesia yang jelas, singkat, dan sesuai dengan informasi sumber. Jangan menambahkan informasi, angka, klaim, atau teks yang tidak diberikan. Jika menampilkan manusia, tampilkan dengan anatomi natural dan pakaian yang sesuai konteks. Jika menampilkan perempuan Muslim, gunakan hijab dan pakaian yang menutup aurat. Gaya visual: [MODERN MINIMALIS / EDITORIAL / CORPORATE / FRIENDLY / DRAMATIC / DLL] Prioritaskan readability, hierarchy, clarity, dan visual storytelling daripada banyaknya elemen.
-Negative prompt:handwritten text sebagai ornamen, teks tidak terbaca, typo, teks acak, informasi tambahan yang tidak diminta, layout berantakan, cluttered, terlalu banyak elemen, visual berlebihan, hierarchy buruk, margin terpotong, cropped text, watermark, logo tidak diminta, signature, blurry, oversharpened, oversaturated, overexposed, plastic skin, bad anatomy, extra fingers, mutated hands, duplicate objects, distorted face, double shadows. Master Negative Prompt masterpiece, 8k resolution, tidak ada teks handwite sebagai ornamen, unreal engine 5, hyper-detailed, trending on artstation, CGI, 3D render, oversharpened, overexposed, oversaturated, airbrushed, plastic skin, flawless skin, perfectly symmetrical face, mannequin, doll, extra fingers, mutated hands, bad anatomy, deformed, cluttered, messy, busy background, chaotic layout, multiple lighting, double shadows, text, watermark, signature, cropped, blurry
+Buat gambar sebuah cover Produk Digital rasio 1:1 tentang “[Nama Produk]”. Gunakan informasi utama berikut [ISI PRODUK]. Tujuan infografis: PROMOSI DAN INFORMASI. Gunakan visual yang relevan dengan topik, sederhana, informatif, dan mudah dipahami. Susun informasi dengan hierarki visual yang jelas: judul utama, informasi pendukung, visual utama, poin-poin penting, dan penutup. Gunakan layout yang rapi, proporsi seimbang, white space yang cukup, margin aman, safe area, serta typography yang mudah dibaca. Gunakan palet warna yang harmonis dan sesuai dengan topik: [PALET WARNA]. Gunakan elemen visual secukupnya dan hindari dekorasi yang tidak memiliki fungsi informasi. Pastikan semua teks menggunakan bahasa Indonesia yang jelas, singkat, dan sesuai dengan informasi sumber. Jangan menambahkan informasi, angka, klaim, atau teks yang tidak diberikan. Jika menampilkan manusia, tampilkan dengan anatomi natural dan pakaian yang sesuai konteks. Jika menampilkan perempuan Muslim, gunakan hijab dan pakaian yang menutup aurat.
+
+Gaya visual: [MODERN MINIMALIS / EDITORIAL / CORPORATE / FRIENDLY / DRAMATIC / DLL]. Prioritaskan readability, hierarchy, clarity, dan visual storytelling daripada banyaknya elemen.
+
+Negative prompt: handwritten text sebagai ornamen, teks tidak terbaca, typo, teks acak, informasi tambahan yang tidak diminta, layout berantakan, cluttered, terlalu banyak elemen, visual berlebihan, hierarchy buruk, margin terpotong, cropped text, watermark, logo tidak diminta, signature, blurry, oversharpened, oversaturated, overexposed, plastic skin, bad anatomy, extra fingers, mutated hands, duplicate objects, distorted face, double shadows.
+
+Master Negative Prompt: masterpiece, 8k resolution, tidak ada teks handwrite sebagai ornamen, unreal engine 5, hyper-detailed, trending on artstation, CGI, 3D render, oversharpened, overexposed, oversaturated, airbrushed, plastic skin, flawless skin, perfectly symmetrical face, mannequin, doll, extra fingers, mutated hands, bad anatomy, deformed, cluttered, messy, busy background, chaotic layout, multiple lighting, double shadows, text, watermark, signature, cropped, blurry.
 `,
       },
     ],
     panduan: [
-      { judul: 'Animasi Bibir berbicara', url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk' },
+      {
+        judul: 'Animasi Bibir berbicara',
+        url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk',
+      },
     ],
-    materi: ``,
+    materi: '',
   },
+
   {
     judul: '4. Bikin Produk Digital by Canva',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&quality=90&format=webp',
     video: '',
     videos: [
-      { judul: 'Tutorial Worksheet Mewarnai', url: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk' },
-      { judul: 'Tutorial FlashCard Anak', url: 'https://youtu.be/noJbaaw0iAU?si=BTazw5QWEt_TfciT' },
-      { judul: 'Tutorial Workshet Aktifitas', url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE' },
+      {
+        judul: 'Tutorial Worksheet Mewarnai',
+        url: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk',
+      },
+      {
+        judul: 'Tutorial FlashCard Anak',
+        url: 'https://youtu.be/noJbaaw0iAU?si=BTazw5QWEt_TfciT',
+      },
+      {
+        judul: 'Tutorial Worksheet Aktivitas',
+        url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE',
+      },
     ],
     tools: '',
     prompt: '',
     prompts: [
       {
         judul: '',
-        isi: ``,
+        isi: '',
       },
     ],
     panduan: [
-      { judul: '' },
+      {
+        judul: '',
+      },
     ],
-    materi: ``,
+    materi: '',
   },
+
   {
-    judul: '5. Strategi Promosi Dimedia Sosial',
-    cover: 'https',
+    judul: '5. Strategi Promosi di Media Sosial',
+    cover: '',
     video: '',
-    videos: [
-      { judul: '', url: 'video' },
-    ],
+    videos: [],
     tools: 'https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181',
     prompt: '',
     prompts: [
       {
         judul: '',
-        isi: ``,
+        isi: '',
       },
     ],
     panduan: [
-      { judul: '', url: '' },
-    ],
-    materi: `Ada beberapa Strategi Promosi yang bisa kalian lakukan, Kalau cara yang menurutku paling mudah, murah dan efisien adalah dengan **mempromosikan Produk Digital di Media Sosial** yang biasa kalian gunakan. Berikut Strategi Promosi Media Sosial yang bisa kalian coba:
-✨ **Membuat konten** di Instagram 1x sehari selama 1-3 bulan untukmengoptimalkan akun sambil membangun Personal Branding
-✨ **Buat Instagram Story** 3-5 stories sehari
-✨ **Buat konten di TikTok**, 1x sehari. Kalau tidak ada waktu, bisamirorring (upload konten yang sama) konten yang kalian buat diInstagram dan upload di semua Media Sosial yang kamu punya
-✨ **Konsisten LIVE TikTok** min 1 jam per hari. Lebih dari itu akanbagus. Fitur LIVE TikTok akan muncul saat TikTok telah memberikannotification diakun kamu. Untuk batas followers itu berbeda-beda,jadi untuk awal, bisa fokus untuk membuat konten di TikTok terlebihdahulu.
- ✨ **Gunakan Lead Magnet Strategi** (berikan free product) untukmenarik audiens, contohnya seperti, E-Book Gratis, atau KursusGratis, dan produk digital lainnya, sekaligus gunakan CTA “Follow”untuk menambahkan followers
-✨ **Berikan Promo** seperti, contohnya 1 month anniversary, ataudiskon tanggal kembar 5.5, atau promo saat LIVE TikTok, dll.`,
-  },
-   {
-    judul: '6. Strategi Bikin Konten',
-    cover: 'https',
-    video: '',
-    videos: [
-      { judul: '', url: 'video' },
-    ],
-    tools: 'https://ai-content-creator-tan.vercel.app/',
-    prompt: '',
-    prompts: [https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181,
       {
         judul: '',
-        isi: ``,
+        url: '',
+      },
+    ],
+    materi: `
+Ada beberapa strategi promosi yang bisa kalian lakukan. Cara yang menurutku paling mudah, murah, dan efisien adalah mempromosikan produk digital di media sosial yang biasa kalian gunakan.
+
+✨ **Membuat konten:** unggah konten Instagram 1 kali sehari selama 1–3 bulan untuk mengoptimalkan akun sambil membangun personal branding.
+
+✨ **Buat Instagram Story:** unggah 3–5 stories sehari.
+
+✨ **Buat konten di TikTok:** 1 kali sehari. Kalau tidak ada waktu, kamu bisa melakukan mirroring (mengunggah konten yang sama) dari Instagram ke semua media sosial yang kamu punya.
+
+✨ **Konsisten LIVE TikTok:** minimal 1 jam per hari. Lebih dari itu akan bagus. Fitur LIVE TikTok akan muncul saat TikTok memberikan notifikasi di akun kamu. Batas followers bisa berbeda-beda, jadi untuk awal, fokus membuat konten terlebih dahulu.
+
+✨ **Gunakan strategi lead magnet:** berikan produk gratis untuk menarik audiens, contohnya ebook gratis, kursus gratis, atau produk digital lainnya. Kamu juga bisa menggunakan CTA “Follow” untuk menambah followers.
+
+✨ **Berikan promo:** misalnya promo anniversary bisnis, diskon tanggal kembar seperti 5.5, atau promo saat LIVE TikTok.
+`,
+  },
+
+  {
+    judul: '6. Strategi Bikin Konten',
+    cover: '',
+    video: '',
+    videos: [],
+    tools: 'https://ai-content-creator-tan.vercel.app/',
+    prompt: '',
+    prompts: [
+      {
+        judul: 'Prompt Strategi Konten',
+        isi: '',
+        url: 'https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181',
       },
     ],
     panduan: [
-      { judul: '', url: '' },
+      {
+        judul: '',
+        url: '',
+      },
     ],
-    materi: `Mulai sekarang, TANAMKAN KEYAKINAN BAHWA NGONTEN atau JUALAN ITU SEDERHANA & MUDAH.
-**Tips untuk cari ide di Instagram**⭐️
-✅**Gunakan strategi ATM (Amati, Tiru Modifikasi)**
-Caranya dengan banyak-banyak scrolling di Media Sosial yang kalian gunakan. Kalian bisa sesuaikan dengan membuat konten yang sedang trend, atau dengan observasi akun kreator lain, dan lihat apakah 2 minggu terakhir ada konten milik kreator tersebut yang sedang FYP? Kalau ada, kita bisa mengikuti cara dia membuat konten. Kalau aku pribadi, tidak hanya mencari ide dari Instagram dan Tiktok tapi juga dari Pinterest.
-✅**Membuat Konten dari Permasalahan (Pain Points)**
-Gunakan permasalahan atau kendala yang kamu atau target audiens kamu hadapi, sebagai sebuah konten. Contoh, untuk Topik Kekayaan (Wealth), permasalahan adalah tentang Hutang atau Cicilan. Jadikanlah itu sebuah konten, dan buat Produk Digital yang kamu tawarkan adalah solusi dari permasalahan mereka.
-✅**Mencari Ide dari ChatGPT**
-ChatGPT adalah tempat yang tepat untuk kamu yang sudahkahabisan ide konten. Aku pribadi cukup sering menggunakanChatGPT.
-  
-Ada 3 hal penting yang harus kamu perhatikan saat kamu membuat konten , yaitu :
-1. **Konten Ber-Value (Bernilai)**
-✔️Konten Edukasi
-✔️Konten Informasi
-✔️Konten Inspirasi
+    materi: `
+Mulai sekarang, TANAMKAN KEYAKINAN BAHWA NGONTEN ATAU JUALAN ITU SEDERHANA DAN MUDAH.
 
-2. **Konten Entertaining (menarik)**
-✔️Kualitas Video harus HD, Jernih, Tidak banyak goyang atau blur.
-✔️Pastikan juga pencahayaan OK. Kamu bisa menggunakan hook visual seperti sedang makan,bekerja, mengetik, minum, berjalan dan menyetir, atau bisa menggunakan video dance TikTok yang sedang trend**
+**Tips untuk mencari ide di Instagram** ⭐️
+
+✅ **Gunakan strategi ATM (Amati, Tiru, Modifikasi).**
+Caranya dengan banyak scrolling di media sosial yang kamu gunakan. Kamu bisa menyesuaikan konten yang sedang tren atau mengamati akun kreator lain. Lihat apakah dalam dua minggu terakhir ada konten kreator tersebut yang sedang FYP. Kalau ada, pelajari cara mereka membuat konten. Kamu juga bisa mencari ide dari Pinterest.
+
+✅ **Membuat konten dari permasalahan (pain points).**
+Gunakan permasalahan atau kendala yang kamu atau target audiens hadapi sebagai ide konten. Contoh, untuk topik kekayaan (wealth), permasalahannya bisa berupa utang atau cicilan. Jadikan itu sebuah konten dan tawarkan produk digital yang relevan sebagai solusi.
+
+✅ **Mencari ide dari ChatGPT.**
+ChatGPT bisa membantu ketika kamu kehabisan ide konten.
+
+Ada tiga hal penting yang harus kamu perhatikan saat membuat konten:
+
+**1. Konten ber-value (bernilai)**
+- Konten edukasi
+- Konten informasi
+- Konten inspirasi
+
+**2. Konten entertaining (menarik)**
+- Kualitas video harus HD, jernih, tidak banyak goyang, dan tidak blur.
+- Pastikan pencahayaan baik. Kamu bisa menggunakan hook visual seperti sedang makan, bekerja, mengetik, minum, berjalan, atau menggunakan video dance TikTok yang sedang tren.
+- Video tidak terlalu panjang; 5–7 detik bisa dicoba sesuai kebutuhan konten.
+- Hook tiga detik pertama harus menarik. Contoh: “Stop scrolling”, “Awas nyesel”, “3 hal penting”, “Jangan sampai nyesal”, atau “Penasaran nggak?”
+- Audio harus relevan dengan video. Kalau videonya ceria, gunakan audio yang happy, bukan mellow hanya karena sedang tren.
+- Jika ada beberapa kalimat yang muncul pada waktu berbeda, pastikan kemunculannya sesuai dengan beat audio.
+- Caption menggunakan hook yang menarik untuk dibaca, misalnya “Ternyata ini rahasianya” atau “Selama ini kamu salah”. Beri jeda paragraf agar mudah dibaca.
+
+**CTA yang perlu diingat:**
+- Ingin menambah followers: CTA FOLLOW.
+- Ingin menambah views dan jangkauan: CTA SHARE.
+- Ingin mendorong penjualan: CTA COMMENT atau CTA yang sesuai dengan alur penjualan.
+
+**3. Konsisten**
+Aku sarankan minimal satu konten per hari dan evaluasi hasilnya secara berkala. Konsistensi tidak menjamin penghasilan, tetapi membantu kamu belajar dan mengetahui konten yang paling sesuai untuk audiens.
+
+Untuk melihat waktu aktif audiens, kamu bisa membuka Dasbor Profesional di profil, memilih bagian pengikut atau total followers, lalu mencari informasi waktu paling aktif jika tersedia.
+
+**Tentang LIVE TikTok**
+Saat fitur LIVE tersedia, kamu bisa mulai mencoba live. Pada awalnya, penonton mungkin keluar-masuk dan jumlah penonton bisa sedikit. Itu wajar. Fokuslah berlatih menyampaikan materi, bukan hanya melihat jumlah penonton.
+
+Siapkan naskah sebelum live dan sampaikan materi yang bermanfaat, seperti:
+- Apa itu produk digital dan contoh-contohnya.
+- Cara kerja produk digital.
+- Tutorial singkat membuat produk digital.
+
+Pahami produk yang kamu tawarkan agar bisa menjawab pertanyaan audiens dengan percaya diri.
+`,
+  },
+
+  {
+    judul: '7. Strategi Live di TikTok',
+    cover: '',
+    video: '',
+    videos: [],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    materi: `
+Selain menawarkan produk digital melalui konten, Story juga bisa menjadi tempat untuk mempromosikan produk digital lainnya.
+
+Di kursus gratis, aku sering menyampaikan bahwa kamu bisa memasukkan berbagai produk digital di LYNK kamu, walaupun berbeda niche. Tetapi, kamu tetap perlu memilih **main product** untuk bisnis sesuai topik yang kamu pilih.
+
+Main product itulah yang sebaiknya dibahas dalam konten agar topik akun tetap konsisten dan tidak berganti-ganti mengikuti setiap produk yang kamu punya.
+
+Lalu, di mana kita bisa mempromosikan produk digital lainnya? Jawabannya: di Story.
+
+Karena itu, penting untuk konsisten membagikan cerita tentang bisnis, pengalaman, dan proses kamu. Dengan begitu, audiens di Instagram Story bisa semakin mengenal kamu dan kamu bisa menawarkan produk lain yang relevan.
+
+Kamu juga bisa memberikan voucher atau penawaran khusus, misalnya saat anniversary bisnis, mencapai target followers, tanggal kembar seperti 3.3, atau diskon pada hari tertentu.
+`,
+  },
+
+  {
+    judul: '8. Strategi Keunikan Produk',
+    cover: '',
+    video: '',
+    videos: [],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: 'Panduan Lengkap Bisnis Digital',
+        url: 'https://drive.google.com/file/d/1_JRi65FtoFhjZFPoFhcPNk5n2JRGlvaV/view?usp=drivesdk',
+      },
+    ],
+    materi: `
+Tanyakan kepada diri sendiri:
+
+- Mengapa orang harus membeli produk saya?
+- Apa yang tidak dimiliki kompetitor?
+- Apa pengalaman belajar yang lebih baik?
+- Apa hasil yang bisa dicapai lebih cepat?
+- Apa bonus yang benar-benar membantu peserta?
+
+**Contoh keunikan:**
+- Belajar menggunakan HP.
+- Cocok untuk pemula.
+- Langkah demi langkah.
+- Template siap pakai.
+- Prompt premium.
+- Update materi secara berkala.
+- Komunitas aktif.
+- Pendampingan.
+
+Keunikan inilah yang membuat produk lebih mudah diingat.
+`,
+  },
+
+  {
+    judul: '9. Bonus Template',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792163500117_1608257.png?width=630&quality=90&format=webp',
+    video: '',
+    videos: [],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '100 Dongeng Bersuara',
+        url: 'https://drive.google.com/file/d/12axPmRogITTFAk63ZsvGL35zUbBCHa9J/view?usp=drivesdk',
+      },
+      {
+        judul: 'Worksheet Activity Anak 10 Tema',
+        url: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ',
+      },
+      {
+        judul: 'Worksheet Buku Mewarnai 10 Tema',
+        url: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ',
+      },
+    ],
+    materi: '',
+  },
+
+  {
+    judul: '10. Bonus Produk Digital Siap Jual',
+    cover: '',
+    video: '',
+    videos: [],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '8JT Produk Digital Lisensi URL, PRL, MRR',
+        url: 'https://drive.google.com/file/d/1XnLaVspUCtLbYiYTo3NJW_jnzyhk-hkG/view?usp=drivesdk',
+      },
+      {
+        judul: '99 Dongeng bersuara',
+        url: 'https://www.canva.com/design/DAGutgCfIFs/Hf6GdIRApkTcSS1NZCxfGg/view?utm_content=DAGutgCfIFs&utm_campaign=designshare&utm_medium=link&utm_source=viewer',
+      },
+      {
+        judul: 'MEGA BUNDLE 150 File Worksheet',
+        url: 'https://www.digitalprodukno1seindonesia.my.id/worksheet',
+      },
+      {
+        judul: 'Ebook Panduan Lengkap Bisnis Produk Digital',
+        url: 'https://drive.google.com/file/d/1zAWiAaJt4arlZJ1U5CafdMhU51lUFiRV/view?usp=drivesdk',
+      },
+      {
+        judul: 'Ebook Rahasia Cuan Jutaan dari lynk.id',
+        url: 'https://drive.google.com/file/d/1VP0fqBZt9kpg2hYhIYUd0ygptCaiYShH/view?usp=drivesdk',
+      },
+      {
+        judul: '9 Games Edukasi Anak',
+        url: 'https://drive.google.com/drive/u/0/mobile/folders/18ntRFjH7uTNEpGpFx_NsXrNuol0Yfpxj/1ZWdZOaceMetjmVmu0wjsJ8Xlh7lw3Q_0?sort=13&direction=a',
+      },
+      {
+        judul: 'Bank Konten Affiliate',
+        url: 'https://drive.google.com/drive/folders/1KvWDu_2sF6p0mkl2xyY11_Z_4AzqX__3',
+      },
+      {
+        judul: 'Ebook Strategi Reels Jadi Cuan',
+        url: 'https://drive.google.com/file/d/1UVkI474FO1yLXrmsh1eiS8afajyMq_OX/view?usp=drivesdk',
+      },
+      {
+        judul: 'Planner Tabungan',
+        url: 'https://drive.google.com/file/d/1Q53gtI9fThl1K4ZV5gMwu8WkiQqKfYwU/view?usp=drivesdk',
+      },
+      {
+        judul: 'Ide Konten Produk Digital',
+        url: 'https://drive.google.com/file/d/1CzqNIt6RLoWBKaxz1SsinixqvHLwEii9/view?usp=drivesdk',
+      },
+      {
+        judul: 'Ebook Rahasia Promosi',
+        url: 'https://drive.google.com/file/d/1GJT_WTHzoN2GK-5S_0dVyjOd9tFGBI5z/view?usp=drivesdk',
+      },
+      {
+        judul: '90. Ecourse Eksklusif',
+        url: 'https://drive.google.com/drive/folders/1fT-F0iYTiVqN7qC3khdVwHHkYrQ-wGxS',
+      },
+    ],
+    materi: '',
+  },
+];
+
+export default data;kan juga pencahayaan OK. Kamu bisa menggunakan hook visual seperti sedang makan,bekerja, mengetik, minum, berjalan dan menyetir, atau bisa menggunakan video dance TikTok yang sedang trend**
 ✔️Video tidak terlalu panjang, 5-7 detik cukup kok
 ✔️Hook 3detik pertama harus menarik‼️Contoh : Stop scrolling, awas nyesel, 3 hal penting, ngk lagi2 deh, jangan percaya, penasaran ngk dll.
 ✔️Audio harus relevan dengan video. Kalau video kamu ceria, pake audio yang HAPPY, jangan yang MELLOW cuma gara2 lagi tranding❌},
