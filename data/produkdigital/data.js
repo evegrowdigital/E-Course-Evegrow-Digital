@@ -9,13 +9,13 @@ const data = [
     tools: '',
     prompt: '',
     materi: `
-Produk digital adalah solusi yang dikemas dalam bentuk digital.
+**Produk digital adalah solusi yang dikemas dalam bentuk digital.**
 Ini adalah salah satu mindset terpenting.
 Kesalahan pemula:
 "Aku mau bikin ebook. Isinya apa ya?"
 Seharusnya bukan begitu.
 Mulai dari:
-SIAPA → MASALAH APA → SOLUSI APA → PRODUK APA
+**SIAPA → MASALAH APA → SOLUSI APA → PRODUK APA**
 
 Semakin jelas siapa yang dibantu, semakin mudah menentukan isi produk. Produk harus bisa menyelesaikan masalah.
 Cara mencari Ide Produk :
@@ -25,11 +25,11 @@ Cara mencari Ide Produk :
 4. Dari pertanyaan audience, Perhatikan pertanyaan yang sering muncul di: TikTok, Instagram, Facebook, Threads, YouTube dan Komunitas.
 5. Dari komentar, Komentar sering berisi masalah nyata.
 6. Dari kompetitor, Bukan untuk meniru. Tetapi untuk melihat:
-Produk apa yang sudah ada?
-Siapa targetnya?
-Apa yang mereka tawarkan?
-Apa yang masih kurang?
-Bagaimana kamu bisa membuat versi yang lebih spesifik?
+• Produk apa yang sudah ada?
+• Siapa targetnya?
+• Apa yang mereka tawarkan?
+• Apa yang masih kurang?
+• Bagaimana kamu bisa membuat versi yang lebih spesifik?
 7. Dari tren, Perhatikan teknologi dan tren baru.
 Contoh: AI berkembang sangat cepat.
 Muncul kebutuhan baru seperti:
@@ -39,7 +39,7 @@ Contoh: Membuat caption, Membuat laporan, Membuat desain, Membuat konten, Membua
 Pekerjaan berulang bisa dikemas menjadi:
 Template + SOP + Prompt + Tutorial.
 
-Ingatlah:Orang tidak membeli produk digital. Mereka membeli solusi, hasil, dan transformasi.
+**Ingatlah:Orang tidak membeli produk digital. Mereka membeli solusi, hasil, dan transformasi.**
 
 Action Plan:
 1. Tentukan satu target audiens yang paling spesifik.
@@ -51,15 +51,36 @@ Action Plan:
   },
 
   {
-    judul: '2. Membuat Konten Affiliate dengan AI',
-    cover: '',
-    video: 'https://www.youtube.com/watch?v=ISI-ID-VIDEO',
+    judul: 'Siapkan Toko Digital',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&amp;quality=90&amp;format=webp',
+    video: '',
+    videos: [
+      { judul: 'Tutorial daftar lynk.id', url: 'https://youtu.be/AOzI6AbmBAo?si=Zj7N4OrUN9rJNTcX' },
+      { judul: 'Tutorial merapikan toko', url: 'https://youtu.be/EovHV1vSums?si=CItJiheRVxC42VP0' },
+      { judul: 'Tutorial Upload Produk', url: 'https://youtu.be/XUvARSK2gOc?si=dyBFUxGoSDQMg4g3' },
+      { judul: 'Tutorial Affiliate Produk', url: 'https://youtu.be/bO8Ttx5D_gs?si=msyvyHW0XvpdLPDM' },
+    ],
     tools: '',
     prompt: '',
-    materi: `
-Isi materi kedua.
-`,
+    panduan: [
+      { judul: 'Panduan Landing Page Interaktif', url: 'https://drive.google.com/file/d/1EEVuoP9Mlx7tMIZa28_hA5kZN46xxWEk/view' },
+      { judul: 'Template Design Landing Page', url: 'https://canva.link/hkiwjrz2vl7k1fy' },
+    ],
+    materi: ``,
   },
-];
 
-export default data;
+  {
+    judul: 'Aset Media Belajar',
+    cover: '',
+    video: '',
+    videos: [
+    ],
+    tools: '',
+    prompt: '',
+    panduan: [
+      { judul: 'Animasi Bibir berbicara', url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk' },
+      { judul: 'Prompt Cover Produk', url: 'https://canva.link/wpzrb5enudlxqqg' },
+    ],
+    materi: ``,
+  },
+    
