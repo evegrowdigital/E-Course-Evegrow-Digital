@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import { catatAffiliate } from '@/lib/catatAffiliate.js';
 
 export const runtime = 'nodejs';
 
@@ -58,6 +59,18 @@ export async function POST(req) {
         order: aman,
       })
     );
+
+    // Catat penjualan dan komisi affiliate (hanya untuk pembayaran berhasil)
+    if (data.event === 'payment.received') {
+      try {
+        const hasil = await catatAffiliate(order);
+        console.log('LYNK AFFILIATE', JSON.stringify(hasil));
+      } catch (err) {
+        console.error('LYNK AFFILIATE GAGAL:', err);
+        // 500 supaya Lynk.id bisa mengirim ulang; order tidak akan terhitung ganda
+        return Response.json({ ok: false }, { status: 500 });
+      }
+    }
   }
 
   return Response.json({ ok: true });
