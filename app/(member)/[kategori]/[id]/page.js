@@ -118,15 +118,7 @@ export default async function MateriPage({ params }) {
 
       <h1 className="mt-3 text-2xl font-bold leading-tight text-ink sm:text-3xl">{materi.judul}</h1>
 
-      {daftarVideo.length === 0 ? (
-        <div className="mt-5 overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
-          <div className="relative aspect-video">
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-brand-100">
-              Video belum tersedia untuk materi ini.
-            </div>
-          </div>
-        </div>
-      ) : (
+      {daftarVideo.length > 0 && (
         <div className="mt-5 flex flex-col gap-5">
           {daftarVideo.map((v, i) => (
             <div key={`${v.videoId}-${i}`}>
@@ -288,4 +280,4 @@ export default async function MateriPage({ params }) {
       </nav>
     </article>
   );
-          }
+            }
