@@ -3,11 +3,12 @@ import { getAffiliator, rupiah, NOMOR_WA_ADMIN } from '@/lib/affiliator.js';
 import SalinLink from '@/components/SalinLink.js';
 
 export const metadata = { title: 'Dashboard Affiliate | Evegrow.Digital' };
+export const dynamic = 'force-dynamic';
 
 export default async function AffiliatePage() {
   const member = await getMember();
   const email = member?.email || '';
-  const aff = getAffiliator(email);
+  const aff = await getAffiliator(email);
 
   if (!aff) {
     const pesan = `Halo admin Evegrow, saya mau daftar jadi Affiliator. Email member saya: ${email}`;
@@ -51,8 +52,8 @@ export default async function AffiliatePage() {
           <p className="text-xs font-medium uppercase tracking-wider text-brand-600">
             Total Penjualan
           </p>
-          <p className="mt-2 text-2xl font-bold text-brand-900 sm:text-3xl">
-            {Number(aff.penjualan) || 0}
+          <p className="mt-2 text-xl font-bold text-brand-900 sm:text-2xl">
+            {rupiah(aff.penjualan)}
           </p>
         </div>
         <div className="rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-600 to-brand-500 p-4 text-white shadow-soft sm:p-5">
@@ -81,4 +82,4 @@ export default async function AffiliatePage() {
       </div>
     </>
   );
-      }
+}
