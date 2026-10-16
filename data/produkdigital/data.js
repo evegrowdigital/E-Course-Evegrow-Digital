@@ -51,7 +51,7 @@ Action Plan:
   },
 
   {
-    judul: 'Siapkan Toko Digital',
+    judul: '2.Siapkan Toko Digital',
     cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
@@ -70,7 +70,7 @@ Action Plan:
   },
 
   {
-    judul: 'Aset Media Belajar',
+    judul: '3. Aset Media Belajar',
     cover: '',
     video: '',
     videos: [
@@ -88,6 +88,228 @@ Negative prompt:handwritten text sebagai ornamen, teks tidak terbaca, typo, teks
     ],
     panduan: [
       { judul: 'Animasi Bibir berbicara', url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk' },
+    ],
+    materi: ``,
+  },
+  {
+    judul: '4. Bikin Produk Digital by Canva',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&amp;quality=90&amp;format=webp',
+    video: '',
+    videos: [
+      { judul: 'Tutorial Worksheet Mewarnai', url: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk' },
+      { judul: 'Tutorial FlashCard Anak', url: 'https://youtu.be/noJbaaw0iAU?si=BTazw5QWEt_TfciT' },
+      { judul: 'Tutorial Workshet Aktifitas', url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE' },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '' },
+    ],
+    materi: ``,
+  },
+  {
+    judul: '5. Strategi Promosi Dimedia Sosial',
+    cover: 'https',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: 'https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '', url: '' },
+    ],
+    materi: `Ada beberapa Strategi Promosi yang bisa kalian lakukan, Kalau cara yang menurutku paling mudah, murah dan efisien adalah dengan **mempromosikan Produk Digital di Media Sosial** yang biasa kalian gunakan. Berikut Strategi Promosi Media Sosial yang bisa kalian coba:
+✨ **Membuat konten** di Instagram 1x sehari selama 1-3 bulan untukmengoptimalkan akun sambil membangun Personal Branding
+✨ **Buat Instagram Story** 3-5 stories sehari
+✨ **Buat konten di TikTok**, 1x sehari. Kalau tidak ada waktu, bisamirorring (upload konten yang sama) konten yang kalian buat diInstagram dan upload di semua Media Sosial yang kamu punya
+✨ **Konsisten LIVE TikTok** min 1 jam per hari. Lebih dari itu akanbagus. Fitur LIVE TikTok akan muncul saat TikTok telah memberikannotification diakun kamu. Untuk batas followers itu berbeda-beda,jadi untuk awal, bisa fokus untuk membuat konten di TikTok terlebihdahulu.
+ ✨ **Gunakan Lead Magnet Strategi** (berikan free product) untukmenarik audiens, contohnya seperti, E-Book Gratis, atau KursusGratis, dan produk digital lainnya, sekaligus gunakan CTA “Follow”untuk menambahkan followers
+✨ **Berikan Promo** seperti, contohnya 1 month anniversary, ataudiskon tanggal kembar 5.5, atau promo saat LIVE TikTok, dll.`,
+  },
+   {
+    judul: '6. Strategi Bikin Konten',
+    cover: 'https',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: 'https://ai-content-creator-tan.vercel.app/',
+    prompt: '',
+    prompts: [https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181,
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '', url: '' },
+    ],
+    materi: `Mulai sekarang, TANAMKAN KEYAKINAN BAHWA NGONTEN atau JUALAN ITU SEDERHANA & MUDAH.
+**Tips untuk cari ide di Instagram**⭐️
+✅**Gunakan strategi ATM (Amati, Tiru Modifikasi)**
+Caranya dengan banyak-banyak scrolling di Media Sosial yang kalian gunakan. Kalian bisa sesuaikan dengan membuat konten yang sedang trend, atau dengan observasi akun kreator lain, dan lihat apakah 2 minggu terakhir ada konten milik kreator tersebut yang sedang FYP? Kalau ada, kita bisa mengikuti cara dia membuat konten. Kalau aku pribadi, tidak hanya mencari ide dari Instagram dan Tiktok tapi juga dari Pinterest.
+✅**Membuat Konten dari Permasalahan (Pain Points)**
+Gunakan permasalahan atau kendala yang kamu atau target audiens kamu hadapi, sebagai sebuah konten. Contoh, untuk Topik Kekayaan (Wealth), permasalahan adalah tentang Hutang atau Cicilan. Jadikanlah itu sebuah konten, dan buat Produk Digital yang kamu tawarkan adalah solusi dari permasalahan mereka.
+✅**Mencari Ide dari ChatGPT**
+ChatGPT adalah tempat yang tepat untuk kamu yang sudahkahabisan ide konten. Aku pribadi cukup sering menggunakanChatGPT.
+  
+Ada 3 hal penting yang harus kamu perhatikan saat kamu membuat konten , yaitu :
+1. **Konten Ber-Value (Bernilai)**
+✔️Konten Edukasi
+✔️Konten Informasi
+✔️Konten Inspirasi
+
+2. **Konten Entertaining (menarik)**
+✔️Kualitas Video harus HD, Jernih, Tidak banyak goyang atau blur.
+✔️Pastikan juga pencahayaan OK. Kamu bisa menggunakan hook visual seperti sedang makan,bekerja, mengetik, minum, berjalan dan menyetir, atau bisa menggunakan video dance TikTok yang sedang trend**
+✔️Video tidak terlalu panjang, 5-7 detik cukup kok
+✔️Hook 3detik pertama harus menarik‼️Contoh : Stop scrolling, awas nyesel, 3 hal penting, ngk lagi2 deh, jangan percaya, penasaran ngk dll.
+✔️Audio harus relevan dengan video. Kalau video kamu ceria, pake audio yang HAPPY, jangan yang MELLOW cuma gara2 lagi tranding❌},
+✔️Jika kamu memiliki beberapa kalimat yang muncul dikonten kamu. contoh : “Ternyata hal ini yang buat views reels anjlok”, “Check caption untuk detailnya”
+⬆️ Nah itukan ada 2 kalimat yang muncul pada waktu ygberbeda. Pastikan kalimat tersebut ON BEAT dengan audio ygkamu gunakan.
+✔️Caption menggunakan Hook yang menarik untuk dibaca.Contoh : Ternyata ini rahasianya, selama ini kamu salah, jangansampe nyesal.Lalu enter 2x baru lanjut caption selanjutnya✨
+
+Kemudian CTA, kamu harus ingat :
+➡️ Kalau mau banyak followers CTA FOLLOW
+➡️ Kalau mau banyak Views CTA SHARE
+➡️ Kalau untuk penjualan CTA COMMENT
+
+- Harus ada fitur LIVE TikTok terlebih dahulu.
+- Saat fitur LIVE TikTok sudah muncul, bisa coba langsung live.
+- Saat kalian mulai LIVE, akan banyak audiens yang keluar masuk, dan kemungkinan besar belum ada yang akan menonton LIVE kamu, dan itu adalah hal yang wajar. Kalian gausah focus ke penonton yang keluar masuk, tetapi focus untuk belajar menyampaikan materi. Jadi aku sangat menyarankan kalian untuk dapat menyiapkan script materi untuk disampaikan dalam LIVE kamu sebelum kamu melakukan penawaran, untuk dapat menarik perhatian audiens. Pastikan materi yang kamu sampaikan itu bervalue ya kawan-kawan😉 Seperti contohnya, aku memberikan informasi fundamental terkait Produk Digital, seperti "Apa itu Produk Digital dan contoh-contohnya" lalu "Cara kerja Produk Digital sampai dia bisa CUAN" dan bahkan "Tutorial-tutorial singkat terkait membuat Produk Digital"
+. Hal ini sangat aku sarankan, supaya
+dapat membangun kepercayaan audiens yaaa🥰 Dan pastikan kamu ngerti Product Knowledgenya, supaya saat ada audiens yang bertanya, kamu bisa menjawab dengan Percaya Diri.
+3. **Konsisten**‼️
+Aku sarankan, 1 hari harus ada minimal 1 Konten. Lalu konsisten selama 3 bulan. 1 bulan pertama pasti sudah terlihat peningkatannya dan kalau kamu konsisten 3 bulan, aku yakin akan ada penghasilan yang kamu dapatkan.Untuk jam tayang terbaik akunmu, bisa lihat di dasbor profesional. Caranya :
+- Klik “Dasbor Profesional” di profile
+- Klik “Total Followers atau pengikut Baru”
+- Scroll paling bawah- Nanti ada “Most active time atau waktu paling aktif”
+},
+ {
+    judul: '7. Strategi Live di tiktok',
+    cover: 'https',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '', url: '' },
+    ],
+   { materi: `Selain penawaran Produk Digital di konten-konten yang kamu buat, Story adalah tempat yang tepat untuk kamu bisa jualan Produk Digital kamu yang lainnya✨
+   Di Kursus Gratis aku sering banget mention kalo kamu bisa masukin produk digital sebanyak apapun di LYNK kamu,walaupun berbeda-beda niche, TETAPI, kamu harus memilih Main Product untuk bisnis kamu, yang sesuai dengan topik yang kamu pilih tentunya. Lalu Main Product kamu lah yang harus kamu bahas di dalam konten-konten kamu, jadi konten kamu tetap konsisten pada satu Topik saja, gaboleh ganti-ganti sesuai dengan Produk Digital yang kamu punya. Nah sekarang pertanyaannya : “dimana kita bisa promosiin produk digital kita yang lain?"Jawabannya di Story 
+  ✨ Makanya penting banget untuk kamu konsisten membagikan cerita-cerita tentang Bisnis kamu,sering sharing, sehingga audiens kamu di IG Story bisa terbentuk dan kamu bisa mempromosikan Produk Digital kamu disana.Kasih Voucher ataupun penawaran-penawaran khusus seperti, anniversary 6 bulan mulai bisnis, atau 10rb followers, atau tanggal kembar kaya 3.3, atau diskon setiap hari tertentu."
+  },
+     {
+    judul: '8. Strategi Keunikan Produk',
+    cover: 'https',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: 'Panduan Lengkap Bisnis Digital', url: 'https://drive.google.com/file/d/1_JRi65FtoFhjZFPoFhcPNk5n2JRGlvaV/view?usp=drivesdk' },
+    ],
+    materi: `Tanyakan kepada diri sendiri:
+
+- Mengapa orang harus membeli produk saya?
+- Apa yang tidak dimiliki kompetitor?
+- Apa pengalaman belajar yang lebih baik?
+- Apa hasil yang bisa dicapai lebih cepat?
+- Apa bonus yang benar-benar membantu peserta?
+
+Contoh keunikan:
+
+- Belajar menggunakan HP.
+- Cocok untuk pemula.
+- Langkah demi langkah.
+- Template siap pakai.
+- Prompt premium.
+- Update materi secara berkala.
+- Komunitas aktif.
+- Pendampingan.
+
+Keunikan inilah yang membuat produk lebih mudah diingat.`,
+  },
+
+ {
+    judul: '9. Bonus Template',
+    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792163500117_1608257.png?width=630&amp;quality=90&amp;format=webp',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '100 Dongen Bersuara', url: 'https://drive.google.com/file/d/12axPmRogITTFAk63ZsvGL35zUbBCHa9J/view?usp=drivesdk' },
+      { judul: 'Worksheet Activity Anak 10 tema', url: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ'},
+      { judul: 'Worksheet Buku Mewarnai 10 Tema' u: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ'},
+    ],
+    materi: ``,
+  },
+     {
+    judul: '10. Bonus Produk Digital Siap Jual',
+    cover: 'https',
+    video: '',
+    videos: [
+      { judul: '', url: 'video' },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: ``,
+      },
+    ],
+    panduan: [
+      { judul: '8JT Produk Digital Lisensi URL, PRL, MRR', url: 'https://drive.google.com/file/d/1XnLaVspUCtLbYiYTo3NJW_jnzyhk-hkG/view?usp=drivesdk' },
+      { judul: '99 Dongeng bersuara', url: 'https://www.canva.com/design/DAGutgCfIFs/Hf6GdIRApkTcSS1NZCxfGg/view?utm_content=DAGutgCfIFs&utm_campaign=designshare&utm_medium=link&utm_source=viewer' },
+      { judul: 'MEGA BUNDLE 150 File Worksheet', url: 'https://www.digitalprodukno1seindonesia.my.id/worksheet' },
+      { judul: 'Ebook Panduan Lengkap Bisnis Produk Digital', url: 'https://drive.google.com/file/d/1zAWiAaJt4arlZJ1U5CafdMhU51lUFiRV/view?usp=drivesdk' },
+      { judul: 'Ebook Rahasia Cuan Jutaan dari lynk.id', url: 'https://drive.google.com/file/d/1VP0fqBZt9kpg2hYhIYUd0ygptCaiYShH/view?usp=drivesdk' },
+      { judul: '9 Games Edukasi Anak', url: 'https://drive.google.com/drive/u/0/mobile/folders/18ntRFjH7uTNEpGpFx_NsXrNuol0Yfpxj/1ZWdZOaceMetjmVmu0wjsJ8Xlh7lw3Q_0?sort=13&direction=a' },
+      { judul: 'Bank Konten Affiliate', url: 'https://drive.google.com/drive/folders/1KvWDu_2sF6p0mkl2xyY11_Z_4AzqX__3' },
+      { judul: 'Ebool Strategi Reels Jadi Cuan', url: 'https://drive.google.com/file/d/1UVkI474FO1yLXrmsh1eiS8afajyMq_OX/view?usp=drivesdk' },
+      { judul: 'Planner Tabungan', url: 'https://drive.google.com/file/d/1Q53gtI9fThl1K4ZV5gMwu8WkiQqKfYwU/view?usp=drivesdk' },
+      { judul: 'Ide Konten Produk Digital', url: 'https://drive.google.com/file/d/1CzqNIt6RLoWBKaxz1SsinixqvHLwEii9/view?usp=drivesdk' },
+      { judul: 'Ebook Rahasia Promosi', url: 'https://drive.google.com/file/d/1GJT_WTHzoN2GK-5S_0dVyjOd9tFGBI5z/view?usp=drivesdk' },
+      { judul: '90.Ecourse Eksklusif', url: 'https://drive.google.com/drive/folders/1fT-F0iYTiVqN7qC3khdVwHHkYrQ-wGxS' },
     ],
     materi: ``,
   },
