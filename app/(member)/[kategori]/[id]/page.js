@@ -4,6 +4,23 @@ import { getAllMateri, getMateri } from '@/lib/materi.js';
 import { getKategori } from '@/lib/kategori.js';
 import { getYouTubeId } from '@/lib/youtube.js';
 
+function Teks({ children }) {
+  const bagian = String(children).split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {bagian.map((b, i) =>
+        b.startsWith('**') && b.endsWith('**') && b.length > 4 ? (
+          <strong key={i} className="font-bold text-ink">
+            {b.slice(2, -2)}
+          </strong>
+        ) : (
+          b
+        )
+      )}
+    </>
+  );
+}
+
 export async function generateMetadata({ params }) {
   const { kategori, id } = await params;
   const m = getMateri(kategori, id);
@@ -120,7 +137,7 @@ export default async function MateriPage({ params }) {
           <div className="border-t border-brand-100 px-5 py-5 sm:px-7">
             {teks && (
               <div className="max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
-                {teks}
+                <Teks>{teks}</Teks>
               </div>
             )}
 
