@@ -27,6 +27,14 @@ const IKON = {
       <path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1" />
     </>
   ),
+  dashboard: (
+    <>
+      <path d="M4 20V10" />
+      <path d="M10 20V4" />
+      <path d="M16 20v-7" />
+      <path d="M22 20H2" />
+    </>
+  ),
   profil: (
     <>
       <circle cx="12" cy="8" r="4" />
@@ -42,6 +50,7 @@ const MENU = [
     ikon: IKON[k.slug],
     slug: k.slug,
   })),
+  { href: '/affiliate', label: 'Dashboard Affiliate', ikon: IKON.dashboard },
   { href: '/profil', label: 'Profil Saya', ikon: IKON.profil },
 ];
 
