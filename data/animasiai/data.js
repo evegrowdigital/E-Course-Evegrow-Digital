@@ -25,7 +25,6 @@ const data = [
     ],
     materi: ``,
   },
-},
    {
     judul: '2. Contoh Gaya visual',
     cover: 'https',
