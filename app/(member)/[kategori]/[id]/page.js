@@ -12,14 +12,15 @@ import PromptBox from '@/components/PromptBox.js';
 // [Foto: https://link-gambar.jpg | Keterangan foto]
 
 function Teks({ children }) {
-  const bagian = String(children).split(
+  const teks = typeof children === 'string' ? children : String(children ?? '');
+
+  const bagian = teks.split(
     /(\*\*[^*]+\*\*|\[foto:[^\]]+\])/gi
   );
 
   return (
     <>
       {bagian.map((b, i) => {
-        // Teks tebal
         if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
           return (
             <strong key={i} className="font-bold text-ink">
@@ -28,7 +29,6 @@ function Teks({ children }) {
           );
         }
 
-        // Gambar dengan format [Foto: URL] atau [Foto: URL | keterangan]
         if (
           b.toLowerCase().startsWith('[foto:') &&
           b.endsWith(']')
@@ -64,6 +64,51 @@ function Teks({ children }) {
   );
 }
 
+// Mengubah isi materi menjadi teks dengan aman.
+// Mendukung string, array, dan objek.
+function normalisasiMateri(value) {
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => {
+        if (typeof item === 'string') return item;
+
+        if (item && typeof item === 'object') {
+          const isi =
+            item.teks ??
+            item.isi ??
+            item.content ??
+            item.text ??
+            item.paragraf;
+
+          return typeof isi === 'string' ? isi : '';
+        }
+
+        return '';
+      })
+      .filter(Boolean)
+      .join('\n');
+  }
+
+  if (value && typeof value === 'object') {
+    const isi =
+      value.teks ??
+      value.isi ??
+      value.content ??
+      value.text ??
+      value.paragraf;
+
+    if (typeof isi === 'string') return isi;
+
+    return '';
+  }
+
+  return '';
+}
+
 export async function generateMetadata({ params }) {
   const { kategori, id } = await params;
   const m = getMateri(kategori, id);
@@ -87,50 +132,66 @@ export default async function MateriPage({ params }) {
   const sebelumnya = semua[index - 1];
   const berikutnya = semua[index + 1];
 
-  // Video: mendukung video tunggal dan beberapa video.
-  const daftarVideo = [materi.video, ...(materi.videos || [])]
+  // Video tunggal dan beberapa video.
+  const daftarVideo = [
+    materi.video,
+    ...(Array.isArray(materi.videos) ? materi.videos : []),
+  ]
     .map((v) => (typeof v === 'string' ? { judul: '', url: v } : v))
-    .filter((v) => v && v.url)
+    .filter((v) => v && typeof v.url === 'string' && v.url.trim())
     .map((v) => ({
       judul: v.judul || '',
       videoId: getYouTubeId(v.url),
     }))
     .filter((v) => v.videoId);
 
-  // Panduan: mendukung URL langsung atau objek judul dan URL.
+  // Panduan.
   const panduan = (
     Array.isArray(materi.panduan)
       ? materi.panduan
-      : [materi.panduan]
+      : materi.panduan
+        ? [materi.panduan]
+        : []
   )
     .map((p) => (typeof p === 'string' ? { judul: '', url: p } : p))
-    .filter((p) => p && p.url);
+    .filter((p) => p && typeof p.url === 'string' && p.url.trim());
 
-  // Prompt dengan tombol salin.
+  // Prompt.
   const daftarPrompt = (
     Array.isArray(materi.prompts)
       ? materi.prompts
-      : [materi.prompts]
+      : materi.prompts
+        ? [materi.prompts]
+        : []
   )
     .map((p) => (typeof p === 'string' ? { judul: '', isi: p } : p))
-    .filter((p) => p && p.isi && String(p.isi).trim())
+    .filter((p) => p && p.isi != null && String(p.isi).trim())
     .map((p, i, arr) => ({
       judul: p.judul || (arr.length > 1 ? `Prompt ${i + 1}` : 'Prompt'),
       isi: String(p.isi).trim(),
     }));
 
-  const teks = (materi.materi || '')
+  // Perbaikan utama: jangan panggil split sebelum memastikan teks berupa string.
+  const teks = normalisasiMateri(materi.materi)
     .split('\n')
     .map((l) => l.trim())
     .join('\n')
     .trim();
 
   // Gambar tambahan di bawah teks materi.
-  const gambar = (materi.gambar || [])
+  const gambar = (
+    Array.isArray(materi.gambar)
+      ? materi.gambar
+      : materi.gambar
+        ? [materi.gambar]
+        : []
+  )
     .map((g) => (typeof g === 'string' ? { src: g, caption: '' } : g))
-    .filter((g) => g && g.src);
+    .filter((g) => g && typeof g.src === 'string' && g.src.trim());
 
-  const adaTombol = materi.tools || materi.prompt || panduan.length > 0;
+  const adaTombol = Boolean(
+    materi.tools || materi.prompt || panduan.length > 0
+  );
 
   return (
     <article>
