@@ -1,3 +1,5 @@
+// data/affiliateai/data.js
+
 const data = [
   {
     judul: '1. Membuat Karakter Realistis',
