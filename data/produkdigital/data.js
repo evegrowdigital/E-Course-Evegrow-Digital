@@ -116,7 +116,8 @@ Slide 5 : Halaman KUIS
 Slide 4 : Halaman Koleksi Bintang 
 Slide 7 : Halaman Refleksi.
 Buatkan Prompt lengkap sekalian isi materi teks, visual promptnya di setiap slide nya.
-Gunakan gaya visual Premium Handmade Whimsical Doll + Whimsical Handmade 3D Doll + Premium Textile Craft + Soft Polymer Clay + Storybook Diorama, dengan tampilan modern, bersih, edukatif, dan menarik untuk siswa sekolah dini / PAUD. Semua objek memiliki bentuk membulat, warna cerah, pencahayaan lembut, bayangan halus, serta kualitas render tinggi. Dominasi warna biru langit, putih, pink , merah, kuning dan biru muda. Tambahkan elemen dekorasi sesuai dengan materi terkait. Setiap slide memiliki tombol navigasi Home, Kembali, dan Lanjut dengan bentuk membulat yang konsisten. Gunakan font besar yang mudah dibaca. Rasio gambar 16:9, resolusi Ultra HD. Mempunyai karakter sendiri yaitu gadis perempuan berambut panjang sesuai dengan gambar yang saya lampirkan. Karakter konsisten. Buatkan teks prompt saja, bukan gambar.`,
+Gunakan gaya visual Premium Handmade Whimsical Doll + Whimsical Handmade 3D Doll + Premium Textile Craft + Soft Polymer Clay + Storybook Diorama, dengan tampilan modern, bersih, edukatif, dan menarik untuk siswa sekolah dini / PAUD. Semua objek memiliki bentuk membulat, warna cerah, pencahayaan lembut, bayangan halus, serta kualitas render tinggi. Dominasi warna biru langit, putih, pink , merah, kuning dan biru muda. Tambahkan elemen dekorasi sesuai dengan materi terkait. Setiap slide memiliki tombol navigasi Home, Kembali, dan Lanjut dengan bentuk membulat yang konsisten. Gunakan font besar yang mudah dibaca. Rasio gambar 16:9, resolusi Ultra HD. Mempunyai karakter sendiri yaitu gadis perempuan berambut panjang sesuai dengan gambar yang saya lampirkan. Karakter konsisten. Buatkan teks prompt saja, bukan gambar.
+`,
       },
       {
         judul: 'Refleksi Digital Interaktif Universal,
@@ -125,7 +126,8 @@ Tugasmu adalah merancang sebuah fitur refleksi digital interaktif yang menyenang
 Refleksi tidak boleh terasa seperti ujian atau evaluasi formal. Gunakan pendekatan bermain sambil belajar, pilihan visual, ikon, ekspresi, karakter pendamping, animasi, penghargaan positif, dan interaksi sederhana.
 Karakter utama, [Tulis nama karakter yang kamu gunakan], berperan sebagai teman belajar dan pemandu refleksi yang memberikan pertanyaan sederhana, apresiasi positif, serta motivasi kepada anak.
 Pastikan setiap aktivitas refleksi membantu anak untuk mengingat kembali pengalaman belajar, mengenali materi yang telah dipelajari, memilih hal yang paling diingat atau disukai, serta mengekspresikan perasaannya setelah menyelesaikan petualangan.
-Gunakan bahasa yang sederhana, singkat, positif, hangat, dan mudah dipahami oleh anak usia dini.`,
+Gunakan bahasa yang sederhana, singkat, positif, hangat, dan mudah dipahami oleh anak usia dini.
+`,
       },
       {
         judul: 'Aplikasi Interaktif Koleksi Bintang',
@@ -766,7 +768,8 @@ Setiap elemen visual harus membantu anak memahami:
 
 Jangan membuat aplikasi terasa seperti sistem nilai sekolah.
 
-Buat anak merasa sedang mengumpulkan kenangan dan pencapaian dari sebuah petualangan yang menyenangkan.`,
+Buat anak merasa sedang mengumpulkan kenangan dan pencapaian dari sebuah petualangan yang menyenangkan.
+`,
       },
       {
         judul: 'Game Edukasi Versi AI',
@@ -787,7 +790,8 @@ Slide 9 : "[konsep kuis : Reveal Picture - Tebak Gambar hewan]" : mulai soal kui
 Slide 10 : "[Tebak suara hewan - sediakan gambar saja, tidak perlu audio]" : mulai kuis level 4. 
 Slide 11 : Buatkan jika berhasil atau jawaban benar 
 Slide 12 : Buatkan jika coba lagi atau jawaban kurang tepat. 
-Tambahkan tombol navigasi “HOME”, “BACK” dan “NEXT” Pada setiap slide. Susun semuanya menjadi teks prompt saja. `,
+Tambahkan tombol navigasi “HOME”, “BACK” dan “NEXT” Pada setiap slide. Susun semuanya menjadi teks prompt saja. 
+`,
       },
       {
         judul: 'MPI VERSI AI',
@@ -804,7 +808,8 @@ Slide 9 : organ-organ sistem ekskresi (hati)
 Slide 10 : halaman untuk video pembelajaran. 
 Slide 11 : halaman untuk kuis 
 Buatkan Prompt lengkap sekalian isi materi teks, visual promptnya di setiap slide nya.
-Gunakan gaya visual 3D Soft Plasticky Toy premium dengan tampilan modern, bersih, edukatif, dan menarik untuk siswa SMP. Semua objek memiliki bentuk membulat, tekstur plastik halus mengilap (glossy), warna cerah, pencahayaan lembut, bayangan halus, serta kualitas render tinggi seperti animasi Pixar. Dominasi warna biru langit, putih, hijau toska, dan biru muda. Tambahkan elemen dekorasi berupa tetesan air, molekul, ikon sains, daun, gelembung, dan partikel cahaya. Setiap slide memiliki tombol navigasi Home, Kembali, dan Lanjut dengan bentuk membulat yang konsisten. Gunakan font besar yang mudah dibaca. Rasio gambar 16:9, resolusi Ultra HD.`,
+Gunakan gaya visual 3D Soft Plasticky Toy premium dengan tampilan modern, bersih, edukatif, dan menarik untuk siswa SMP. Semua objek memiliki bentuk membulat, tekstur plastik halus mengilap (glossy), warna cerah, pencahayaan lembut, bayangan halus, serta kualitas render tinggi seperti animasi Pixar. Dominasi warna biru langit, putih, hijau toska, dan biru muda. Tambahkan elemen dekorasi berupa tetesan air, molekul, ikon sains, daun, gelembung, dan partikel cahaya. Setiap slide memiliki tombol navigasi Home, Kembali, dan Lanjut dengan bentuk membulat yang konsisten. Gunakan font besar yang mudah dibaca. Rasio gambar 16:9, resolusi Ultra HD.
+`,
       },
       {
         judul: 'PPT REALISTIS MANUSIA',
@@ -820,7 +825,8 @@ Slide 8 : Cara menjaga kesehatan rangka
 Slide 9 : halaman untuk video pembelajaran , 
 Slide 10 : halaman untuk kuis.
 Gunakan Style  : 
-Ultra Realistic Educational Cinematic Diorama, premium educational environment, authentic modern learning space, museum-quality educational exhibition, hyper realistic subjects and objects, scientifically accurate visual representation, photorealistic materials and textures, highly detailed educational models, immersive learning atmosphere, professional classroom and educational exhibition design, realistic human anatomy and natural proportions when applicable, realistic objects with authentic surface details, clean modern educational interior, interactive learning display, premium educational presentation, expressive natural lighting, warm cinematic documentary color grading, golden hour volumetric sunlight streaming through large windows, floating dust particles illuminated by soft light rays, subtle atmospheric haze, physically based rendering (PBR), Unreal Engine 5 quality, ray tracing, global illumination, ambient occlusion, shallow depth of field, cinematic composition, National Geographic documentary aesthetic, Discovery Channel educational documentary style, masterpiece, ultra detailed textures, HDR, 8K Ultra HD, highly immersive, realistic materials, professional educational atmosphere, modern museum-quality presentation, clean composition with balanced negative space, visually engaging learning environment, realistic reflections and shadows, premium quality educational visualization, no cartoon, no clay, no toy, no CGI look, no illustration, no low quality, no blurry, no watermark, no text. Buatkan teks prompt lengkap di setiap slide-nya, meliputi (visual prompt, teks narasi dan video prompt). Tambahkan master karakter seorang guru laki-laki usia 26 tahun sedang berdiri mengajar, memakai baju khaki. Buatkan teks prompt saja. bukan gambar.`,
+Ultra Realistic Educational Cinematic Diorama, premium educational environment, authentic modern learning space, museum-quality educational exhibition, hyper realistic subjects and objects, scientifically accurate visual representation, photorealistic materials and textures, highly detailed educational models, immersive learning atmosphere, professional classroom and educational exhibition design, realistic human anatomy and natural proportions when applicable, realistic objects with authentic surface details, clean modern educational interior, interactive learning display, premium educational presentation, expressive natural lighting, warm cinematic documentary color grading, golden hour volumetric sunlight streaming through large windows, floating dust particles illuminated by soft light rays, subtle atmospheric haze, physically based rendering (PBR), Unreal Engine 5 quality, ray tracing, global illumination, ambient occlusion, shallow depth of field, cinematic composition, National Geographic documentary aesthetic, Discovery Channel educational documentary style, masterpiece, ultra detailed textures, HDR, 8K Ultra HD, highly immersive, realistic materials, professional educational atmosphere, modern museum-quality presentation, clean composition with balanced negative space, visually engaging learning environment, realistic reflections and shadows, premium quality educational visualization, no cartoon, no clay, no toy, no CGI look, no illustration, no low quality, no blurry, no watermark, no text. Buatkan teks prompt lengkap di setiap slide-nya, meliputi (visual prompt, teks narasi dan video prompt). Tambahkan master karakter seorang guru laki-laki usia 26 tahun sedang berdiri mengajar, memakai baju khaki. Buatkan teks prompt saja. bukan gambar.
+`,
       },
     ],
     panduan: [
@@ -832,7 +838,8 @@ Ultra Realistic Educational Cinematic Diorama, premium educational environment, 
         judul: 'Game Edukasi Versi AI',
         isi: `SILAHKAN BUAT GAMBAR 1-1 SESUAI DENGAN JUMLAH SLIDE. 
 UNTUK BERUBAH MENJADI ANIMASI PADA SLIDE 3, TEMAN-TEMAN BUAT GAMBARNYA DULU, NANTI GENERATE KE FLOW.
-Ganti keterangan yang berwarna pada prompt, sesuai tema yang teman-teman inginkan.`,
+Ganti keterangan yang berwarna pada prompt, sesuai tema yang teman-teman inginkan.
+`,
       },
       {
         judul: 'MPI VERSI AI',
@@ -850,7 +857,8 @@ Pilihan Gaya Visual itu bermacam-macam :
 3D Papercraft
 Pilihan Rasio ada 2 macam : 
 Presentasi (Landscape) : 16:9
-Presentasi (seluler/potrait) : 9:16`,
+Presentasi (seluler/potrait) : 9:16
+`,
       },
       {
         judul: 'PPT Realistis Manusia',
@@ -860,7 +868,8 @@ INI ADALAH MASTER STYLE UNIVERSAL , JADI :
 ✅ Dapat digunakan untuk semua mata pelajaran (IPAS, IPA, IPS, Matematika, Bahasa Indonesia, PPKn, Bahasa Inggris, dll.). 
 ✅ Cocok untuk semua jenjang (PAUD hingga SMA) dengan hanya mengganti objek utama. 
 ✅ Tidak terikat pada tema tertentu (anatomi, luar angkasa, sejarah, hewan, tumbuhan, teknologi, budaya, dan sebagainya). 
-✅ Menghasilkan visual bergaya dokumenter premium seperti National Geographic, Discovery Channel, atau BBC Earth, sehingga tampak realistis, profesional, dan konsisten di seluruh media pembelajaran interaktif.`,
+✅ Menghasilkan visual bergaya dokumenter premium seperti National Geographic, Discovery Channel, atau BBC Earth, sehingga tampak realistis, profesional, dan konsisten di seluruh media pembelajaran interaktif.
+`,
       },
     ],
     materi: '',
