@@ -828,12 +828,48 @@ Gunakan Style  :
 Ultra Realistic Educational Cinematic Diorama, premium educational environment, authentic modern learning space, museum-quality educational exhibition, hyper realistic subjects and objects, scientifically accurate visual representation, photorealistic materials and textures, highly detailed educational models, immersive learning atmosphere, professional classroom and educational exhibition design, realistic human anatomy and natural proportions when applicable, realistic objects with authentic surface details, clean modern educational interior, interactive learning display, premium educational presentation, expressive natural lighting, warm cinematic documentary color grading, golden hour volumetric sunlight streaming through large windows, floating dust particles illuminated by soft light rays, subtle atmospheric haze, physically based rendering (PBR), Unreal Engine 5 quality, ray tracing, global illumination, ambient occlusion, shallow depth of field, cinematic composition, National Geographic documentary aesthetic, Discovery Channel educational documentary style, masterpiece, ultra detailed textures, HDR, 8K Ultra HD, highly immersive, realistic materials, professional educational atmosphere, modern museum-quality presentation, clean composition with balanced negative space, visually engaging learning environment, realistic reflections and shadows, premium quality educational visualization, no cartoon, no clay, no toy, no CGI look, no illustration, no low quality, no blurry, no watermark, no text. Buatkan teks prompt lengkap di setiap slide-nya, meliputi (visual prompt, teks narasi dan video prompt). Tambahkan master karakter seorang guru laki-laki usia 26 tahun sedang berdiri mengajar, memakai baju khaki. Buatkan teks prompt saja. bukan gambar.
 `,
       },
+      {
+        judul: 'Membuat Storybook',
+        isi: `Buat ilustrasi buku cerita anak (storybook) premium berkualitas penerbit profesional yang dirancang untuk anak usia 3–7 tahun, dengan tampilan dan kualitas produksi setara buku cerita bergambar internasional terlaris. Gunakan format persegi sekitar 20 × 20 cm, komposisi 1 halaman penuh (full one-page spread) dengan ilustrasi full-bleed yang menyatu secara mulus di kedua halaman, halaman board book yang tebal dengan sudut membulat (rounded corners), finishing laminasi doff, tekstur kertas premium yang lembut, kualitas cetak ultra tinggi, warna-warna cerah dan kaya, standar ilustrasi editorial profesional, serta detail ilustrasi yang sangat tinggi. Gunakan gaya ilustrasi yang konsisten pada seluruh halaman buku**, dengan style :** Ilustrasi Storybook Bergaya Disney, dengan tetap mempertahankan bentuk yang membulat, pencahayaan sinematik, suasana magis, harmoni warna hangat, nuansa imajinatif, mata besar yang ekspresif, ekspresi wajah yang menggemaskan, kualitas ilustrasi premium, dan desain karakter yang konsisten di setiap halaman. Rancang setiap karakter dengan proporsi membulat, tampilan yang ramah anak, pakaian berwarna-warni, ekspresi emosi yang jelas, tangan dan kaki yang lembut, siluet yang menarik, serta ekspresi seperti bahagia, bersemangat, terkejut, penasaran, mengantuk, takut, bangga, tertawa, menangis, kagum, dan berpikir sehingga mampu menyampaikan cerita secara visual. Susun setiap adegan menggunakan foreground, middle ground, dan background yang seimbang, dilengkapi environmental storytelling, kedalaman sinematik, perspektif realistis, pose yang dinamis, interaksi alami antar karakter, garis panduan visual (leading lines), komposisi yang harmonis, serta pencahayaan lembut sehingga setiap halaman mampu menceritakan kisahnya bahkan tanpa teks. Tampilkan ilustrasi sebagai buku cerita cetak premium yang realistis , ketebalan halaman yang nyata, serta menyediakan ruang kosong (negative space) secara alami pada langit, awan, rumput, dinding, lantai, air, salju, pasir, atau gradasi warna lembut untuk penempatan judul, narasi, dialog, maupun keterangan tanpa menutupi karakter utama. Sisakan area tipografi yang bersih menggunakan gaya huruf sans-serif yang membulat, ramah anak, mudah dibaca, dan menyerupai Fredoka, Quicksand, Baloo, Nunito, atau font komik yang ceria dengan tata letak yang menarik. Tambahkan efek suara (onomatope) bergaya komik seperti "BOOM!", "POP!", "WHOOSH!", "SPLASH!", "ROAR!", "MEOW!", "MOO!", "CIIIP!", "SZZZ!", "WOW!", dan "YAY!" menggunakan huruf besar berwarna-warni, tata letak melengkung, efek gerakan, garis tepi komik, dan penempatan yang mengikuti aksi sehingga ilustrasi terasa hidup saat dibacakan. Rancang buku sebagai board book interaktif premium dengan fitur pop-up menggunakan mekanisme rekayasa kertas yang realistis, konstruksi kertas bertingkat, karakter yang berdiri secara tiga dimensi, jendela lift-the-flap dengan sudut membulat dan ilustrasi kejutan di baliknya, fitur touch-and-feel berupa tekstur kain lembut, bulu, beludru, emboss, karet, kayu, daun, gelembung, glitter, silikon, serta fitur die-cut berupa potongan halaman berbentuk karakter, jendela berbentuk lingkaran, siluet hewan, maupun lubang yang memungkinkan anak mengintip halaman berikutnya. Gunakan pencahayaan matahari pagi yang lembut, cahaya hangat dalam ruangan, nuansa golden hour, pencahayaan volumetrik, pantulan cahaya alami, bayangan halus, suasana yang hangat dan penuh mimpi, serta pencahayaan sinematik yang ramah anak. Terapkan palet warna ceria dengan dominasi warna pastel hangat, warna-warna cerah yang harmonis, kontras yang nyaman di mata, saturasi yang seimbang, dan tampilan visual yang menenangkan. Lengkapi latar dengan detail yang kaya namun tidak mengganggu fokus, seperti bunga, pepohonan, rumput, awan, furnitur kayu, mainan, buku, bebatuan, pegunungan, bintang, bulan, kastel, desa, hutan, lautan, sekolah, taman bermain, maupun lingkungan lain yang sesuai dengan cerita. Pastikan setiap halaman secara alami menyampaikan nilai-nilai positif seperti kebaikan, persahabatan, empati, kreativitas, rasa ingin tahu, kerja sama, tanggung jawab, percaya diri, kemandirian, rasa hormat, dan kemampuan memecahkan masalah tanpa terlihat menggurui. Pertahankan standar ilustrasi penerbit profesional dengan kualitas setara buku cerita anak pemenang penghargaan, detail sangat tinggi, komposisi yang bersih, pencahayaan, warna, tekstur, dan desain karakter yang konsisten pada seluruh halaman, tanpa objek buram, anatomi yang salah, anggota tubuh berlebih, objek ganda, wajah terpotong, maupun cacat visual lainnya.
+"[Judul Cerita: Kelinci Kecil yang Pemberani
+Tema Cerita: Persahabatan dan Petualangan
+Tokoh Utama: Seekor kelinci kecil, seekor burung biru, dan kura-kura bijaksana
+Latar Tempat: Hutan ajaib yang dipenuhi bunga warna-warni dan pepohonan besar
+Adegan: Kelinci kecil membantu burung biru yang tersesat mencari keluarganya di dalam hutan.
+Ekspresi: Penasaran, Berani, Bahagia
+Pesan Edukasi: Selalu menolong teman yang membutuhkan.
+jumlah scene : 8 scene]"
+Kata Kunci Akhir: Buku Cerita Anak Premium, Storybook Satu Halaman, Full Bleed Illustration, Board Book, Rounded Corners, Interactive Storybook, Pop-up Book, Lift-the-Flap, Touch-and-Feel, Komposisi Sinematik, Ilustrasi Editorial, Buku Cerita Anak Berkualitas Internasional, Highly Detailed, Ultra Quality, Vibrant Colors, Soft Lighting, Child-Friendly, Expressive Characters, Professional Publishing Quality, Consistent Character Design, Rich Textures, Magical Atmosphere, Bedtime Storybook, Format Persegi 20 × 20 cm. buatkan teks prompt di setiap scene. Buatkan teks prompt saja dan tambahkan narasi di setiap scene. kecuali cover.
+`,
+      },
+      {
+        judul: 'Cover Storybook',
+        isi: `Buat ilustrasi cover buku cerita anak premium berkualitas penerbit profesional yang dirancang untuk anak usia 3–7 tahun, format persegi sekitar 20 × 20 cm, satu halaman penuh (full-page cover illustration), menampilkan buku hardcover board book premium yang realistis dengan halaman tebal, sudut membulat (rounded corners), ketebalan buku terlihat jelas, finishing laminasi doff, tekstur kertas premium yang lembut, kualitas cetak ultra tinggi, warna-warna cerah dan kaya, standar ilustrasi editorial profesional, serta kualitas visual setara buku cerita anak internasional pemenang penghargaan. Rancang cover seperti buku cerita anak premium yang dijual di toko buku, dengan tata letak editorial yang elegan, hierarki visual yang jelas, komposisi profesional, dan daya tarik visual yang kuat.
+Gunakan gaya Ilustrasi Storybook Bergaya Disney dengan desain karakter yang membulat, lucu, ramah anak, mata besar dan ekspresif, ekspresi wajah yang jelas, proporsi karakter yang menggemaskan, pencahayaan sinematik, suasana hangat dan magis, palet warna pastel harmonis dengan aksen warna cerah, pencahayaan volumetrik, bayangan lembut, tekstur kaya, global illumination realistis, rim lighting lembut, serta kualitas rendering karakter premium. Pastikan desain karakter konsisten dan mudah dikenali.
+Tampilkan "[TOKOH UTAMA]" secara dominan di bagian tengah cover, berinteraksi dengan "[TOKOH PENDUKUNG]", dengan ekspresi "[EKSPRESI]" yang menggambarkan tema utama cerita. Rancang setiap karakter dengan siluet menarik, proporsi membulat, pakaian atau aksesori sesuai cerita, warna ceria, ekspresi emosional yang kuat, serta tampilan yang aman dan menarik bagi anak usia 3–7 tahun.
+Buat latar "[LATAR CERITA]" yang sesuai dengan tema, dilengkapi "[ELEMEN LINGKUNGAN]" dan "[ELEMEN DEKORATIF]" yang memperkuat storytelling. Gunakan struktur visual foreground, middle ground, dan background yang seimbang, kedalaman sinematik, perspektif realistis, leading lines, atmospheric depth, framing harmonis, serta environmental storytelling sehingga anak dapat memahami gambaran dasar cerita hanya dengan melihat cover.
+Sisakan negative space yang bersih untuk penempatan judul. Pada bagian atas, tambahkan banner premium yang menampilkan "[NAMA SERI / LABEL]". Tampilkan judul utama "[JUDUL CERITA]" dengan tipografi sans-serif membulat dan ramah anak yang terinspirasi dari Fredoka, Baloo, Nunito, Quicksand, dengan huruf 3D berwarna, efek bevel lembut, emboss, bayangan halus, dan keterbacaan sangat baik. Di bawah judul, tampilkan "[SUBJUDUL / TEMA]".
+Tambahkan badge premium bertuliskan "Usia 3–7 Tahun", "Buku Cerita Interaktif Premium", "Pop-Up Storybook", "Lift-the-Flap", "Touch-and-Feel", dan "Full Color Illustration"
+Gunakan pencahayaan soft morning sunlight, golden hour, volumetric lighting, warm glow, natural reflections, soft shadows, gentle rim lighting, serta atmosfer yang sesuai dengan cerita. Gunakan palet warna ceria, harmonis, hangat, pastel, dan nyaman bagi anak.
+Tampilkan cover sebagai produk board book premium yang realistis, dengan ketebalan halaman, rounded corners, hardcover binding, matte lamination, premium paper texture, dan detail material nyata.
+Pastikan cover menyampaikan "[PESAN / NILAI UTAMA CERITA]" secara visual tanpa terlihat menggurui. Prioritaskan daya tarik karakter, storytelling visual, keterbacaan judul, hierarki tipografi, komposisi profesional, suasana emosional, dan kualitas penerbitan premium.
+HINDARI: objek buram, anatomi salah, anggota tubuh berlebih, karakter ganda yang tidak diperlukan, wajah cacat, wajah terpotong, desain karakter tidak konsisten, ekspresi aneh, tipografi tidak terbaca, terlalu banyak teks, komposisi terlalu ramai, pencahayaan keras, warna terlalu gelap, elemen menakutkan, watermark, logo tidak diperlukan, huruf acak, teks salah eja, detail beresolusi rendah, artefak visual, objek terdistorsi, dan elemen latar yang tidak relevan.
+Kata Kunci: Buku Cerita Anak Premium, Cover Buku Cerita Anak, Template Cover Universal, Ilustrasi Storybook Bergaya Disney, Kualitas Penerbit Profesional, Hardcover Board Book, Rounded Corners, Laminasi Doff, Tekstur Kertas Premium, Tata Letak Editorial, Highly Detailed, Ultra Quality, Vibrant Colors, Soft Cinematic Lighting, Magical Atmosphere, Child-Friendly, Expressive Characters, Consistent Character Design, Rich Textures, Cinematic Composition, Interactive Storybook, Pop-Up Book, Lift-the-Flap, Touch-and-Feel, Die-Cut, Full Color Illustration, Standar Buku Cerita Anak Internasional, Format Persegi 20 × 20 cm.
+`,
+      },
+      {
+        judul: 'Pesan Moral Storybook',
+        isi: `Pada scene 9, tambahkan pesan moral . tambahkan teks narasi yang diucapkan oleh karakter kelinci. durasi teks pas untuk voice AI : 10 detik. buatkan teks prompt untuk teks to image dan image to video. Hanya teks prompt saja.
+        `,
+      },
     ],
     panduan: [
       {
         judul: 'Animasi Bibir berbicara',
         url: 'https://drive.google.com/file/d/1itrwGc_nTbNUHBNFSdAjSalEYA7oECWE/view?usp=drivesdk',
       },
+    ],
+    materi: [
       {
         judul: 'Game Edukasi Versi AI',
         isi: `SILAHKAN BUAT GAMBAR 1-1 SESUAI DENGAN JUMLAH SLIDE. 
@@ -871,9 +907,33 @@ INI ADALAH MASTER STYLE UNIVERSAL , JADI :
 ✅ Menghasilkan visual bergaya dokumenter premium seperti National Geographic, Discovery Channel, atau BBC Earth, sehingga tampak realistis, profesional, dan konsisten di seluruh media pembelajaran interaktif.
 `,
       },
-    ],
-    materi: '',
+      {
+        judul: 'Game Pertualangan',
+        isi: `Judul Cerita : KELINCI KECIL YANG PEMBERANI
+
+Tokoh Utama: Seekor kelinci kecil berwarna putih dengan mata besar cokelat, mengenakan ransel penjelajah kecil.
+
+
+Tokoh Pendukung: Seekor burung biru yang ceria dan seekor kura-kura hijau yang bijaksana dengan topi penjelajah kecil.
+
+Ekspresi: Penasaran, berani, bahagia, ramah, dan penuh semangat.
+
+
+Latar: Hutan ajaib yang dipenuhi pepohonan raksasa, bunga warna-warni, sungai kecil, jamur bercahaya, kupu-kupu, dan sinar matahari keemasan.
+
+Elemen Lingkungan: Bunga warna-warni, daun, batu, sungai kecil, jamur bercahaya, kupu-kupu, burung, semak-semak, pohon tua raksasa, jalan setapak, dan partikel cahaya magis.
+
+
+Elemen Dekoratif: Bunga, daun, kupu-kupu, jamur, bintang kecil, dedaunan, ranting, dan ornamen hutan magis.
+
+Nama Seri: ENSIKLOPEDIA CERITA ANAK
+Subjudul: Persahabatan dan Petualangan
+
+Pesan Moral: Selalu menolong teman yang membutuhkan.
+`,
       },
+    ],
+  },
       {
     judul: '4. Bikin Produk Digital by Canva',
     cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&quality=90&format=webp',
