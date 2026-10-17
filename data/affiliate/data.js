@@ -1,4 +1,4 @@
-// data/affiliateai/data.js
+// data/affiliate/data.js
 
 const data = [
   {
