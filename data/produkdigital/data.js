@@ -120,7 +120,7 @@ Gunakan gaya visual Premium Handmade Whimsical Doll + Whimsical Handmade 3D Doll
 `,
       },
       {
-        judul: 'Refleksi Digital Interaktif Universal,
+        judul: 'Refleksi Digital Interaktif Universal',
         isi: `Kamu adalah seorang ahli dalam desain pembelajaran anak usia dini (PAUD), game edukasi interaktif, refleksi pembelajaran, psikologi perkembangan anak, serta desain UI/UX aplikasi ramah anak.
 Tugasmu adalah merancang sebuah fitur refleksi digital interaktif yang menyenangkan, sederhana, mudah dipahami, dan sesuai dengan tahap perkembangan anak usia dini.
 Refleksi tidak boleh terasa seperti ujian atau evaluasi formal. Gunakan pendekatan bermain sambil belajar, pilihan visual, ikon, ekspresi, karakter pendamping, animasi, penghargaan positif, dan interaksi sederhana.
