@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllMateri, getMateri } from '@/lib/materi.js';
@@ -5,10 +6,10 @@ import { getKategori } from '@/lib/kategori.js';
 import { getYouTubeId } from '@/lib/youtube.js';
 import PromptBox from '@/components/PromptBox.js';
 
-// Aturan penulisan di dalam teks materi:
-//   **teks tebal**
-//   [foto: https://link-gambar.jpg]
-//   [foto: https://link-gambar.jpg | keterangan foto]
+// Format materi:
+// **teks tebal**
+// [Foto: https://link-gambar.jpg]
+// [Foto: https://link-gambar.jpg | Keterangan foto]
 
 function Teks({ children }) {
   const bagian = String(children).split(
@@ -18,6 +19,7 @@ function Teks({ children }) {
   return (
     <>
       {bagian.map((b, i) => {
+        // Teks tebal
         if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
           return (
             <strong key={i} className="font-bold text-ink">
@@ -26,7 +28,11 @@ function Teks({ children }) {
           );
         }
 
-        if (b.toLowerCase().startsWith('[foto:') && b.endsWith(']')) {
+        // Gambar dengan format [Foto: URL] atau [Foto: URL | keterangan]
+        if (
+          b.toLowerCase().startsWith('[foto:') &&
+          b.endsWith(']')
+        ) {
           const isi = b.slice(6, -1).trim();
           const [url, ...sisa] = isi.split('|');
           const link = url.trim();
@@ -42,6 +48,7 @@ function Teks({ children }) {
                 loading="lazy"
                 className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
               />
+
               {caption && (
                 <figcaption className="mt-2 text-center text-xs text-brand-800/70 sm:text-sm">
                   {caption}
@@ -57,56 +64,22 @@ function Teks({ children }) {
   );
 }
 
-  return (
-    <>
-      {bagian.map((b, i) => {
-        if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
-          return (
-            <strong key={i} className="font-bold text-ink">
-              {b.slice(2, -2)}
-            </strong>
-          );
-        }
-
-        if (b.startsWith('[foto:') && b.endsWith(']')) {
-          const [src, ...sisa] = b.slice(6, -1).split('|');
-          const caption = sisa.join('|').trim();
-          const link = src.trim();
-          if (!link) return null;
-
-          return (
-            <span key={i} className="my-3 block">
-              <img
-                src={link}
-                alt={caption || 'Gambar materi'}
-                loading="lazy"
-                className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
-              />
-              {caption && (
-                <span className="mt-2 block text-center text-xs text-brand-800/70 sm:text-sm">
-                  {caption}
-                </span>
-              )}
-            </span>
-          );
-        }
-
-        return b;
-      })}
-    </>
-  );
-}
-
 export async function generateMetadata({ params }) {
   const { kategori, id } = await params;
   const m = getMateri(kategori, id);
-  return { title: m ? `${m.judul} | Evegrow.Digital` : 'Materi | Evegrow.Digital' };
+
+  return {
+    title: m
+      ? `${m.judul} | Evegrow.Digital`
+      : 'Materi | Evegrow.Digital',
+  };
 }
 
 export default async function MateriPage({ params }) {
   const { kategori, id } = await params;
   const k = getKategori(kategori);
   const materi = k ? getMateri(kategori, id) : null;
+
   if (!materi) notFound();
 
   const semua = getAllMateri(k.slug);
@@ -114,21 +87,31 @@ export default async function MateriPage({ params }) {
   const sebelumnya = semua[index - 1];
   const berikutnya = semua[index + 1];
 
-  // Video: gabungan dari `video` (satu) dan `videos` (banyak).
-  // Boleh link saja, atau { judul: 'Tutorial 2', url: 'link' }
+  // Video: mendukung video tunggal dan beberapa video.
   const daftarVideo = [materi.video, ...(materi.videos || [])]
     .map((v) => (typeof v === 'string' ? { judul: '', url: v } : v))
     .filter((v) => v && v.url)
-    .map((v) => ({ judul: v.judul || '', videoId: getYouTubeId(v.url) }))
+    .map((v) => ({
+      judul: v.judul || '',
+      videoId: getYouTubeId(v.url),
+    }))
     .filter((v) => v.videoId);
 
-  // Panduan: boleh link saja, atau { judul: 'Panduan Canva', url: 'link' }
-  const panduan = (Array.isArray(materi.panduan) ? materi.panduan : [materi.panduan])
+  // Panduan: mendukung URL langsung atau objek judul dan URL.
+  const panduan = (
+    Array.isArray(materi.panduan)
+      ? materi.panduan
+      : [materi.panduan]
+  )
     .map((p) => (typeof p === 'string' ? { judul: '', url: p } : p))
     .filter((p) => p && p.url);
 
-  // Prompt dengan tombol salin: boleh teks saja, atau { judul: 'Prompt 1', isi: 'teks prompt' }
-  const daftarPrompt = (Array.isArray(materi.prompts) ? materi.prompts : [materi.prompts])
+  // Prompt dengan tombol salin.
+  const daftarPrompt = (
+    Array.isArray(materi.prompts)
+      ? materi.prompts
+      : [materi.prompts]
+  )
     .map((p) => (typeof p === 'string' ? { judul: '', isi: p } : p))
     .filter((p) => p && p.isi && String(p.isi).trim())
     .map((p, i, arr) => ({
@@ -142,7 +125,7 @@ export default async function MateriPage({ params }) {
     .join('\n')
     .trim();
 
-  // Foto tambahan di bawah teks: link saja, atau { src: 'link', caption: 'keterangan' }
+  // Gambar tambahan di bawah teks materi.
   const gambar = (materi.gambar || [])
     .map((g) => (typeof g === 'string' ? { src: g, caption: '' } : g))
     .filter((g) => g && g.src);
@@ -155,13 +138,25 @@ export default async function MateriPage({ params }) {
         href={`/${k.slug}`}
         className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:text-brand-900"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <path d="M15 18l-6-6 6-6" />
         </svg>
         Semua materi {k.label}
       </Link>
 
-      <h1 className="mt-3 text-2xl font-bold leading-tight text-ink sm:text-3xl">{materi.judul}</h1>
+      <h1 className="mt-3 text-2xl font-bold leading-tight text-ink sm:text-3xl">
+        {materi.judul}
+      </h1>
 
       {daftarVideo.length > 0 && (
         <div className="mt-5 flex flex-col gap-5">
@@ -172,6 +167,7 @@ export default async function MateriPage({ params }) {
                   {v.judul || `Video ${i + 1}`}
                 </p>
               )}
+
               <div className="overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
                 <div className="relative aspect-video">
                   <iframe
@@ -202,6 +198,7 @@ export default async function MateriPage({ params }) {
               Akses Tools
             </a>
           )}
+
           {materi.prompt && (
             <a
               href={materi.prompt}
@@ -212,6 +209,7 @@ export default async function MateriPage({ params }) {
               Akses Prompt
             </a>
           )}
+
           {panduan.map((p, i) => (
             <a
               key={`${p.url}-${i}`}
@@ -220,12 +218,25 @@ export default async function MateriPage({ params }) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-200 bg-brand-100 px-6 py-3 text-sm font-semibold text-brand-800 transition hover:border-brand-400 hover:bg-brand-200"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z" />
                 <path d="M14 3v5h5M9 13h6M9 17h6" />
               </svg>
+
               {p.judul ||
-                (panduan.length > 1 ? `Akses Panduan ${i + 1}` : 'Akses Panduan')}
+                (panduan.length > 1
+                  ? `Akses Panduan ${i + 1}`
+                  : 'Akses Panduan')}
             </a>
           ))}
         </div>
@@ -234,7 +245,11 @@ export default async function MateriPage({ params }) {
       {daftarPrompt.length > 0 && (
         <div className="mt-5 flex flex-col gap-3">
           {daftarPrompt.map((p, i) => (
-            <PromptBox key={`${p.judul}-${i}`} judul={p.judul} isi={p.isi} />
+            <PromptBox
+              key={`${p.judul}-${i}`}
+              judul={p.judul}
+              isi={p.isi}
+            />
           ))}
         </div>
       )}
@@ -243,12 +258,24 @@ export default async function MateriPage({ params }) {
         <details className="group mt-3 overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-soft">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 text-sm font-semibold text-brand-800 transition hover:bg-brand-100 sm:text-base [&::-webkit-details-marker]:hidden">
             <span className="flex items-center gap-2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
                 <path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v14l-4-3H6a2 2 0 01-2-2V5z" />
               </svg>
+
               <span className="group-open:hidden">Lihat Materi</span>
               <span className="hidden group-open:inline">Tutup Materi</span>
             </span>
+
             <svg
               width="20"
               height="20"
@@ -282,6 +309,7 @@ export default async function MateriPage({ params }) {
                       loading="lazy"
                       className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
                     />
+
                     {g.caption && (
                       <figcaption className="mt-2 text-center text-xs text-brand-800/70 sm:text-sm">
                         {g.caption}
@@ -301,21 +329,46 @@ export default async function MateriPage({ params }) {
             href={`/${k.slug}/${sebelumnya.id}`}
             className="group flex items-center gap-2 rounded-2xl border border-brand-200 bg-white px-4 py-3.5 text-sm font-semibold text-brand-800 shadow-soft transition hover:-translate-y-0.5 hover:border-brand-400 hover:bg-brand-100"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 transition group-hover:-translate-x-0.5">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="shrink-0 transition group-hover:-translate-x-0.5"
+            >
               <path d="M15 18l-6-6 6-6" />
             </svg>
+
             <span>Sebelumnya</span>
           </Link>
         ) : (
           <span />
         )}
+
         {berikutnya ? (
           <Link
             href={`/${k.slug}/${berikutnya.id}`}
             className="group flex items-center justify-end gap-2 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 px-4 py-3.5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:from-brand-700 hover:to-brand-600"
           >
             <span>Berikutnya</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0 transition group-hover:translate-x-0.5">
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className="shrink-0 transition group-hover:translate-x-0.5"
+            >
               <path d="M9 18l6-6-6-6" />
             </svg>
           </Link>
@@ -325,4 +378,4 @@ export default async function MateriPage({ params }) {
       </nav>
     </article>
   );
-            }
+}
