@@ -9,8 +9,53 @@ import PromptBox from '@/components/PromptBox.js';
 //   **teks tebal**
 //   [foto: https://link-gambar.jpg]
 //   [foto: https://link-gambar.jpg | keterangan foto]
+
 function Teks({ children }) {
-  const bagian = String(children).split(/(\*\*[^*]+\*\*|\[foto:[^\]]+\])/g);
+  const bagian = String(children).split(
+    /(\*\*[^*]+\*\*|\[foto:[^\]]+\])/gi
+  );
+
+  return (
+    <>
+      {bagian.map((b, i) => {
+        if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
+          return (
+            <strong key={i} className="font-bold text-ink">
+              {b.slice(2, -2)}
+            </strong>
+          );
+        }
+
+        if (b.toLowerCase().startsWith('[foto:') && b.endsWith(']')) {
+          const isi = b.slice(6, -1).trim();
+          const [url, ...sisa] = isi.split('|');
+          const link = url.trim();
+          const caption = sisa.join('|').trim();
+
+          if (!link) return null;
+
+          return (
+            <figure key={i} className="my-4">
+              <img
+                src={link}
+                alt={caption || 'Gambar materi'}
+                loading="lazy"
+                className="h-auto w-full rounded-2xl border border-brand-100 shadow-soft"
+              />
+              {caption && (
+                <figcaption className="mt-2 text-center text-xs text-brand-800/70 sm:text-sm">
+                  {caption}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }
+
+        return <span key={i}>{b}</span>;
+      })}
+    </>
+  );
+}
 
   return (
     <>
