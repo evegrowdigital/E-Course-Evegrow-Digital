@@ -46,6 +46,102 @@ Siapkan foto Referensi nya
 
 `,
   },
+  {
+    judul: '2. Kumpulan Character Sheet',
+    cover: '',
+    video: '',
+    videos: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: 'Akses Character Sheet',
+        isi: '',
+        url: 'https://drive.google.com/drive/folders/1ZJ3OCA4JyiYB2rPjF2LiA_U9NQJjcxbN',
+      },
+    ],
+    panduan: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    materi: `
+`,
+  },
+  {
+    judul: '3. Kumpulan Prompt',
+    cover: '',
+    video: '',
+    videos: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    tools: '',
+    prompt: 'https://app.notion.com/p/Kumpulan-Prompt-3b99c3fa18b480fd986cdd59770c999e?source=copy_link',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+        url: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    materi: `
+`,
+  },
+  {
+    judul: '4. Motion Control Omni',
+    cover: '',
+    video: 'https://youtu.be/H6Kda2AB-pc?si=OeQYJgtlY95E9-Ba',
+    videos: [
+      {
+        judul: 'Langkah Pertama - Download Referensi',
+        url: 'https://youtu.be/pO7-u07U-28?si=S7NukZKcsfFHEbPV',
+      },
+      {
+        judul: 'Langkah kedua - Membuat Foto Model',
+        url: 'https://youtu.be/bqyhvn-6z3s?si=Hxmzd_NCNVOo4cs0',
+      },
+      {
+        judul: 'Langkah ketiga - Generate Video',
+        url: 'https://youtu.be/3KMGeYJQ5rg?si=mV_HLA3g9hJVQfVU',
+      },
+      {
+        judul: 'Langkah Keempat - Editing',
+        url: 'https://youtu.be/ulyozeqCLts?si=7thum1HcdoUbDMcr',
+      },
+    ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+        url: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    materi: `
+`,
+  },
 ];
 
 export default data;
