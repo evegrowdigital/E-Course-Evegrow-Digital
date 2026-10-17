@@ -872,14 +872,13 @@ Kata Kunci: Buku Cerita Anak Premium, Cover Buku Cerita Anak, Template Cover Uni
     materi: [
       {
         judul: 'Game Edukasi Versi AI',
-        isi: `SILAHKAN BUAT GAMBAR 1-1 SESUAI DENGAN JUMLAH SLIDE. 
+        isi: `**Panduan untuk Game Edukasi Versi AI**
+        SILAHKAN BUAT GAMBAR 1-1 SESUAI DENGAN JUMLAH SLIDE. 
 UNTUK BERUBAH MENJADI ANIMASI PADA SLIDE 3, TEMAN-TEMAN BUAT GAMBARNYA DULU, NANTI GENERATE KE FLOW.
 Ganti keterangan yang berwarna pada prompt, sesuai tema yang teman-teman inginkan.
-`,
-      },
-      {
-        judul: 'MPI VERSI AI',
-        isi: `Pada tiap slide khususnya untuk materi pembelajaran, disesuaikan sama tujuan pembelajaran. Misalnya ada 5 tujuan pembelajaran. Contoh diatas hanya memuat 2 tujuan pembelajaran (sampai slide 9 saja). Bapak /ibu bisa tambahkan mulai slide 10 itu masih materi dengan pembahasan tujuan pembelajaran ke 3,4,5 dst. 
+
+**Panduan MPI VERSI AI**
+Pada tiap slide khususnya untuk materi pembelajaran, disesuaikan sama tujuan pembelajaran. Misalnya ada 5 tujuan pembelajaran. Contoh diatas hanya memuat 2 tujuan pembelajaran (sampai slide 9 saja). Bapak /ibu bisa tambahkan mulai slide 10 itu masih materi dengan pembahasan tujuan pembelajaran ke 3,4,5 dst. 
 Pilihan Gaya Visual itu bermacam-macam : 
 3D Soft Plasticky Toy
 3D Disney Cartoon
@@ -894,22 +893,18 @@ Pilihan Gaya Visual itu bermacam-macam :
 Pilihan Rasio ada 2 macam : 
 Presentasi (Landscape) : 16:9
 Presentasi (seluler/potrait) : 9:16
-`,
-      },
-      {
-        judul: 'PPT Realistis Manusia',
-        isi: `Buat temen- temen yang membutuhkan style realistis manusia. Pada bagian style tersebut bisa di copy semua.
+
+** Panduan PPT Realistis Manusia**
+Buat temen- temen yang membutuhkan style realistis manusia. Pada bagian style tersebut bisa di copy semua.
 KELEBIHAN STYLE TERSEBUT : 
 INI ADALAH MASTER STYLE UNIVERSAL , JADI :
 ✅ Dapat digunakan untuk semua mata pelajaran (IPAS, IPA, IPS, Matematika, Bahasa Indonesia, PPKn, Bahasa Inggris, dll.). 
 ✅ Cocok untuk semua jenjang (PAUD hingga SMA) dengan hanya mengganti objek utama. 
 ✅ Tidak terikat pada tema tertentu (anatomi, luar angkasa, sejarah, hewan, tumbuhan, teknologi, budaya, dan sebagainya). 
 ✅ Menghasilkan visual bergaya dokumenter premium seperti National Geographic, Discovery Channel, atau BBC Earth, sehingga tampak realistis, profesional, dan konsisten di seluruh media pembelajaran interaktif.
-`,
-      },
-      {
-        judul: 'Game Pertualangan',
-        isi: `Judul Cerita : KELINCI KECIL YANG PEMBERANI
+
+**Panduan Pengisian Storybook***
+Judul Cerita : KELINCI KECIL YANG PEMBERANI
 
 Tokoh Utama: Seekor kelinci kecil berwarna putih dengan mata besar cokelat, mengenakan ransel penjelajah kecil.
 
