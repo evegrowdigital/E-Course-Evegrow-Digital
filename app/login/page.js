@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer.js';
 
 const LOGO =
-  'https://i.ibb.co.com/v4vnDrZr/file-0000000095ac820695edea0b24952bb0.png';
+  'https://i.ibb.co.com/BHQvvZNP/Welcome-1024-x-1024-piksel-20261018-204041-0000.png';
 
 export default function LoginPage() {
   const router = useRouter();
