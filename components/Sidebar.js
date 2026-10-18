@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { KATEGORI, SOSMED } from '@/lib/kategori.js';
 
-const LOGO_SRC = 'https://i.ibb.co.com/v4vnDrZr/file-0000000095ac820695edea0b24952bb0.png';
+const LOGO_SRC = 'https://i.ibb.co.com/BHQvvZNP/Welcome-1024-x-1024-piksel-20261018-204041-0000.png';
 
 const IKON = {
   'produk-digital': (
