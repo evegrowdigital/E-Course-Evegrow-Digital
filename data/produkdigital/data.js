@@ -3,7 +3,7 @@
 const data = [
   {
     judul: '1. Pondasi Bisnis Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792107346641_1842633.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372077376_9700366.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/idp22MnAq_k?si=YH86tGUgVF_b1wgN',
     tools: '',
     prompt: '',
