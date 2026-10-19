@@ -931,7 +931,7 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
   },
       {
     judul: '4. Bikin Produk Digital by Canva',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792402477598_9405214.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
