@@ -3,7 +3,7 @@
 const data = [
   {
     judul: '1. Membuat Karakter Realistis',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372874685_9944155.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
@@ -48,7 +48,7 @@ Siapkan foto Referensi nya
   },
   {
     judul: '2. Kumpulan Character Sheet',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372925759_1273223.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
@@ -76,7 +76,7 @@ Siapkan foto Referensi nya
   },
   {
     judul: '3. Kumpulan Prompt',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372989507_9050352.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
@@ -104,7 +104,7 @@ Siapkan foto Referensi nya
   },
   {
     judul: '4. Motion Control Omni',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792373025338_2548597.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/H6Kda2AB-pc?si=OeQYJgtlY95E9-Ba',
     videos: [
       {
