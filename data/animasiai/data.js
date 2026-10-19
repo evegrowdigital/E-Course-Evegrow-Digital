@@ -4,7 +4,7 @@
 const data = [
    {
     judul: '1. Tutorial Generate',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372621754_3086914.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       { judul: 'Tutorial Leonardo.ai', url: 'https://youtu.be/9pt2ErBzjs4?si=AGeSklzSC5oOcaWT' },
@@ -27,7 +27,7 @@ const data = [
   },
    {
     judul: '2. Contoh Gaya visual',
-    cover: 'https',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372668487_4000329.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       { judul: '', url: 'video' },
@@ -47,7 +47,7 @@ const data = [
   },
    {
     judul: '3. Konten Edukasi',
-    cover: 'https',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372718094_2374707.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/zhrOnJ7gLig?si=Lc_bB_sK-ILVgXf_',
     videos: [
       { judul: '', url: 'video' },
@@ -71,7 +71,7 @@ const data = [
   },
    {
     judul: '4. Konten Bernyayi',
-    cover: 'https',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372819354_9796364.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       { judul: '', url: 'video' },
