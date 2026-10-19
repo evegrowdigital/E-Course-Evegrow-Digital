@@ -50,7 +50,7 @@ Semakin jelas siapa yang dibantu, semakin mudah menentukan isi produk. Produk ha
 
   {
     judul: '2. Siapkan Toko Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792115219879_7771262.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372133160_9086152.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
@@ -87,7 +87,7 @@ Semakin jelas siapa yang dibantu, semakin mudah menentukan isi produk. Produk ha
 
   {
     judul: '3. Aset Media Belajar',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372238126_5697130.png?format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -965,7 +965,7 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
 
   {
     judul: '5. Strategi Promosi di Media Sosial',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372305147_9726151.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: 'https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181',
@@ -1001,7 +1001,7 @@ Ada beberapa strategi promosi yang bisa kalian lakukan. Cara yang menurutku pali
 
   {
     judul: '6. Strategi Bikin Konten',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/oglZM0q05KQ',
     videos: [],
     tools: 'https://ai-content-creator-tan.vercel.app/',
@@ -1042,7 +1042,7 @@ Ada tiga hal penting yang harus kamu perhatikan saat membuat konten:
 
 **2. Konten entertaining (menarik)**
 - Kualitas video harus HD, jernih, tidak banyak goyang, dan tidak blur.
-- Pastikan juga pencahayaan OK. Kamu bisa menggunakan hook visual seperti sedang makan,bekerja, mengetik, minum, berjalan dan menyetir, atau bisa menggunakan video dance TikTok yang sedang trend**
+- Pastikan juga pencahayaan OK. Kamu bisa menggunakan hook visual seperti sedang makan,bekerja, mengetik, minum, berjalan dan menyetir, atau bisa menggunakan video dance TikTok yang sedang trend
 - Video tidak terlalu panjang, 5-7 detik cukup kok
 - Hook 3detik pertama harus menarik‼️Contoh : Stop scrolling, awas nyesel, 3 hal penting, ngk lagi2 deh, jangan percaya, penasaran ngk dll.
 - Audio harus relevan dengan video. Kalau video kamu ceria, pake audio yang HAPPY, jangan yang MELLOW cuma gara2 lagi tranding❌},
@@ -1070,7 +1070,7 @@ Aku sarankan, 1 hari harus ada minimal 1 Konten. Lalu konsisten selama 3 bulan. 
 
   {
     judul: '7. Strategi Live di TikTok',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372437962_2741255.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1104,7 +1104,7 @@ Kamu juga bisa memberikan voucher atau penawaran khusus, misalnya saat anniversa
 
   {
     judul: '8. Strategi Keunikan Produk',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372473958_8266454.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1146,7 +1146,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
 
   {
     judul: '9. Bonus Template',
-    cover: 'https://cdn.lynkid.my.id/draft-products/16-10-2026/1792163500117_1608257.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372514471_4580033.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1176,7 +1176,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
 
   {
     judul: '10. Bonus Produk Digital Siap Jual',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
