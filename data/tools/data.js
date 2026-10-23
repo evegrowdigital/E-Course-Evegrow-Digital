@@ -8,6 +8,15 @@ const data = [
      panduan: [],
     materi: ``,
   },
+   {
+     judul: '2. Edu Kuis Generator',
+     cover: '',
+     video: '',
+     tools: 'https://evegrowgeneratoredukuis.netlify.app/',
+     prompt: '',
+     panduan: [],
+    materi: ``,
+  },
 ];
 
 export default data;
