@@ -1,4 +1,5 @@
-{
+const data = [
+    {
     judul: '1. Storybook Generator',
     cover: '',
     video: 'https://youtu.be/o6-KnR9ejnU',
@@ -13,3 +14,6 @@
     materi: `
 `,
   },
+];
+
+export default data;
