@@ -11,7 +11,7 @@ const data = [
    {
      judul: '2. Edu Kuis Generator',
      cover: '',
-     video: '',
+     video: 'https://youtu.be/l6uqTlETjn0',
      tools: 'https://evegrowgeneratoredukuis.netlify.app/',
      prompt: '',
      panduan: [],
