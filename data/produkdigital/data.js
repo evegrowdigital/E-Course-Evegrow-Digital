@@ -946,6 +946,9 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
         judul: 'Tutorial Worksheet Aktivitas',
         url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE',
       },
+      {
+        judul: 'Tutorial Storybook by Generator',
+        url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE',
     ],
     tools: '',
     prompt: '',
