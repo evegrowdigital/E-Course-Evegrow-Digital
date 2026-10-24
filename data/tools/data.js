@@ -6,7 +6,7 @@ const data = [
      tools: 'https://share.gemini.google/oshcXbaxcY3k',
      prompt: '',
      panduan: [],
-    materi: ``,
+     materi: ``,
   },
    {
      judul: '2. Edu Kuis Generator',
@@ -15,7 +15,16 @@ const data = [
      tools: 'https://evegrowgeneratoredukuis.netlify.app/',
      prompt: '',
      panduan: [],
-    materi: ``,
+     materi: ``,
+  },
+  {
+     judul: '3. Media Ajar Generator',
+     cover: '',
+     video: '',
+     tools: 'https://mediaajargenerator.my.id',
+     prompt: '',
+     panduan: [],
+     materi: ``,
   },
 ];
 
