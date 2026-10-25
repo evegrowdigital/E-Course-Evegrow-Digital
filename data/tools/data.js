@@ -26,11 +26,30 @@ const data = [
      panduan: [],
      materi: ``,
   },
- {
+  {
      judul: '4. AI Content Creator',
      cover: '',
      video: '',
      tools: 'https://ai-content-creator-tan.vercel.app/',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: '5. GEM Copywriting Script',
+     cover: '',
+     video: 'https://youtu.be/yt-k5tH4DCA',
+     tools: 'https://gemini.google.com/gem/1L1dbFpOHKYHfUkOwlCYTU9k6cbDi57eS?usp=sharing',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+   
+  {
+     judul: '6. GEM Multishot Image',
+     cover: '',
+     video: 'https://youtu.be/tAWLPllcACc',
+     tools: 'https://gemini.google.com/gem/1SCNa9qr6wbBdwuF2Ec7HlZWrNZWq9E83?usp=sharing',
      prompt: '',
      panduan: [],
      materi: ``,
