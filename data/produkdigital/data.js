@@ -957,15 +957,15 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
       {
         judul: '',
         url: 'https://youtu.be/e1v1OeiXkD4?si=1ztkRDE6xOFT6mL0',
-      }
+      },
       {
         judul: '',
         url: 'https://youtu.be/6Q2b1BjSfMQ?si=-8GGQbfrM4NJLNso',
-      }
+      },
       {
         judul: '',
         url: 'https://youtu.be/-dyIIdT9iW4?si=9QGIUdj0qG_6J-Yg',
-      }
+      },
       {
         judul: '',
         url: 'https://youtu.be/q_85itkRYo4?si=Pxfs3XfjxTWhslz-',
