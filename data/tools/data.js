@@ -26,6 +26,15 @@ const data = [
      panduan: [],
      materi: ``,
   },
+ {
+     judul: '4. AI Content Creator',
+     cover: '',
+     video: '',
+     tools: 'https://ai-content-creator-tan.vercel.app/',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
 ];
 
 export default data;
