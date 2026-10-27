@@ -929,62 +929,9 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
       },
     ],
   },
-      {
-    judul: '4. Bikin Produk Digital by Canva',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792402477598_9405214.png?width=630&amp;quality=90&amp;format=webp',
-    video: '',
-    videos: [
-      {
-        judul: 'Tutorial Worksheet Mewarnai',
-        url: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk',
-      },
-      {
-        judul: 'Tutorial FlashCard Anak',
-        url: 'https://youtu.be/noJbaaw0iAU?si=BTazw5QWEt_TfciT',
-      },
-      {
-        judul: 'Tutorial Worksheet Aktivitas',
-        url: 'https://youtu.be/LHhnvlzFTtw?si=9N686sAzY15V2qRE',
-      },
-      {
-        judul: 'Tutorial Storybook by Generator',
-        url: 'https://youtu.be/o6-KnR9ejnU',
-      },
-      {
-        judul: 'Langkah 1 - Bikin Web vercel',
-        url: 'https://youtu.be/e1v1OeiXkD4?si=1ztkRDE6xOFT6mL0',
-      },
-      {
-        judul: 'Langkah 2 - Bikin Web vercel',
-        url: 'https://youtu.be/6Q2b1BjSfMQ?si=-8GGQbfrM4NJLNso',
-      },
-      {
-        judul: 'Langkah 3 - Bikin Web vercel',
-        url: 'https://youtu.be/-dyIIdT9iW4?si=9QGIUdj0qG_6J-Yg',
-      },
-      {
-        judul: 'Langkah 4 - Bikin Web vercel',
-        url: 'https://youtu.be/q_85itkRYo4?si=Pxfs3XfjxTWhslz-',
-      }
-    ],
-    tools: '',
-    prompt: '',
-    prompts: [
-      {
-        judul: 'contoh promptnya',
-        isi: 'saya ingin membuat aplikasi web untuk membuat konten animasi AI menggunakan Github. Kamu adalah pakar programmer pembuat aplikasi handal dengan coding dan ahli dalam membuat video animasi yang viral dan storytelling yang menarik perhatian audiens. User cukup input ide konten, gaya visual(berikan opsi 3D Animation, clay, 3D pixar, Disney dan semacamnya), jumlah scene, Jumlah Karakter, Karakter (buat pilihan dibuatkan AI atau Upload sendiri), audio (pilihan menggunakan dialog, narasi, tanpa narasi dan dialog), Kolom intruksi tambahan. Buat setiap parameter memiliki input custom. Kemudian hasilkan output master karakter key untuk prompt karakter konsisten jika user memilih karakternya dibuatkan ai. setiap scene harus tampilkan preview atau sinopsis, karakter yang muncul, prompt image, prompt dialog, setelah semua scene selesai jika user menggunakan narasi kirim satu block untuk full narasi scene 1 sampai akhir, jika user menggunakan dialog maka Didalam prompt video tambahkan dialog. Hasil output harus membuat animasi dengan karakter yang konsisten di semua scene. Hook visual dan audio yang membuat stop scrol dalam waktu 1-2 detik. Menggunakan logo ini : https://i.ibb.co.com/rGHQMTZK/file-0000000000c871fa916efe87ea03d0a5.png . Warna brand Cream coklat, tambahkan footer powered by evegrow.id. Buatkan saya kode untuk membuat aplikasi di Github. Dengan file packjson, globals.css, page, layout. Aplikasi ini menggunakan api key groq.com jadi tambahkan tombol kunci untuk memasukkan api keynya',
-      },
-    ],
-    panduan: [
-      {
-        judul: '',
-      },
-    ],
-    materi: '',
-  },
 
   {
-    judul: '5. Strategi Promosi di Media Sosial',
+    judul: '4. Strategi Promosi di Media Sosial',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372305147_9726151.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
@@ -1020,7 +967,7 @@ Ada beberapa strategi promosi yang bisa kalian lakukan. Cara yang menurutku pali
   },
 
   {
-    judul: '6. Strategi Bikin Konten',
+    judul: '5. Strategi Bikin Konten',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/oglZM0q05KQ',
     videos: [],
@@ -1089,7 +1036,7 @@ Aku sarankan, 1 hari harus ada minimal 1 Konten. Lalu konsisten selama 3 bulan. 
   },
 
   {
-    judul: '7. Strategi Live di TikTok',
+    judul: '6. Strategi Live di TikTok',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372437962_2741255.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
@@ -1123,7 +1070,7 @@ Kamu juga bisa memberikan voucher atau penawaran khusus, misalnya saat anniversa
   },
 
   {
-    judul: '8. Strategi Keunikan Produk',
+    judul: '7. Strategi Keunikan Produk',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372473958_8266454.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
@@ -1165,7 +1112,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
   },
 
   {
-    judul: '9. Bonus Template',
+    judul: '8. Bonus Template',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372514471_4580033.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
@@ -1195,7 +1142,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
   },
 
   {
-    judul: '10. Bonus Produk Digital Siap Jual',
+    judul: '9. Bonus Produk Digital Siap Jual',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
@@ -1229,7 +1176,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
         url: 'https://drive.google.com/file/d/1VP0fqBZt9kpg2hYhIYUd0ygptCaiYShH/view?usp=drivesdk',
       },
       {
-        judul: '6. 9 Games Edukasi Anak',
+        judul: '6. 8 Games Edukasi Anak',
         url: 'https://drive.google.com/drive/u/0/mobile/folders/18ntRFjH7uTNEpGpFx_NsXrNuol0Yfpxj/1ZWdZOaceMetjmVmu0wjsJ8Xlh7lw3Q_0?sort=13&direction=a',
       },
       {
