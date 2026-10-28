@@ -1,3 +1,6 @@
+// data/produkdigital/M13/data.js
+
+const data = [
 {
     judul: '13. Tutorial Storybook by AI',
     cover: '',
