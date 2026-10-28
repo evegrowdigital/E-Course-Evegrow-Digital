@@ -16,3 +16,6 @@ const data = [
     panduan: '',
     materi: '',
   },
+];
+
+export default data;  
