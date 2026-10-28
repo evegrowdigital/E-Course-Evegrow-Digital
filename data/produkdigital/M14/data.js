@@ -1,3 +1,6 @@
+// data/produkdigital/M14/data.js
+
+const data = [
 {
     judul: '14. Tutorial Web Vercel',
     cover: '',
