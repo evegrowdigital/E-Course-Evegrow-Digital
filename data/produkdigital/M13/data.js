@@ -22,3 +22,6 @@ const data = [
     ],
     materi: '',
   },
+];
+
+export default data;  
