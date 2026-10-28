@@ -1,3 +1,6 @@
+// data/produkdigital/M10/data.js
+
+const data = [
 {
     judul: '10. Tutorial Workseet Mewarnai',
     cover: '',
