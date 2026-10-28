@@ -2,7 +2,7 @@
 
 const data = [
 {
-    judul: '10. Tutorial Workseet Mewarnai',
+    judul: '10. Tutorial Worksheet Mewarnai',
     cover: '',
     video: '',
     videos: [
