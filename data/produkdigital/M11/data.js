@@ -1,3 +1,6 @@
+// data/produkdigital/M11/data.js
+
+const data = [
 {
     judul: '11. Tutorial Membuat FlashCard',
     cover: '',
