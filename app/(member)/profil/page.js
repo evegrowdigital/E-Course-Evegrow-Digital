@@ -1,5 +1,5 @@
 import { getMember } from '@/lib/auth';
-import { getAllMateri } from '@/lib/materi';
+import { getItems } from '@/lib/konten';
 
 export const metadata = { title: 'Profil Saya | Evegrow.Digital' };
 
@@ -15,7 +15,7 @@ export default async function ProfilPage() {
         year: 'numeric',
       })
     : '-';
-  const totalMateri = getAllMateri().length;
+  const totalMateri = getItems('materi').length;
 
   const rows = [
     ['Nama', name],
