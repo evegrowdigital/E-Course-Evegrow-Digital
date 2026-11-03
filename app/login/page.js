@@ -5,8 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer.js';
 
-const LOGO =
-  'https://i.ibb.co.com/BHQvvZNP/Welcome-1024-x-1024-piksel-20261018-204041-0000.png';
+const LOGO = '/logo.png';
 
 export default function LoginPage() {
   const router = useRouter();
