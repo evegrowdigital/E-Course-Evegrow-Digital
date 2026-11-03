@@ -1,55 +1,131 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ===== EVEGROW DIGITAL COLOR SYSTEM ===== */
+
+:root {
+  --brand-primary: #8b5cf6;
+  --brand-secondary: #a855f7;
+  --brand-dark: #302047;
+
+  --brand-light: #f5efff;
+  --brand-border: #eadcff;
+
+  --brand-pink: #ff91b8;
+  --brand-blue: #78b7ff;
+  --brand-mint: #65d6b5;
+  --brand-yellow: #ffd477;
+
+  --background: #fbf8ff;
+  --surface: #ffffff;
+  --text-primary: #302047;
+  --text-secondary: #756687;
+}
+
+/* ===== GLOBAL ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #fcfaff;
-  color: #2b1f45;
+  background: var(--background);
+  color: var(--text-primary);
 }
 
 :focus-visible {
-  outline: 2px solid #9a3df0;
-  outline-offset: 2px;
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 3px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
+/* ===== SIDEBAR & HEADER ===== */
+
+.sb-aside {
+  display: none;
 }
-/* ===== Sidebar & Header Bar ===== */
-.sb-aside { display: none; }
+
 .sb-topbar {
-  position: sticky; top: 0; z-index: 40;
-  display: flex; align-items: center; justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ebd9ff;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--brand-border);
 }
+
 .sb-burger {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border: 0; border-radius: 12px;
-  background: #f5ecff; color: #2b1f45; cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: var(--brand-light);
+  color: var(--brand-primary);
+
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
+
+.sb-burger:hover {
+  background: #eadcff;
+  transform: translateY(-1px);
+}
+
 @media (min-width: 1024px) {
   .sb-aside {
-    display: block; position: fixed; inset: 0 auto 0 0; z-index: 30;
-    width: 18rem; background: #fff; border-right: 1px solid #ebd9ff;
+    display: block;
+    position: fixed;
+    inset: 0 auto 0 0;
+
+    z-index: 30;
+    width: 18rem;
+
+    background: var(--surface);
+    border-right: 1px solid var(--brand-border);
   }
-  .sb-topbar { display: none; }
+
+  .sb-topbar {
+    display: none;
+  }
 }
 
-.sb { display: flex; flex-direction: column; height: 100%; padding: 20px 16px; overflow-y: auto; background: #fff; }
-/* ===== Logo & Brand Name ===== */
+.sb {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  padding: 20px 16px;
+
+  overflow-y: auto;
+  background: var(--surface);
+}
+
+/* ===== BRAND LOGO & TEXT ===== */
+
 .sb-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+
   gap: 12px;
   padding: 4px 8px 20px;
+
   font-weight: 800;
   min-width: 0;
 }
@@ -59,72 +135,222 @@ body {
   width: 44px;
   height: 44px;
   min-width: 44px;
+
   flex-shrink: 0;
   object-fit: contain;
+
   border-radius: 12px;
 }
 
-/* Nama brand */
 .sb-logo span {
   display: block;
   font-size: 16px;
   font-weight: 800;
+
   letter-spacing: -0.4px;
   line-height: 1.2;
-  color: #2b1f45;
+
+  color: var(--brand-dark);
   white-space: nowrap;
 }
-.sb-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+
+/* ===== NAVIGATION ===== */
+
+.sb-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+  flex: 1;
+}
 
 .sb-row {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 12px; border-radius: 14px;
-  font-size: 14px; font-weight: 600; color: #2b1f45; text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--brand-dark);
+  text-decoration: none;
+
+  transition: background 0.2s, color 0.2s;
 }
-.sb-row:hover { background: #f5ecff; }
-.sb-row.active { background: #f5ecff; color: #6a22b0; }
-.sb-row.disabled { opacity: 0.6; cursor: default; }
-.sb-row.disabled:hover { background: transparent; }
-.sb-label { flex: 1; min-width: 0; }
+
+.sb-row:hover {
+  background: #f5efff;
+}
+
+.sb-row.active {
+  background: #eee2ff;
+  color: #7c3aed;
+}
+
+.sb-row.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.sb-row.disabled:hover {
+  background: transparent;
+}
+
+.sb-label {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== MENU ICONS ===== */
 
 .mini {
-  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
-  width: 36px; height: 36px; border-radius: 12px; color: #fff;
-  box-shadow: 0 6px 14px -6px rgba(154, 61, 240, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 14px;
+  color: #ffffff;
+
+  box-shadow: 0 5px 12px -5px rgba(139, 92, 246, 0.45);
 }
-.ico-sm { width: 18px; height: 18px; }
+
+.ico-sm {
+  width: 18px;
+  height: 18px;
+}
+
 .badge {
-  font-size: 10px; font-weight: 600; white-space: nowrap;
-  padding: 2px 8px; border-radius: 999px; background: #f5ecff; color: #8029d6;
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  padding: 4px 9px;
+  border-radius: 999px;
+
+  background: #f3e8ff;
+  color: #9333ea;
 }
 
-.sb-user { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #ebd9ff; }
-.sb-profile { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 14px; color: inherit; text-decoration: none; }
-.sb-profile:hover { background: #f5ecff; }
+/* ===== USER PROFILE ===== */
+
+.sb-user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 16px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--brand-border);
+}
+
+.sb-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px;
+  border-radius: 14px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.sb-profile:hover {
+  background: var(--brand-light);
+}
+
 .avatar {
-  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
-  width: 40px; height: 40px; border-radius: 999px;
-  font-weight: 700; color: #fff; background: linear-gradient(160deg, #c78bff, #9a3df0);
-}
-.sb-profile-text { display: flex; flex-direction: column; min-width: 0; }
-.sb-name { font-size: 14px; font-weight: 700; }
-.sb-email { font-size: 12px; color: #7b6a99; }
-.trunc { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-.sb-overlay { position: fixed; inset: 0; z-index: 50; display: flex; }
-.sb-backdrop { position: absolute; inset: 0; border: 0; background: rgba(43, 31, 69, 0.45); }
-.sb-drawer {
-  position: relative; width: 18rem; max-width: 85vw; height: 100%;
-  background: #fff; box-shadow: 0 0 40px rgba(43, 31, 69, 0.25);
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #c084fc,
+    #8b5cf6
+  );
 }
-/* ===== EVEGROW DIGITAL BRAND FIX ===== */
+
+.sb-profile-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sb-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sb-email {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.trunc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== MOBILE SIDEBAR DRAWER ===== */
+
+.sb-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 50;
+  display: flex;
+}
+
+.sb-backdrop {
+  position: absolute;
+  inset: 0;
+
+  border: 0;
+  background: rgba(48, 32, 71, 0.42);
+}
+
+.sb-drawer {
+  position: relative;
+
+  width: 18rem;
+  max-width: 85vw;
+  height: 100%;
+
+  background: var(--surface);
+
+  box-shadow: 0 0 40px rgba(48, 32, 71, 0.2);
+}
+
+/* ===== EVEGROW BRAND FIX ===== */
 
 .brand {
   display: inline-flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: flex-start !important;
+
   flex-wrap: nowrap !important;
 
   gap: 10px !important;
@@ -133,6 +359,7 @@ body {
 }
 
 /* Logo */
+
 .brand .brand-logo {
   display: block !important;
 
@@ -145,11 +372,13 @@ body {
   object-fit: contain !important;
 }
 
-/* Container teks */
+/* Brand text */
+
 .brand .brand-text {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
+
   flex-wrap: nowrap !important;
 
   gap: 4px !important;
@@ -157,24 +386,40 @@ body {
   min-width: 0 !important;
 }
 
-/* Nama brand */
+/* Brand name */
+
 .brand .brand-name,
 .brand .brand-sub {
   display: inline-block !important;
 
   font-family: Inter, Arial, sans-serif !important;
+
   font-size: 16px !important;
   font-weight: 800 !important;
+
   line-height: 1.2 !important;
   letter-spacing: -0.5px !important;
 
-  color: #2b1f45 !important;
+  color: #302047 !important;
+
   white-space: nowrap !important;
 }
 
-/* Ukuran besar */
+/* Large brand */
+
 .brand.brand-lg .brand-logo {
   width: 52px !important;
   height: 52px !important;
+
   flex-basis: 52px !important;
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }
