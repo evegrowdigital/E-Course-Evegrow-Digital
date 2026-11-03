@@ -13,6 +13,7 @@ const menu = [
   { label: 'Request', href: '', icon: 'send', colors: ['#f79a9a', '#e04f5a'] },
   // Ganti 62XXXXXXXXXX dengan nomor WA kamu (awali 62, tanpa 0 dan tanpa +)
   { label: 'Chat Private 1:1', href: 'https://wa.me/6283852122325', icon: 'whatsapp', colors: ['#6aeb8e', '#1fb850'] },
+  { label: 'Dashboard Affiliate', href: '/affiliate', icon: 'users', colors: ['#7F91D9', '#4D5EAC'] },
 ];
 
 export default menu;
