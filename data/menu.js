@@ -1,19 +1,77 @@
-// Atur menu beranda di sini.
-// href: '/materi' = halaman di website, 'https://...' = link luar (otomatis buka tab baru)
-// href: ''        = menu tampil "Segera hadir" (belum bisa diklik)
 
 const menu = [
-  { label: 'Materi', href: '/materi', icon: 'book', colors: ['#cf94f2', '#9a4fd6'] },
-  { label: 'Tools', href: '', icon: 'wrench', colors: ['#7db3f8', '#3b78e0'] },
-  { label: 'Kumpulan Prompt', href: '', icon: 'sparkles', colors: ['#f7a6c8', '#e0568f'] },
-  { label: 'Tutorial Mode Video', href: '', icon: 'play', colors: ['#f7ae7c', '#e5703a'] },
-  { label: 'Tutorial Mode Gambar', href: '', icon: 'image', colors: ['#7fd9c3', '#35a68b'] },
-  { label: 'Kumpulan Template', href: '', icon: 'template', colors: ['#f8d674', '#eba52d'] },
-  { label: 'E-course Canva', href: '', icon: 'cap', colors: ['#97a0f8', '#5558d9'] },
-  { label: 'Request', href: '', icon: 'send', colors: ['#f79a9a', '#e04f5a'] },
-  // Ganti 62XXXXXXXXXX dengan nomor WA kamu (awali 62, tanpa 0 dan tanpa +)
-  { label: 'Chat Private 1:1', href: 'https://wa.me/6283852122325', icon: 'whatsapp', colors: ['#6aeb8e', '#1fb850'] },
-  { label: 'Dashboard Affiliate', href: '/affiliate', icon: 'users', colors: ['#7F91D9', '#4D5EAC'] },
+  {
+    label: 'Materi',
+    href: '/materi',
+    icon: 'book',
+    colors: ['#CF94F2', '#9A4FD6'],
+  },
+  {
+    label: 'Tools',
+    href: '',
+    icon: 'wrench',
+    colors: ['#7DB3F8', '#3B78E0'],
+  },
+  {
+    label: 'Kumpulan Prompt',
+    href: '',
+    icon: 'sparkles',
+    colors: ['#F7A6C8', '#E0568F'],
+  },
+  {
+    label: 'Tutorial Mode Video',
+    href: '',
+    icon: 'play',
+    colors: ['#F7AE7C', '#E5703A'],
+  },
+  {
+    label: 'Tutorial Mode Gambar',
+    href: '',
+    icon: 'image',
+    colors: ['#7FD9C3', '#35A68B'],
+  },
+  {
+    label: 'Kumpulan Template',
+    href: '',
+    icon: 'template',
+    colors: ['#F8D674', '#EBA52D'],
+  },
+  {
+    label: 'E-course Canva',
+    href: '',
+    icon: 'cap',
+    colors: ['#97A0F8', '#5558D9'],
+  },
+  {
+    label: 'Chat Private 1:1',
+    href: 'https://wa.me/6283852122325',
+    icon: 'whatsapp',
+    colors: ['#6AEB8E', '#1FB850'],
+  },
+  {
+    label: 'Dashboard Affiliate',
+    href: '/affiliate',
+    icon: 'users',
+    colors: ['#7F91D9', '#4D5EAC'],
+  },
+  {
+    label: 'AI Content Studio',
+    href: '',
+    icon: 'sparkles',
+    colors: ['#D66BFF', '#8A24D6'],
+  },
+  {
+    label: 'Blueprint Bisnis',
+    href: '',
+    icon: 'cap',
+    colors: ['#8B9BFF', '#5146C8'],
+  },
+  {
+    label: 'Bonus',
+    href: '',
+    icon: 'gift',
+    colors: ['#FF70D9', '#C000A8'],
+  },
 ];
 
 export default menu;
