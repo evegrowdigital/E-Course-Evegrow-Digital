@@ -1,5 +1,6 @@
 import { getMember } from '@/lib/auth';
 import { getTotalMember } from '@/lib/members';
+import { getItems } from '@/lib/konten';
 import menu from '@/data/menu';
 import MenuTile from '@/components/MenuTile';
 import MenuIcon from '@/components/MenuIcon';
@@ -8,6 +9,12 @@ export default async function BerandaPage() {
   const member = await getMember();
   const total = await getTotalMember();
   const name = member?.nama || member?.email?.split('@')[0] || 'Member';
+
+  // Menu dengan folder aktif otomatis jika sudah ada isinya
+  const daftarMenu = menu.map((item) => ({
+    ...item,
+    href: item.folder ? (getItems(item.folder).length > 0 ? `/${item.slug}` : '') : item.href,
+  }));
 
   return (
     <>
@@ -21,7 +28,6 @@ export default async function BerandaPage() {
         </p>
       </div>
 
-      {/* Kotak total member */}
       <div className="mt-4 flex items-center gap-4 rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-200 to-brand-100 p-5 shadow-soft">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-soft">
           <MenuIcon name="users" className="h-6 w-6" />
@@ -39,7 +45,7 @@ export default async function BerandaPage() {
       </p>
 
       <div className="mt-3 grid grid-cols-3 gap-3 sm:gap-5">
-        {menu.map((item) => (
+        {daftarMenu.map((item) => (
           <MenuTile key={item.label} item={item} />
         ))}
       </div>
