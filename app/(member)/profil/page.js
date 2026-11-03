@@ -8,19 +8,12 @@ export default async function ProfilPage() {
   const email = member?.email || '';
   const name = member?.nama || email.split('@')[0];
   const initial = name.charAt(0).toUpperCase();
-  const bergabung = member?.created_at
-    ? new Date(member.created_at).toLocaleDateString('id-ID', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
-    : '-';
   const totalMateri = getItems('materi').length;
 
   const rows = [
     ['Nama', name],
     ['Email', email],
-    ['Bergabung sejak', bergabung],
+    ['Status', 'Member aktif'],
     ['Materi tersedia', `${totalMateri} materi`],
   ];
 
