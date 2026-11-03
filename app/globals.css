@@ -3,31 +3,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== EVEGROW DIGITAL COLOR SYSTEM ===== */
+/* ===== EVEGROW DIGITAL — PROFESSIONAL COLOR SYSTEM ===== */
 
 :root {
-  --brand-primary: #8b5cf6;
-  --brand-secondary: #a855f7;
-  --brand-dark: #302047;
+  --brand-primary: #6656c8;
+  --brand-secondary: #8274d8;
+  --brand-dark: #29283d;
 
-  --brand-light: #f5efff;
-  --brand-border: #eadcff;
+  --brand-light: #f0eff9;
+  --brand-border: #dfe2ec;
 
-  --brand-pink: #ff91b8;
-  --brand-blue: #78b7ff;
-  --brand-mint: #65d6b5;
-  --brand-yellow: #ffd477;
+  /* Accent colors */
+  --brand-pink: #d879a7;
+  --brand-blue: #6598d2;
+  --brand-mint: #55a99a;
+  --brand-yellow: #d6aa52;
 
-  --background: #fbf8ff;
+  /* Professional backgrounds */
+  --background: #f1f3f8;
   --surface: #ffffff;
-  --text-primary: #302047;
-  --text-secondary: #756687;
+  --text-primary: #29283d;
+  --text-secondary: #6d7185;
 }
 
 /* ===== GLOBAL ===== */
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
@@ -82,7 +85,7 @@ body {
 }
 
 .sb-burger:hover {
-  background: #eadcff;
+  background: #e5e3f6;
   transform: translateY(-1px);
 }
 
@@ -182,12 +185,12 @@ body {
 }
 
 .sb-row:hover {
-  background: #f5efff;
+  background: #f0eff9;
 }
 
 .sb-row.active {
-  background: #eee2ff;
-  color: #7c3aed;
+  background: #e7e5f7;
+  color: #5143a8;
 }
 
 .sb-row.disabled {
@@ -219,7 +222,7 @@ body {
   border-radius: 14px;
   color: #ffffff;
 
-  box-shadow: 0 5px 12px -5px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 5px 12px -5px rgba(102, 86, 200, 0.35);
 }
 
 .ico-sm {
@@ -236,8 +239,8 @@ body {
   padding: 4px 9px;
   border-radius: 999px;
 
-  background: #f3e8ff;
-  color: #9333ea;
+  background: #eeecfa;
+  color: #6656c8;
 }
 
 /* ===== USER PROFILE ===== */
@@ -286,8 +289,8 @@ body {
 
   background: linear-gradient(
     135deg,
-    #c084fc,
-    #8b5cf6
+    #8274d8,
+    #5143a8
   );
 }
 
@@ -328,7 +331,7 @@ body {
   inset: 0;
 
   border: 0;
-  background: rgba(48, 32, 71, 0.42);
+  background: rgba(41, 40, 61, 0.42);
 }
 
 .sb-drawer {
@@ -340,7 +343,7 @@ body {
 
   background: var(--surface);
 
-  box-shadow: 0 0 40px rgba(48, 32, 71, 0.2);
+  box-shadow: 0 0 40px rgba(41, 40, 61, 0.16);
 }
 
 /* ===== EVEGROW BRAND FIX ===== */
@@ -400,7 +403,7 @@ body {
   line-height: 1.2 !important;
   letter-spacing: -0.5px !important;
 
-  color: #302047 !important;
+  color: #29283d !important;
 
   white-space: nowrap !important;
 }
