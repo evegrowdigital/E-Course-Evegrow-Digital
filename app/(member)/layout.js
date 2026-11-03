@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation';
-import { getMember } from '@/lib/auth.js';
-import { hitungMateri } from '@/lib/materi.js';
-import Sidebar from '@/components/Sidebar.js';
-import Footer from '@/components/Footer.js';
+import { getMember } from '@/lib/auth';
+import { getMenuItems } from '@/lib/menu';
+import Sidebar from '@/components/Sidebar';
+import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,11 +11,11 @@ export default async function MemberLayout({ children }) {
   if (!member) redirect('/api/logout');
 
   const name = member.nama || member.email.split('@')[0];
-  const counts = hitungMateri();
+  const menuItems = getMenuItems();
 
   return (
     <div className="min-h-screen lg:pl-72">
-      <Sidebar name={name} email={member.email} counts={counts} />
+      <Sidebar name={name} email={member.email} menuItems={menuItems} />
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
         <main>{children}</main>
         <Footer />
