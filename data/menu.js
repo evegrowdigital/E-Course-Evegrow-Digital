@@ -24,7 +24,7 @@ const menu = [
   },
   {
     label: 'Tutorial Mode Video',
-    href: '',
+    href: '/tutorial-mode-video',
     icon: 'play',
     colors: ['#F7AE7C', '#E5703A'],
   },
