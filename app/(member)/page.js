@@ -13,37 +13,51 @@ export default async function BerandaPage() {
   // Menu dengan folder aktif otomatis jika sudah ada isinya
   const daftarMenu = menu.map((item) => ({
     ...item,
-    href: item.folder ? (getItems(item.folder).length > 0 ? `/${item.slug}` : '') : item.href,
+    href: item.folder
+      ? getItems(item.folder).length > 0
+        ? `/${item.slug}`
+        : ''
+      : item.href,
   }));
 
   return (
     <>
-      <h1 className="break-words text-2xl font-bold text-ink sm:text-3xl">Halo, {name}!</h1>
+      <h1 className="break-words text-2xl font-bold text-[#352348] sm:text-3xl">
+        Halo, {name}!
+      </h1>
 
-      <div className="mt-4 rounded-3xl border border-brand-100 bg-gradient-to-br from-white to-brand-100 p-5 shadow-soft sm:p-6">
-        <p className="text-[15px] leading-relaxed text-ink/80 sm:text-base">
+      {/* Kartu sambutan */}
+      <div className="mt-4 rounded-3xl border border-[#E3D0F5] bg-gradient-to-br from-[#FBF6FF] via-[#F3E8FF] to-[#E9D8FA] p-5 shadow-[0_12px_30px_-12px_rgba(117,66,184,0.25)] sm:p-6">
+        <p className="text-[15px] leading-relaxed text-[#554363] sm:text-base">
           Terima kasih sudah mempercayakan proses belajar bersama Evegrow.digital. Semoga ini
           menjadi peluang bagi teman-teman untuk upgrade skill dan membuka peluang penghasilan
           dari rumah. Aamiin 🤲
         </p>
       </div>
 
-      <div className="mt-4 flex items-center gap-4 rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-200 to-brand-100 p-5 shadow-soft">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-brand-700 shadow-soft">
+      {/* Kartu Total Member */}
+      <div className="mt-4 flex items-center gap-4 rounded-3xl border border-[#CDB4ED] bg-gradient-to-br from-[#E4D2FA] via-[#D7BDF3] to-[#C7A5EB] p-5 shadow-[0_12px_28px_-10px_rgba(117,66,184,0.32)]">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/70 bg-[#FCF8FF] text-[#8750C5] shadow-[0_5px_14px_-5px_rgba(88,47,133,0.25)]">
           <MenuIcon name="users" className="h-6 w-6" />
         </span>
+
         <div>
-          <p className="text-sm font-medium text-brand-800">Total Member</p>
-          <p className="text-2xl font-bold leading-tight text-brand-900 sm:text-3xl">
+          <p className="text-sm font-semibold text-[#70419F]">
+            Total Member
+          </p>
+
+          <p className="text-2xl font-bold leading-tight text-[#542A80] sm:text-3xl">
             {total.toLocaleString('id-ID')}
           </p>
         </div>
       </div>
 
-      <p className="mt-6 text-sm text-brand-800/70 sm:text-base">
+      {/* Petunjuk menu */}
+      <p className="mt-6 text-sm font-medium text-[#8A65AC] sm:text-base">
         Pilih menu yang ingin kamu buka.
       </p>
 
+      {/* Daftar menu */}
       <div className="mt-3 grid grid-cols-3 gap-3 sm:gap-5">
         {daftarMenu.map((item) => (
           <MenuTile key={item.label} item={item} />
@@ -51,4 +65,4 @@ export default async function BerandaPage() {
       </div>
     </>
   );
-}
+        }
