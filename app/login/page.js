@@ -4,7 +4,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer.js';
-import Brand from '@/components/Brand';
 
 const LOGO = '/logo.png';
 
