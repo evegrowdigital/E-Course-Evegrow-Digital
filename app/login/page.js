@@ -53,7 +53,8 @@ export default function LoginPage() {
 
           {/* Logo dengan outline dan shadow lembut */}
           <div className="mx-auto flex h-[104px] w-[104px] items-center justify-center overflow-hidden rounded-[23px] border border-[#DCC3FF] bg-white p-1.5 shadow-[0_4px_18px_rgba(124,58,237,0.18)]">
-            <Brand size="lg" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={LOGO} alt="Evegrow.Digital" className="login-logo" />
           </div>
 
           <h1 className="mt-7 text-center text-xl font-bold tracking-tight text-[#302044] sm:text-2xl">
