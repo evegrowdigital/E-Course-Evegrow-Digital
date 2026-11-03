@@ -26,13 +26,13 @@ export default function LoginPage() {
         body: JSON.stringify({ email: email.trim().toLowerCase() }),
       });
 
-      const data = await res.json();
+     const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
         setError(
           data.error === 'NOT_MEMBER'
             ? 'Email belum terdaftar sebagai member. Gunakan email yang digunakan untuk pembelian di lynk.id.'
-            : data.error || 'Gagal masuk. Coba lagi.'
+           : data.error || `Gagal masuk (kode ${res.status}). Coba lagi.`
         );
         return;
       }
