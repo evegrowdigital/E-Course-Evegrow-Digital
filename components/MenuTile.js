@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import MenuIcon from './MenuIcon';
 
@@ -10,15 +11,15 @@ function IconTile({ item }) {
       style={{
         background: `linear-gradient(160deg, ${c1}, ${c2})`,
         boxShadow: `
-          0 12px 18px -8px ${c2}aa,
-          inset 0 2px 3px rgba(255,255,255,.55),
-          inset 0 -5px 8px rgba(0,0,0,.14)
+          0 12px 22px -8px ${c2}aa,
+          inset 0 2px 3px rgba(255,255,255,.45),
+          inset 0 -5px 8px rgba(0,0,0,.18)
         `,
       }}
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-1.5 top-1 h-1/2 rounded-t-[0.9rem] rounded-b-[2rem] bg-gradient-to-b from-white/45 to-transparent"
+        className="pointer-events-none absolute inset-x-1.5 top-1 h-1/2 rounded-t-[0.9rem] rounded-b-[2rem] bg-gradient-to-b from-white/40 to-transparent"
       />
 
       <MenuIcon
@@ -31,19 +32,19 @@ function IconTile({ item }) {
 
 export default function MenuTile({ item }) {
   const base =
-    'group flex flex-col items-center gap-2 rounded-2xl border border-[#E5D8F5] bg-[#FBF8FF] px-2 py-4 text-center shadow-[0_8px_24px_-12px_rgba(117,66,184,0.22)] transition duration-200 hover:-translate-y-1 hover:border-[#C8A9EF] hover:bg-[#F7F0FF] sm:gap-3 sm:py-6';
+    'group flex flex-col items-center gap-2 rounded-2xl border border-[#382044] bg-gradient-to-br from-[#211329] to-[#140D1B] px-2 py-4 text-center shadow-[0_8px_24px_-12px_rgba(208,0,245,0.28)] transition duration-200 hover:-translate-y-1 hover:border-[#A600D6] hover:shadow-[0_12px_30px_-10px_rgba(208,0,245,0.35)] sm:gap-3 sm:py-6';
 
   const content = (
     <>
       <IconTile item={item} />
 
       <span className="flex min-h-[2rem] flex-col items-center justify-start sm:min-h-[2.5rem]">
-        <span className="text-[11px] font-semibold leading-tight text-ink sm:text-sm">
+        <span className="text-[11px] font-semibold leading-tight text-[#F5EAFB] sm:text-sm">
           {item.label}
         </span>
 
         {!item.href && (
-          <span className="mt-1 rounded-full bg-[#EEE2FC] px-2 py-0.5 text-[9px] font-medium text-[#8051B5] sm:text-[11px]">
+          <span className="mt-1 rounded-full border border-[#542264] bg-[#351441] px-2 py-0.5 text-[9px] font-medium text-[#E7A0FF] sm:text-[11px]">
             Segera hadir
           </span>
         )}
