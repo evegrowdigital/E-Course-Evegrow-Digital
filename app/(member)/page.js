@@ -1,3 +1,4 @@
+
 import { getMember } from '@/lib/auth';
 import { getTotalMember } from '@/lib/members';
 import { getItems } from '@/lib/konten';
@@ -22,13 +23,19 @@ export default async function BerandaPage() {
 
   return (
     <>
-      <h1 className="break-words text-2xl font-bold text-[#352348] sm:text-3xl">
+      {/* Judul Beranda */}
+      <h1 className="break-words text-2xl font-bold text-[#F5EAFB] sm:text-3xl">
         Halo, {name}!
       </h1>
 
-      {/* Kartu sambutan */}
-      <div className="mt-4 rounded-3xl border border-[#E3D0F5] bg-gradient-to-br from-[#FBF6FF] via-[#F3E8FF] to-[#E9D8FA] p-5 shadow-[0_12px_30px_-12px_rgba(117,66,184,0.25)] sm:p-6">
-        <p className="text-[15px] leading-relaxed text-[#554363] sm:text-base">
+      {/* Kartu Sambutan */}
+      <div className="relative mt-4 overflow-hidden rounded-3xl border border-[#542264] bg-gradient-to-br from-[#2A1236] via-[#211329] to-[#160D1D] p-5 shadow-[0_12px_32px_-12px_rgba(208,0,245,0.22)] sm:p-6">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#D000F5]/10 blur-3xl"
+        />
+
+        <p className="relative text-[15px] leading-relaxed text-[#D7C9E2] sm:text-base">
           Terima kasih sudah mempercayakan proses belajar bersama Evegrow.digital. Semoga ini
           menjadi peluang bagi teman-teman untuk upgrade skill dan membuka peluang penghasilan
           dari rumah. Aamiin 🤲
@@ -36,28 +43,33 @@ export default async function BerandaPage() {
       </div>
 
       {/* Kartu Total Member */}
-      <div className="mt-4 flex items-center gap-4 rounded-3xl border border-[#CDB4ED] bg-gradient-to-br from-[#E4D2FA] via-[#D7BDF3] to-[#C7A5EB] p-5 shadow-[0_12px_28px_-10px_rgba(117,66,184,0.32)]">
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/70 bg-[#FCF8FF] text-[#8750C5] shadow-[0_5px_14px_-5px_rgba(88,47,133,0.25)]">
+      <div className="relative mt-4 flex items-center gap-4 overflow-hidden rounded-3xl border border-[#702486] bg-gradient-to-br from-[#3A1749] via-[#291332] to-[#1B1024] p-5 shadow-[0_12px_30px_-10px_rgba(208,0,245,0.28)]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#D000F5]/15 blur-3xl"
+        />
+
+        <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#75418A] bg-[#211329] text-[#E45AFF] shadow-[0_5px_16px_-5px_rgba(208,0,245,0.3)]">
           <MenuIcon name="users" className="h-6 w-6" />
         </span>
 
-        <div>
-          <p className="text-sm font-semibold text-[#70419F]">
+        <div className="relative">
+          <p className="text-sm font-semibold text-[#E7A0FF]">
             Total Member
           </p>
 
-          <p className="text-2xl font-bold leading-tight text-[#542A80] sm:text-3xl">
+          <p className="text-2xl font-bold leading-tight text-white sm:text-3xl">
             {total.toLocaleString('id-ID')}
           </p>
         </div>
       </div>
 
-      {/* Petunjuk menu */}
-      <p className="mt-6 text-sm font-medium text-[#8A65AC] sm:text-base">
+      {/* Petunjuk Menu */}
+      <p className="mt-6 text-sm font-medium text-[#C5A8D5] sm:text-base">
         Pilih menu yang ingin kamu buka.
       </p>
 
-      {/* Daftar menu */}
+      {/* Daftar Menu */}
       <div className="mt-3 grid grid-cols-3 gap-3 sm:gap-5">
         {daftarMenu.map((item) => (
           <MenuTile key={item.label} item={item} />
