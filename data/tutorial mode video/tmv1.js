@@ -1,4 +1,4 @@
-const materi = [
+const data= [
   {
     judul: 'Siapkan Toko Digital',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372133160_9086152.png?width=630&amp;quality=90&amp;format=webp',
@@ -23,4 +23,4 @@ const materi = [
       ]
  ];
 
-export default materi;
+export default data;
