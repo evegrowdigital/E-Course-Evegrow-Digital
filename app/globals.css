@@ -118,3 +118,38 @@ body {
   position: relative; width: 18rem; max-width: 85vw; height: 100%;
   background: #fff; box-shadow: 0 0 40px rgba(43, 31, 69, 0.25);
 }
+
+/* FIX: Logo dan nama brand harus sejajar */
+.sb .sb-logo {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 4px 8px 20px !important;
+}
+
+/* Ukuran logo */
+.sb .sb-logo img {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  flex: 0 0 44px !important;
+  object-fit: contain !important;
+}
+
+/* Nama brand di samping logo */
+.sb .sb-logo span {
+  display: block !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.4px !important;
+  color: #2b1f45 !important;
+}
