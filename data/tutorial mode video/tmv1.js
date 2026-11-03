@@ -19,8 +19,26 @@ const data= [
       {
         judul: 'Tutorial Affiliate Produk',
         url: 'https://youtu.be/bO8Ttx5D_gs?si=msyvyHW0XvpdLPDM',
-      }
-      ]
- ];
+      },
+      ],
+    tools: '',
+    prompt: '',
+    prompts: [
+      {
+        judul: '',
+        isi: '',
+        url: '',
+      },
+    ],
+    panduan: [
+      {
+        judul: '',
+        url: '',
+      },
+    ],
+    materi: `
+`,
+  },
+];
 
-export default data;
+export data;
