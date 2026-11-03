@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import menu from '@/data/menu';
@@ -11,7 +12,10 @@ function cariSection(slug) {
 export function generateMetadata({ params }) {
   const s = cariSection(params.section);
   const item = s ? getItem(s.folder, params.id) : null;
-  return { title: item ? `${item.judul} | Evegrow.Digital` : 'Evegrow.Digital' };
+
+  return {
+    title: item ? `${item.judul} | Evegrow.Digital` : 'Evegrow.Digital',
+  };
 }
 
 export default function DetailPage({ params }) {
@@ -27,6 +31,7 @@ export default function DetailPage({ params }) {
   const berikutnya = semua[index + 1];
 
   const videoId = getYouTubeId(materi.video);
+
   const teks = (materi.materi || '')
     .split('\n')
     .map((l) => l.trim())
@@ -34,20 +39,43 @@ export default function DetailPage({ params }) {
     .trim();
 
   return (
-    <article>
+    <article className="mx-auto w-full max-w-5xl">
+      {/* Kembali */}
       <Link
         href={`/${section.slug}`}
-        className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 hover:text-brand-900"
+        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-[#D8B7F5] transition hover:border-[#A855F7]/40 hover:bg-[#A855F7]/10 hover:text-white"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <path d="M15 18l-6-6 6-6" />
         </svg>
         {section.label}
       </Link>
 
-      <h1 className="mt-3 text-2xl font-bold leading-tight text-ink sm:text-3xl">{materi.judul}</h1>
+      {/* Judul */}
+      <header className="mt-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B875F5]">
+          Evegrow Digital Learning
+        </p>
 
-      <div className="mt-5 overflow-hidden rounded-2xl border border-brand-100 bg-brand-900 shadow-soft">
+        <h1 className="mt-2 break-words text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">
+          {materi.judul}
+        </h1>
+
+        <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
+      </header>
+
+      {/* Video */}
+      <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#100A16] shadow-[0_16px_40px_-18px_rgba(0,0,0,0.7)] sm:rounded-3xl">
         <div className="relative aspect-video">
           {videoId ? (
             <iframe
@@ -59,13 +87,14 @@ export default function DetailPage({ params }) {
               referrerPolicy="strict-origin-when-cross-origin"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-brand-100">
+            <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-white/60">
               Video belum tersedia.
             </div>
           )}
         </div>
       </div>
 
+      {/* Tombol tools dan prompt */}
       {(materi.tools || materi.prompt) && (
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           {materi.tools && (
@@ -73,53 +102,83 @@ export default function DetailPage({ params }) {
               href={materi.tools}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#A855F7] to-[#7C3AED] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_22px_-10px_rgba(168,85,247,0.65)] transition hover:-translate-y-0.5 hover:brightness-110"
             >
               Akses Tools
+              <span aria-hidden="true">↗</span>
             </a>
           )}
+
           {materi.prompt && (
             <a
               href={materi.prompt}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-brand-500 bg-white px-6 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-100"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#A855F7]/40 bg-[#A855F7]/10 px-6 py-3 text-sm font-semibold text-[#D8B7F5] transition hover:border-[#C084FC] hover:bg-[#A855F7]/20 hover:text-white"
             >
               Akses Prompt
+              <span aria-hidden="true">↗</span>
             </a>
           )}
         </div>
       )}
 
+      {/* Isi materi */}
       {teks && (
-        <section className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft sm:p-7">
-          <h2 className="text-lg font-bold text-ink sm:text-xl">Materi</h2>
-          <div className="mt-3 max-w-prose whitespace-pre-line text-[15px] leading-relaxed text-ink/90 sm:text-base">
-            {teks}
+        <section className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#17101F] shadow-[0_12px_32px_-18px_rgba(0,0,0,0.65)] sm:rounded-3xl">
+          <div className="border-b border-white/10 bg-gradient-to-r from-[#24132F] to-[#19101F] px-5 py-4 sm:px-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B875F5]">
+              Learning Material
+            </p>
+
+            <h2 className="mt-1 text-lg font-bold text-white sm:text-xl">
+              Materi Pembelajaran
+            </h2>
+          </div>
+
+          <div className="px-5 py-5 sm:px-7 sm:py-7">
+            <div className="max-w-3xl whitespace-pre-line text-[15px] leading-7 text-[#E7DDED] sm:text-base sm:leading-8">
+              {teks}
+            </div>
           </div>
         </section>
       )}
 
-      <nav className="mt-6 flex items-center justify-between gap-3">
+      {/* Navigasi materi */}
+      <nav className="mt-7 flex items-stretch justify-between gap-3 border-t border-white/10 pt-5">
         {sebelumnya ? (
           <Link
             href={`/${section.slug}/${sebelumnya.id}`}
-            className="rounded-xl border border-brand-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-800 hover:bg-brand-100"
+            className="flex max-w-[48%] items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-[#D8B7F5] transition hover:border-[#A855F7]/40 hover:bg-[#A855F7]/10 hover:text-white"
           >
-            Sebelumnya
+            <span aria-hidden="true">←</span>
+            <span className="min-w-0">
+              <span className="block text-[10px] uppercase tracking-wider text-white/40">
+                Sebelumnya
+              </span>
+              <span className="block truncate">{sebelumnya.judul}</span>
+            </span>
           </Link>
         ) : (
           <span />
         )}
+
         {berikutnya && (
           <Link
             href={`/${section.slug}/${berikutnya.id}`}
-            className="rounded-xl border border-brand-200 bg-white px-4 py-2.5 text-sm font-medium text-brand-800 hover:bg-brand-100"
+            className="ml-auto flex max-w-[48%] items-center justify-end gap-2 rounded-xl border border-[#A855F7]/30 bg-[#A855F7]/10 px-4 py-3 text-right text-sm font-medium text-[#D8B7F5] transition hover:border-[#A855F7]/60 hover:bg-[#A855F7]/20 hover:text-white"
           >
-            Berikutnya
+            <span className="min-w-0">
+              <span className="block text-[10px] uppercase tracking-wider text-white/40">
+                Berikutnya
+              </span>
+              <span className="block truncate">{berikutnya.judul}</span>
+            </span>
+            <span aria-hidden="true">→</span>
           </Link>
         )}
       </nav>
     </article>
   );
-}
+                }
+          
