@@ -1,3 +1,7 @@
+// Atur menu beranda di sini.
+// href: '/materi' = halaman di website
+// href: 'https://...' = link luar
+// href: '' = menu tampil "Segera hadir"
 
 const menu = [
   {
@@ -52,25 +56,25 @@ const menu = [
     label: 'Dashboard Affiliate',
     href: '/affiliate',
     icon: 'users',
-    colors: ['#7F91D9', '#4D5EAC'],
+    colors: ['#97A0F8', '#5558D9'],
   },
   {
     label: 'AI Content Studio',
     href: '',
-    icon: 'sparkles',
-    colors: ['#D66BFF', '#8A24D6'],
+    icon: 'bot',
+    colors: ['#D66BFF', '#8B28D9'],
   },
   {
     label: 'Blueprint Bisnis',
     href: '',
-    icon: 'cap',
-    colors: ['#8B9BFF', '#5146C8'],
+    icon: 'layers',
+    colors: ['#8C9BFF', '#4B55C8'],
   },
   {
     label: 'Bonus',
     href: '',
     icon: 'gift',
-    colors: ['#FF70D9', '#C000A8'],
+    colors: ['#FF8BCB', '#D83F91'],
   },
 ];
 
