@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -22,16 +21,18 @@ export default function LoginPage() {
       const res = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+        }),
       });
 
-     const data = await res.json().catch(() => ({}));
+      const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
         setError(
           data.error === 'NOT_MEMBER'
             ? 'Email belum terdaftar sebagai member. Gunakan email yang digunakan untuk pembelian di lynk.id.'
-           : data.error || `Gagal masuk (kode ${res.status}). Coba lagi.`
+            : data.error || `Gagal masuk (kode ${res.status}). Coba lagi.`
         );
         return;
       }
@@ -39,73 +40,112 @@ export default function LoginPage() {
       router.push('/');
       router.refresh();
     } catch {
-      setError('Koneksi bermasalah. Periksa internet kamu lalu coba lagi.');
+      setError(
+        'Koneksi bermasalah. Periksa internet kamu lalu coba lagi.'
+      );
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#F0E7FF] via-[#F8F4FF] to-[#F5F0FF] px-4">
-      <main className="flex flex-1 items-center justify-center py-10">
-        <div className="w-full max-w-md rounded-[30px] border border-[#E9DDFF] bg-white/95 p-6 shadow-[0_18px_55px_rgba(105,55,166,0.12)] sm:p-8">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#0B0710] text-white">
+      {/* Background glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 -top-28 h-80 w-80 rounded-full bg-[#8B18C9]/20 blur-[100px]"
+      />
 
-          {/* Logo dengan outline dan shadow lembut */}
-          <div className="mx-auto flex h-[104px] w-[104px] items-center justify-center overflow-hidden rounded-[23px] border border-[#DCC3FF] bg-white p-1.5 shadow-[0_4px_18px_rgba(124,58,237,0.18)]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={LOGO} alt="Evegrow.Digital" className="login-logo" />
-          </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-[#5421B8]/20 blur-[110px]"
+      />
 
-          <h1 className="mt-7 text-center text-xl font-bold tracking-tight text-[#302044] sm:text-2xl">
-            Masuk ke Member Area
-          </h1>
-
-          <p className="mx-auto mt-2 max-w-sm text-center text-sm leading-6 text-[#806B99]">
-            Login menggunakan akun Gmail yang digunakan untuk pembelian di lynk.id.
-          </p>
-
-          <form onSubmit={handleSubmit} className="mt-7 space-y-5">
-            <div>
-              <label
-                htmlFor="email"
-                className="mb-2 block text-sm font-semibold text-[#39294B]"
-              >
-                Email
-              </label>
-
-              <input
-                id="email"
-                type="email"
-                required
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="nama@gmail.com"
-                className="w-full rounded-2xl border border-[#E0D1F4] bg-[#FAF7FF] px-4 py-3.5 text-base text-[#302044] outline-none transition placeholder:text-[#B5A7C5] focus:border-[#9B63E8] focus:bg-white focus:ring-4 focus:ring-[#A879ED]/15"
-              />
+      <main className="relative flex flex-1 items-center justify-center px-4 py-10 sm:px-6">
+        <div className="w-full max-w-md">
+          {/* Login Card */}
+          <div className="rounded-[30px] border border-[#54266B]/70 bg-[#140D1B]/95 p-6 shadow-[0_25px_80px_rgba(0,0,0,0.45)] sm:p-9">
+            {/* Logo */}
+            <div className="mx-auto flex h-[100px] w-[100px] items-center justify-center rounded-[26px] border border-[#713A91]/60 bg-gradient-to-br from-[#2A1638] to-[#160D20] p-2 shadow-[0_0_35px_rgba(174,55,255,0.16)]">
+              <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[20px] bg-[#E8D8FF]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={LOGO}
+                  alt="Evegrow.Digital"
+                  className="h-full w-full rounded-[20px] object-contain"
+                />
+              </div>
             </div>
 
-            {error && (
-              <p
-                role="alert"
-                className="rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm leading-5 text-red-700"
-              >
-                {error}
+            {/* Heading */}
+            <div className="mt-7 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#C77BFF]">
+                EVEGROW DIGITAL
               </p>
-            )}
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-2xl bg-gradient-to-r from-[#7040AD] to-[#60349B] px-4 py-4 text-sm font-semibold text-white shadow-[0_7px_18px_rgba(103,58,165,0.22)] transition duration-200 hover:from-[#63369D] hover:to-[#542B8D] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {loading ? 'Memeriksa...' : 'Masuk'}
-            </button>
-          </form>
+              <h1 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                Masuk ke Member Area
+              </h1>
+
+              <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#B8A8C5]">
+                Login menggunakan akun Gmail yang digunakan untuk pembelian
+                di lynk.id.
+              </p>
+            </div>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div>
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-semibold text-[#E8DDF2]"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="nama@gmail.com"
+                  className="w-full rounded-2xl border border-[#493353] bg-[#0F0915] px-4 py-4 text-base text-white outline-none transition placeholder:text-[#766582] focus:border-[#B54DFF] focus:bg-[#160D20] focus:ring-4 focus:ring-[#B54DFF]/15"
+                />
+              </div>
+
+              {error && (
+                <p
+                  role="alert"
+                  className="rounded-2xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm leading-5 text-red-300"
+                >
+                  {error}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-[#9B28D9] via-[#B32EEB] to-[#7626C7] px-4 py-4 text-sm font-bold text-white shadow-[0_8px_30px_rgba(159,39,219,0.25)] transition duration-200 hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <span className="relative z-10">
+                  {loading ? 'Memeriksa...' : 'Masuk'}
+                </span>
+              </button>
+            </form>
+
+            {/* Bottom note */}
+            <p className="mt-6 text-center text-xs leading-5 text-[#806E91]">
+              Akses khusus member Evegrow.Digital
+            </p>
+          </div>
         </div>
       </main>
 
-      <Footer />
+      <div className="relative">
+        <Footer />
+      </div>
     </div>
   );
-}
+                    }
