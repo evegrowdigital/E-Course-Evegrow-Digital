@@ -1,3 +1,5 @@
+// data/tutorialmodevideo/tmv1/data.js
+
 const data= [
   {
     judul: 'Siapkan Toko Digital',
