@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import LogoutButton from './LogoutButton';
 import MenuIcon from './MenuIcon';
 
-const LOGO = 'https://i.ibb.co.com/v4vnDrZr/file-0000000095ac820695edea0b24952bb0.png';
+const LOGO = '/logo.png';
 
 function MiniIcon({ colors, children }) {
   const [c1, c2] = colors;
