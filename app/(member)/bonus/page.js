@@ -1,19 +1,23 @@
 
-'use client';
-
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { getItems } from '@/lib/konten.js';
 
-function BonusContent({ items }) {
-  const searchParams = useSearchParams();
-  const bonusId = searchParams.get('lihat');
+export const dynamic = 'force-dynamic';
+
+export default async function BonusPage({ searchParams }) {
+  const items = await getItems('bonus');
+
+  // Membaca bonus yang dipilih dari URL
+  const params = await searchParams;
+  const bonusId = params?.lihat;
 
   const itemAktif = items.find(
     (item) => String(item.id) === String(bonusId)
   );
 
-  // Tampilan daftar bonus
+  // ==========================================
+  // HALAMAN DAFTAR BONUS
+  // ==========================================
   if (itemAktif) {
     const bonus = Array.isArray(itemAktif.panduan)
       ? itemAktif.panduan.filter(
@@ -23,6 +27,8 @@ function BonusContent({ items }) {
 
     return (
       <main className="mx-auto w-full max-w-5xl text-white">
+
+        {/* Tombol Kembali */}
         <Link
           href="/bonus"
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-[#D8B7F5] transition hover:border-purple-400/40 hover:bg-purple-500/10"
@@ -31,6 +37,7 @@ function BonusContent({ items }) {
           Bonus
         </Link>
 
+        {/* Header */}
         <header className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B875F5]">
             Evegrow Digital Learning
@@ -43,41 +50,54 @@ function BonusContent({ items }) {
           <div className="mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
         </header>
 
-        <div className="flex flex-col gap-3">
-          {bonus.map((p, i) => (
-            <a
-              key={i}
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-5 transition hover:border-purple-400/40 hover:bg-purple-500/[0.08] sm:px-5"
-            >
-              <div className="flex min-w-0 items-center gap-4">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xl font-bold text-white shadow-lg">
-                  {i + 1}
-                </span>
-
-                <span className="min-w-0 break-words text-base font-semibold leading-7 text-[#D8B7F5] transition group-hover:text-white sm:text-lg">
-                  {p.judul || `Bonus ${i + 1}`}
-                </span>
-              </div>
-
-              <span
-                className="shrink-0 text-lg text-purple-300 transition group-hover:translate-x-1 group-hover:text-white"
-                aria-hidden="true"
+        {/* Daftar Bonus */}
+        {bonus.length === 0 ? (
+          <p className="text-sm text-purple-200/60">
+            Belum ada bonus tersedia.
+          </p>
+        ) : (
+          <div className="flex flex-col gap-3">
+            {bonus.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-5 transition hover:border-purple-400/40 hover:bg-purple-500/[0.08] sm:px-5"
               >
-                ↗
-              </span>
-            </a>
-          ))}
-        </div>
+                {/* Nomor dan Judul */}
+                <div className="flex min-w-0 items-center gap-4">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xl font-bold text-white shadow-lg">
+                    {i + 1}
+                  </span>
+
+                  <span className="min-w-0 break-words text-base font-semibold leading-7 text-[#D8B7F5] transition group-hover:text-white sm:text-lg">
+                    {p.judul || `Bonus ${i + 1}`}
+                  </span>
+                </div>
+
+                {/* Ikon Akses */}
+                <span
+                  className="shrink-0 text-lg text-purple-300 transition group-hover:translate-x-1 group-hover:text-white"
+                  aria-hidden="true"
+                >
+                  ↗
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
       </main>
     );
   }
 
-  // Tampilan utama Bonus Eksklusif
+  // ==========================================
+  // HALAMAN UTAMA BONUS EKSKLUSIF
+  // ==========================================
   return (
     <main className="mx-auto w-full max-w-5xl text-white">
+
+      {/* Header */}
       <div className="mb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-400">
           Evegrow Digital
@@ -92,6 +112,7 @@ function BonusContent({ items }) {
         </p>
       </div>
 
+      {/* Kartu Bonus */}
       {items.length === 0 ? (
         <p className="text-sm text-purple-200/60">
           Belum ada bonus tersedia.
@@ -103,6 +124,7 @@ function BonusContent({ items }) {
               key={item.id}
               className="overflow-hidden rounded-2xl border border-purple-400/20 bg-[#17101F] shadow-lg"
             >
+              {/* Cover */}
               {item.cover && (
                 <div className="overflow-hidden bg-black/20">
                   <img
@@ -114,6 +136,7 @@ function BonusContent({ items }) {
                 </div>
               )}
 
+              {/* Konten */}
               <div className="p-5 sm:p-6">
                 <h2 className="text-lg font-bold leading-snug text-white sm:text-xl">
                   {item.judul}
@@ -125,8 +148,9 @@ function BonusContent({ items }) {
                   </p>
                 )}
 
+                {/* Tombol Lihat Bonus */}
                 <Link
-                  href={`/bonus?lihat=${item.id}`}
+                  href={`/bonus?lihat=${encodeURIComponent(item.id)}`}
                   className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-4 text-sm font-semibold text-white transition hover:brightness-110"
                 >
                   Lihat Bonus
@@ -139,32 +163,4 @@ function BonusContent({ items }) {
       )}
     </main>
   );
-}
-
-export default function BonusPage() {
-  return (
-    <Suspense
-      fallback={
-        <main className="mx-auto w-full max-w-5xl text-white">
-          <p className="text-sm text-purple-200/60">
-            Memuat bonus...
-          </p>
-        </main>
-      }
-    >
-      <BonusLoader />
-    </Suspense>
-  );
-}
-
-import { getItems } from '@/lib/konten.js';
-
-function BonusLoader() {
-  const [items, setItems] = React.useState([]);
-
-  React.useEffect(() => {
-    getItems('bonus').then(setItems);
-  }, []);
-
-  return <BonusContent items={items} />;
                 }
