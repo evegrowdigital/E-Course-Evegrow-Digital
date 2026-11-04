@@ -1,17 +1,23 @@
-// data/bonus/b1/data.js
+// data/bonus/b2/data.js
 
-const data = [
+const data= [
   {
     judul: 'Bonus Produk Digital Siap Jual',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&quality=90&format=webp',
     video: '',
-    videos: [],
+    videos: [
+     {
+        judul: '',
+        url: '',
+     },
+      ],
     tools: '',
     prompt: '',
     prompts: [
       {
         judul: '',
         isi: '',
+        url: '',
       },
     ],
     panduan: [
@@ -64,8 +70,9 @@ const data = [
         url: 'https://drive.google.com/drive/folders/1fT-F0iYTiVqN7qC3khdVwHHkYrQ-wGxS',
       },
     ],
-    materi: '',
-  }
-  ];
+    materi: `
+`,
+  },
+];
 
-  export default data;
+export default data;
