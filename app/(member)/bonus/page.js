@@ -4,8 +4,8 @@ import { getItems } from '@/lib/konten.js';
 export const dynamic = 'force-dynamic';
 
 export default async function BonusPage() {
-  // Ambil data bonus dari folder b1
-  const items = await getItems('bonus/b1');
+  // Tetap gunakan sumber data bonus yang lama
+  const items = await getItems('bonus');
 
   return (
     <main className="mx-auto w-full max-w-5xl text-white">
@@ -60,7 +60,6 @@ export default async function BonusPage() {
                         href={p.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`Klik untuk Akses Bonus: ${p.judul}`}
                         className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-4 transition hover:border-purple-400/40 hover:bg-purple-500/[0.08] sm:px-5"
                       >
                         <div className="flex min-w-0 items-start gap-3">
@@ -70,7 +69,7 @@ export default async function BonusPage() {
                             {i + 1}
                           </span>
 
-                          {/* Judul dan Akses */}
+                          {/* Judul Bonus */}
                           <div className="min-w-0">
                             <p className="break-words text-sm font-semibold leading-6 text-[#D8B7F5] transition group-hover:text-white sm:text-base">
                               {p.judul || `Bonus ${i + 1}`}
@@ -82,7 +81,7 @@ export default async function BonusPage() {
                           </div>
                         </div>
 
-                        {/* Ikon Link */}
+                        {/* Ikon Akses */}
                         <span
                           className="shrink-0 text-lg text-purple-300 transition group-hover:translate-x-1 group-hover:text-white"
                           aria-hidden="true"
@@ -102,4 +101,5 @@ export default async function BonusPage() {
 
     </main>
   );
-}
+    }
+                          
