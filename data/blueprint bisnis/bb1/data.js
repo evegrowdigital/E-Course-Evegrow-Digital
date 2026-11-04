@@ -1,4 +1,4 @@
-// data/blueprint bisnis/bp1/data.js
+// data/blueprint bisnis/bb1/data.js
 
 const data= [
   {
