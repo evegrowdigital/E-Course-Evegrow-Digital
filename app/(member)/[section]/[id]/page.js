@@ -1,12 +1,20 @@
-
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import menu from '@/data/menu';
+import { findSection } from '@/lib/menu';
 import { getItem, getItems } from '@/lib/konten';
 import { getYouTubeId } from '@/lib/youtube';
 
-function cariSection(slug) {
-  return menu.find((m) => m.slug === slug && m.folder);
+const cariSection = findSection;
+
+// materi bisa berupa teks, atau daftar [{ judul, isi }]
+function bacaMateri(materi) {
+  if (typeof materi === 'string') return materi;
+  if (Array.isArray(materi)) {
+    return materi
+      .map((m) => [m?.judul ? `**${m.judul}**` : '', m?.isi || ''].filter(Boolean).join('\n'))
+      .join('\n\n');
+  }
+  return '';
 }
 
 export function generateMetadata({ params }) {
@@ -32,7 +40,7 @@ export default function DetailPage({ params }) {
 
   const videoId = getYouTubeId(materi.video);
 
-  const teks = (materi.materi || '')
+  const teks = bacaMateri(materi.materi)
     .split('\n')
     .map((l) => l.trim())
     .join('\n')
@@ -181,4 +189,3 @@ export default function DetailPage({ params }) {
     </article>
   );
                 }
-          
