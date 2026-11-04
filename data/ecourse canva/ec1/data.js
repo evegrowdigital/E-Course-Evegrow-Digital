@@ -1,4 +1,4 @@
-// data/produkdigital/M10/data.js
+// data/ecoursecanva/M10/data.js
 
 const data = [
 {
