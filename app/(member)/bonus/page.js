@@ -67,7 +67,7 @@ export default async function BonusPage({ searchParams }) {
               >
                 {/* Nomor dan Judul */}
                 <div className="flex min-w-0 items-center gap-4">
-                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xl font-bold text-white shadow-lg">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xl font-bold text-white shadow-lg">
                     {i + 1}
                   </span>
 
