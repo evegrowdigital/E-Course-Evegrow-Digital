@@ -3,7 +3,7 @@
 const data = [
   {
     judul: '1. Pondasi Bisnis Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372077376_9700366.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372077376_9700366.png?width=630&quality=90&format=webp',
     video: 'https://youtu.be/idp22MnAq_k?si=YH86tGUgVF_b1wgN',
     tools: '',
     prompt: '',
@@ -46,8 +46,13 @@ Semakin jelas siapa yang dibantu, semakin mudah menentukan isi produk. Produk ha
 4. Evaluasi apakah produk yang kamu miliki benar-benar menjawab kebutuhan tersebut.
 5. Catat tiga hal yang bisa ditingkatkan agar produk memiliki nilai lebih dibandingkan kompetitor.
 `,
-  }
-    ],
+  },
+
+  {
+    judul: '2. GANTI DENGAN JUDUL MATERI 2',
+    cover: '',
+    video: '',
+    videos: [],
     tools: '',
     prompt: '',
     panduan: [
@@ -910,7 +915,7 @@ Pesan Moral: Selalu menolong teman yang membutuhkan.
 
   {
     judul: '4. Strategi Promosi di Media Sosial',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372305147_9726151.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372305147_9726151.png?width=630&quality=90&format=webp',
     video: '',
     videos: [],
     tools: 'https://gemini.google.com/share/5d62dac9fcaf?skid=b2b232ba-23ad-4ee1-aa14-879f11d74181',
@@ -946,7 +951,7 @@ Ada beberapa strategi promosi yang bisa kalian lakukan. Cara yang menurutku pali
 
   {
     judul: '5. Strategi Bikin Konten',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&quality=90&format=webp',
     video: 'https://youtu.be/oglZM0q05KQ',
     videos: [],
     tools: 'https://ai-content-creator-tan.vercel.app/',
@@ -1015,7 +1020,7 @@ Aku sarankan, 1 hari harus ada minimal 1 Konten. Lalu konsisten selama 3 bulan. 
 
   {
     judul: '6. Strategi Live di TikTok',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372437962_2741255.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372437962_2741255.png?width=630&quality=90&format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1049,7 +1054,7 @@ Kamu juga bisa memberikan voucher atau penawaran khusus, misalnya saat anniversa
 
   {
     judul: '7. Strategi Keunikan Produk',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372473958_8266454.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372473958_8266454.png?width=630&quality=90&format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1091,7 +1096,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
 
   {
     judul: '8. Bonus Template',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372514471_4580033.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372514471_4580033.png?width=630&quality=90&format=webp',
     video: '',
     videos: [],
     tools: '',
@@ -1121,7 +1126,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
 
   {
     judul: '9. Bonus Produk Digital Siap Jual',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&quality=90&format=webp',
     video: '',
     videos: [],
     tools: '',
