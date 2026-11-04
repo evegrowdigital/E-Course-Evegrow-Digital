@@ -1,4 +1,4 @@
-// data/kumpulan prompt/kp1/data.js
+// data/kumpulan prompt/kp2/data.js
 
 const data= [
   {
