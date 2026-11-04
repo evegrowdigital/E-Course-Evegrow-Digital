@@ -1,4 +1,4 @@
-// data/produkdigital/data.js
+// data/materi/data.js
 
 const data = [
   {
