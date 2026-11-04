@@ -71,11 +71,6 @@ export default async function TutorialModeVideoPage() {
                     </div>
                   )}
 
-                  {/* Ikon Buka */}
-                  <span className="absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/40 text-base text-white backdrop-blur-md transition group-hover:bg-purple-600 sm:bottom-3 sm:right-3 sm:h-9 sm:w-9">
-                    ↗
-                  </span>
-
                 </div>
 
                 {/* Judul Ringkas */}
