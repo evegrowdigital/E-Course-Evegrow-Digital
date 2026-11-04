@@ -1,80 +1,105 @@
 
-import Link from 'next/link';
 import { getItems } from '@/lib/konten.js';
 
 export const dynamic = 'force-dynamic';
 
 export default async function BonusPage() {
-  const items = await getItems('bonus');
+  // Ambil data bonus dari folder b1
+  const items = await getItems('bonus/b1');
 
   return (
-    <main className="mx-auto w-full max-w-4xl text-white">
+    <main className="mx-auto w-full max-w-5xl text-white">
+
       {/* Header */}
-      <div className="mb-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-400">
-          Evegrow Digital
+      <header className="mb-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B875F5]">
+          Evegrow Digital Learning
         </p>
 
-        <h1 className="mt-2 text-2xl font-bold sm:text-3xl">
+        <h1 className="mt-3 break-words text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl">
           Bonus Eksklusif
         </h1>
 
-        <p className="mt-2 text-sm text-purple-200/60">
-          Akses semua bonus dan materi tambahan yang tersedia.
-        </p>
-      </div>
+        <div className="mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
+      </header>
 
-      {/* Daftar Bonus - Satu Kolom */}
+      {/* Daftar Bonus */}
       {items.length === 0 ? (
-        <div className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-6 text-center">
-          <p className="text-sm text-purple-200/60">
-            Belum ada bonus tersedia.
-          </p>
-        </div>
+        <p className="text-sm text-purple-200/60">
+          Belum ada bonus tersedia.
+        </p>
       ) : (
-        <div className="flex flex-col gap-5">
-          {items.map((item) => (
-            <article
-              key={item.id}
-              className="overflow-hidden rounded-2xl border border-purple-400/20 bg-[#17101F] shadow-lg transition hover:border-purple-400/40"
-            >
-              {/* Cover */}
-              {item.cover && (
-                <div className="overflow-hidden bg-black/20">
-                  <img
-                    src={item.cover}
-                    alt={item.judul || 'Bonus'}
-                    className="block h-auto w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+        <div className="flex flex-col gap-7">
+          {items.map((item, index) => {
+            const bonus = Array.isArray(item.panduan)
+              ? item.panduan.filter(
+                  (p) => p && String(p.url || '').trim() !== ''
+                )
+              : [];
 
-              {/* Konten */}
-              <div className="p-5 sm:p-6">
-                <h2 className="text-lg font-bold leading-snug text-white">
-                  {item.judul}
+            return (
+              <section key={item.id}>
+
+                {/* Judul Bonus */}
+                <h2 className="mb-5 flex items-start gap-4 text-lg font-bold leading-snug text-white sm:text-xl">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-lg font-bold text-white shadow-lg">
+                    {index + 1}
+                  </span>
+
+                  <span className="pt-2">
+                    {item.judul}
+                  </span>
                 </h2>
 
-                {item.deskripsi && (
-                  <p className="mt-2 text-sm leading-6 text-purple-200/70">
-                    {item.deskripsi}
-                  </p>
+                {/* Daftar Akses Bonus */}
+                {bonus.length > 0 && (
+                  <div className="flex flex-col gap-3">
+                    {bonus.map((p, i) => (
+                      <a
+                        key={i}
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Klik untuk Akses Bonus: ${p.judul}`}
+                        className="group flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-4 transition hover:border-purple-400/40 hover:bg-purple-500/[0.08] sm:px-5"
+                      >
+                        <div className="flex min-w-0 items-start gap-3">
+
+                          {/* Nomor */}
+                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xs font-bold text-white">
+                            {i + 1}
+                          </span>
+
+                          {/* Judul dan Akses */}
+                          <div className="min-w-0">
+                            <p className="break-words text-sm font-semibold leading-6 text-[#D8B7F5] transition group-hover:text-white sm:text-base">
+                              {p.judul || `Bonus ${i + 1}`}
+                            </p>
+
+                            <p className="mt-1 text-xs text-purple-200/50">
+                              Klik untuk Akses Bonus
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Ikon Link */}
+                        <span
+                          className="shrink-0 text-lg text-purple-300 transition group-hover:translate-x-1 group-hover:text-white"
+                          aria-hidden="true"
+                        >
+                          ↗
+                        </span>
+                      </a>
+                    ))}
+                  </div>
                 )}
 
-                {/* Tombol Detail */}
-                <Link
-                  href={`/bonus/${item.id}`}
-                  className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto"
-                >
-                  Lihat Bonus
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </article>
-          ))}
+              </section>
+            );
+          })}
         </div>
       )}
+
     </main>
   );
 }
