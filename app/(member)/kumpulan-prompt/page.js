@@ -1,4 +1,5 @@
 import { getItems } from '@/lib/konten.js';
+import CopyPrompt from './CopyPrompt';
 
 export const dynamic = 'force-dynamic';
 
@@ -45,7 +46,7 @@ export default async function KumpulanPromptPage() {
                   </h2>
 
                   {item.deskripsi && (
-                    <p className="mt-1 line-clamp-2 break-words text-xs leading-5 text-purple-200/50">
+                    <p className="mt-1 break-words text-xs leading-5 text-purple-200/50">
                       {item.deskripsi}
                     </p>
                   )}
@@ -62,13 +63,7 @@ export default async function KumpulanPromptPage() {
 
               {/* Isi Prompt */}
               <div className="border-t border-white/[0.06] px-4 py-4 sm:px-5">
-                <pre className="whitespace-pre-wrap break-words rounded-xl bg-black/20 p-4 text-xs leading-6 text-purple-100/80 sm:text-sm">
-                  {item.prompt || 'Isi prompt belum tersedia.'}
-                </pre>
-
-                <p className="mt-3 text-xs text-purple-200/40">
-                  Buka prompt untuk membaca dan menyalin isinya.
-                </p>
+                <CopyPrompt prompt={item.prompt || ''} />
               </div>
             </details>
           ))}
