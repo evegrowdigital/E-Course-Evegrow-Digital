@@ -2,7 +2,7 @@
 
 const data = [
 {
-    judul: '15. Game Interaktif by Canva Code, Claude, Gemini, Chatgpt',
+    judul: 'Game Interaktif by Canva Code, Claude, Gemini',
     cover: '',
     video: 'https://youtu.be/XoCHY1_snbs',
     videos: [
