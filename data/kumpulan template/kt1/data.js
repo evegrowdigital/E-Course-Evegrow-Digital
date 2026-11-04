@@ -1,9 +1,10 @@
-// data/bonus/b1/data.js
+// data/kumpulan template/kt1/data.js
 
 const data= [
   {
-    judul: 'Bonus Produk Digital Siap Jual',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&quality=90&format=webp',
+    judul: '100 Dongeng Bersuara',
+    url: 'https://drive.google.com/file/d/12axPmRogITTFAk63ZsvGL35zUbBCHa9J/view?usp=drivesdk',
+    cover: '',
     video: '',
     videos: [
      {
@@ -12,7 +13,8 @@ const data= [
      },
       ],
     tools: '',
-    prompt: '',
+    prompt: `
+    `,
     prompts: [
       {
         judul: '',
@@ -21,7 +23,6 @@ const data= [
       },
     ],
     panduan: [
-      
     ],
     materi: `
 `,
