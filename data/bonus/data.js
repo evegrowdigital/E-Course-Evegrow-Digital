@@ -1,6 +1,6 @@
-//data/bonus/data.js
+// data/bonus/data.js
 
-cost data: [
+const data = [
   {
     judul: 'Bonus Produk Digital Siap Jual',
     cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372585844_5257648.png?width=630&quality=90&format=webp',
@@ -66,7 +66,6 @@ cost data: [
     ],
     materi: '',
   }
-  `,
   ];
 
   export default data;
