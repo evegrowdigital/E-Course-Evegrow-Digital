@@ -232,11 +232,7 @@ export default async function TutorialModeVideoDetailPage({ params }) {
       {/* Prompt */}
       {isPrompt && (
         <section className="mt-8 space-y-4">
-
-          <h2 className="text-xl font-bold text-white sm:text-2xl">
-            Kumpulan Prompt
-          </h2>
-
+        
           {prompts.map((prompt, index) => (
             <PromptItem
               key={`${prompt.judul}-${index}`}
