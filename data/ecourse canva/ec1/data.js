@@ -1,8 +1,8 @@
-// data/ecoursecanva/M10/data.js
+// data/ecoursecanva/ec1/data.js
 
 const data = [
 {
-    judul: '10. Tutorial Worksheet Mewarnai',
+    judul: 'Tutorial Worksheet Mewarnai',
     cover: '',
     video: '',
     videos: [
