@@ -4,11 +4,11 @@ const data = [
 {
     judul: 'Tutorial Worksheet Mewarnai',
     cover: '',
-    video: '',
+    video: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk',
     videos: [
       {
-        judul: 'Tutorial Worksheet Mewarnai by Canva',
-        url: 'https://youtu.be/FRdMGzPgsYU?si=qftdFl5FxoGwj4rk',
+        judul: '',
+        url: '',
       },
     ],
     tools: '',
