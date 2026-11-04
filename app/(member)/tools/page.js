@@ -134,10 +134,10 @@ export default async function ToolsPage() {
                       href={item.tools}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[60px] min-w-[240px] items-center justify-center gap-3 rounded-2xl border border-purple-300/40 bg-gradient-to-r from-[#A855F7] to-[#9333EA] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_-8px_rgba(168,85,247,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 active:scale-[0.98] sm:min-w-[260px] sm:text-lg"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#A855F7]/50 bg-gradient-to-r from-[#A855F7]/20 to-[#9333EA]/20 px-6 py-3.5 text-base font-semibold text-[#D8B7F5] transition hover:border-purple-400 hover:bg-purple-500/20 hover:text-white"
                     >
                       Akses Tools
-                      <span aria-hidden="true" className="text-lg">
+                      <span aria-hidden="true">
                         ↗
                       </span>
                     </a>
@@ -152,5 +152,4 @@ export default async function ToolsPage() {
 
     </main>
   );
-                  }
-                  
+                                }
