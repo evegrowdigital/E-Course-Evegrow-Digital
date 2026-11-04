@@ -1109,17 +1109,7 @@ Keunikan inilah yang membuat produk lebih mudah diingat.
     ],
     panduan: [
       {
-        judul: '100 Dongeng Bersuara',
-        url: 'https://drive.google.com/file/d/12axPmRogITTFAk63ZsvGL35zUbBCHa9J/view?usp=drivesdk',
-      },
-      {
-        judul: 'Worksheet Activity Anak 10 Tema',
-        url: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ',
-      },
-      {
-        judul: 'Worksheet Buku Mewarnai 10 Tema',
-        url: 'https://drive.google.com/drive/folders/1uB8B-9KN7MrGwgv9sIcNTSpDPpbWxIaJ',
-      },
+      
     ],
     materi: '',
   },
