@@ -72,7 +72,7 @@ export default async function ToolsPage() {
                 <h2 className="mb-3 flex items-center gap-4 text-base font-bold text-white sm:text-lg">
 
                   {/* Bulatan numbering diperkecil */}
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-base font-bold text-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-base font-bold text-white">
                     {index + 1}
                   </span>
 
