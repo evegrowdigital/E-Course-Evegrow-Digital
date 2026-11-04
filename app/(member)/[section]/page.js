@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation';
-import menu from '@/data/menu';
+import { findSection } from '@/lib/menu';
 import { getItems } from '@/lib/konten';
 import MateriCard from '@/components/MateriCard';
 
-function cariSection(slug) {
-  return menu.find((m) => m.slug === slug && m.folder);
-}
+const cariSection = findSection;
 
 export function generateMetadata({ params }) {
   const s = cariSection(params.section);
@@ -25,7 +23,8 @@ export default function SectionPage({ params }) {
 
       {daftar.length === 0 ? (
         <p className="mt-8 rounded-2xl bg-white p-6 text-center text-sm text-brand-800/70">
-          Belum ada isi. Tambahkan file {section.prefix}1.js di folder data/{section.folder}.
+          Belum ada isi. Tambahkan folder item (contoh: {section.prefix}1) berisi data.js di
+          folder data/{section.folder}.
         </p>
       ) : (
         <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-4">
@@ -36,4 +35,4 @@ export default function SectionPage({ params }) {
       )}
     </>
   );
-        }
+}
