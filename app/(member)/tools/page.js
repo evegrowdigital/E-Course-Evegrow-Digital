@@ -68,7 +68,7 @@ export default async function ToolsPage() {
             return (
               <article key={item.id}>
 
-                {/* Nomor dan Judul */}
+                {/* Nomor dan Judul Tools */}
                 <h2 className="mb-3 flex items-center gap-4 text-base font-bold text-white sm:text-lg">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-base font-bold text-white shadow-lg">
                     {index + 1}
@@ -129,15 +129,17 @@ export default async function ToolsPage() {
 
                 {/* Tombol Akses Tools */}
                 {item.tools && (
-                  <div className="mt-4">
+                  <div className="mt-5">
                     <a
                       href={item.tools}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#A855F7]/40 bg-[#A855F7]/10 px-6 py-3 text-sm font-semibold text-[#D8B7F5] transition hover:border-[#C084FC] hover:bg-[#A855F7]/20 hover:text-white"
+                      className="inline-flex min-h-[60px] min-w-[240px] items-center justify-center gap-3 rounded-2xl border border-purple-300/40 bg-gradient-to-r from-[#A855F7] to-[#9333EA] px-8 py-4 text-base font-bold text-white shadow-[0_8px_24px_-8px_rgba(168,85,247,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 active:scale-[0.98] sm:min-w-[260px] sm:text-lg"
                     >
                       Akses Tools
-                      <span aria-hidden="true">↗</span>
+                      <span aria-hidden="true" className="text-lg">
+                        ↗
+                      </span>
                     </a>
                   </div>
                 )}
@@ -150,4 +152,5 @@ export default async function ToolsPage() {
 
     </main>
   );
-                          }
+                  }
+                  
