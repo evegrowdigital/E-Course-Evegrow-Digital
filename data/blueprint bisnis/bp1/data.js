@@ -1,9 +1,9 @@
-// data/kumpulan prompt/kp1/data.js
+// data/blueprint bisnis/bp1/data.js
 
 const data= [
   {
-    judul: 'Game Pertualangan',
-    cover: '',
+    judul: 'Strategi Promosi Di Media Sosial',
+    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&quality=90&format=webp',
     video: '',
     videos: [
      {
