@@ -1,4 +1,4 @@
-const ctx = require.context('../../../data', true, /\.js$/);
+const items = await getItems('tutorial mode video');
 
 export const dynamic = 'force-dynamic';
 
