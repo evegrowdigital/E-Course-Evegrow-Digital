@@ -17,6 +17,29 @@ function bacaMateri(materi) {
   return '';
 }
 
+// Gabungkan `video` (satu) dan `videos` (daftar), buang yang kosong
+function daftarVideo(item) {
+  const hasil = [];
+  const tambah = (judul, url) => {
+    const id = getYouTubeId(url);
+    if (id) hasil.push({ judul: judul || '', id });
+  };
+  if (item.video) tambah('', item.video);
+  if (Array.isArray(item.videos)) {
+    item.videos.forEach((v) => {
+      if (typeof v === 'string') tambah('', v);
+      else if (v) tambah(v.judul, v.url || v.video);
+    });
+  }
+  return hasil;
+}
+
+// Buang entri yang isinya kosong semua
+function bersihkan(list, kunci) {
+  if (!Array.isArray(list)) return [];
+  return list.filter((x) => x && kunci.some((k) => String(x[k] || '').trim() !== ''));
+}
+
 export function generateMetadata({ params }) {
   const s = cariSection(params.section);
   const item = s ? getItem(s.folder, params.id) : null;
@@ -38,13 +61,20 @@ export default function DetailPage({ params }) {
   const sebelumnya = semua[index - 1];
   const berikutnya = semua[index + 1];
 
-  const videoId = getYouTubeId(materi.video);
+  const videos = daftarVideo(materi);
+  const prompts = bersihkan(materi.prompts, ['isi', 'url']);
+  const panduan = bersihkan(materi.panduan, ['url']);
 
   const teks = bacaMateri(materi.materi)
     .split('\n')
     .map((l) => l.trim())
     .join('\n')
     .trim();
+
+  const kartu =
+    'overflow-hidden rounded-2xl border border-white/10 bg-[#17101F] shadow-[0_12px_32px_-18px_rgba(0,0,0,0.65)] sm:rounded-3xl';
+  const kepalaKartu =
+    'border-b border-white/10 bg-gradient-to-r from-[#24132F] to-[#19101F] px-5 py-4 sm:px-7';
 
   return (
     <article className="mx-auto w-full max-w-5xl">
@@ -82,25 +112,47 @@ export default function DetailPage({ params }) {
         <div className="mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
       </header>
 
-      {/* Video */}
-      <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#100A16] shadow-[0_16px_40px_-18px_rgba(0,0,0,0.7)] sm:rounded-3xl">
-        <div className="relative aspect-video">
-          {videoId ? (
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`}
-              title={materi.judul}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          ) : (
+      {/* Video (bisa lebih dari satu) */}
+      {videos.length > 0 ? (
+        <div className="mt-6 space-y-6">
+          {videos.map((v, i) => (
+            <section key={v.id + i}>
+              {(v.judul || videos.length > 1) && (
+                <h2 className="mb-3 flex items-center gap-3 text-base font-bold text-white sm:text-lg">
+                  {videos.length > 1 && (
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xs font-bold text-white">
+                      {i + 1}
+                    </span>
+                  )}
+                  <span className="min-w-0 break-words">{v.judul || `Video ${i + 1}`}</span>
+                </h2>
+              )}
+
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#100A16] shadow-[0_16px_40px_-18px_rgba(0,0,0,0.7)] sm:rounded-3xl">
+                <div className="relative aspect-video">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${v.id}?rel=0&modestbranding=1&playsinline=1`}
+                    title={v.judul || materi.judul}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </div>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#100A16] shadow-[0_16px_40px_-18px_rgba(0,0,0,0.7)] sm:rounded-3xl">
+          <div className="relative aspect-video">
             <div className="absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-white/60">
               Video belum tersedia.
             </div>
-          )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Tombol tools dan prompt */}
       {(materi.tools || materi.prompt) && (
@@ -131,10 +183,75 @@ export default function DetailPage({ params }) {
         </div>
       )}
 
+      {/* Prompt (daftar) */}
+      {prompts.length > 0 && (
+        <section className={`mt-6 ${kartu}`}>
+          <div className={kepalaKartu}>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B875F5]">
+              Prompt
+            </p>
+            <h2 className="mt-1 text-lg font-bold text-white sm:text-xl">Kumpulan Prompt</h2>
+          </div>
+
+          <div className="space-y-5 px-5 py-5 sm:px-7 sm:py-7">
+            {prompts.map((p, i) => (
+              <div key={i}>
+                {p.judul && <h3 className="mb-2 text-sm font-semibold text-white sm:text-base">{p.judul}</h3>}
+
+                {p.isi && (
+                  <div className="select-all whitespace-pre-wrap break-words rounded-xl border border-white/10 bg-black/30 p-4 text-[13px] leading-6 text-[#E7DDED] sm:text-sm">
+                    {p.isi.trim()}
+                  </div>
+                )}
+
+                {p.url && (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 rounded-xl border border-[#A855F7]/40 bg-[#A855F7]/10 px-4 py-2 text-sm font-semibold text-[#D8B7F5] transition hover:border-[#C084FC] hover:bg-[#A855F7]/20 hover:text-white"
+                  >
+                    Akses Prompt
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Panduan (daftar link) */}
+      {panduan.length > 0 && (
+        <section className={`mt-6 ${kartu}`}>
+          <div className={kepalaKartu}>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B875F5]">
+              Panduan
+            </p>
+            <h2 className="mt-1 text-lg font-bold text-white sm:text-xl">Panduan &amp; Template</h2>
+          </div>
+
+          <div className="flex flex-col gap-3 px-5 py-5 sm:px-7 sm:py-7">
+            {panduan.map((g, i) => (
+              <a
+                key={i}
+                href={g.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-[#D8B7F5] transition hover:border-[#A855F7]/40 hover:bg-[#A855F7]/10 hover:text-white"
+              >
+                <span className="min-w-0 break-words">{g.judul || 'Buka panduan'}</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Isi materi */}
       {teks && (
-        <section className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-[#17101F] shadow-[0_12px_32px_-18px_rgba(0,0,0,0.65)] sm:rounded-3xl">
-          <div className="border-b border-white/10 bg-gradient-to-r from-[#24132F] to-[#19101F] px-5 py-4 sm:px-7">
+        <section className={`mt-6 ${kartu}`}>
+          <div className={kepalaKartu}>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B875F5]">
               Learning Material
             </p>
@@ -188,4 +305,4 @@ export default function DetailPage({ params }) {
       </nav>
     </article>
   );
-                }
+}
