@@ -14,6 +14,15 @@ import {
 
 export const dynamic = 'force-dynamic';
 
+// Cek apakah panduan benar-benar punya isi (bukan kosong/spasi saja).
+function punyaIsi(isi) {
+  if (!isi) return false;
+  if (typeof isi === 'string') return isi.trim().length > 0;
+  if (Array.isArray(isi)) return isi.some(punyaIsi);
+  if (typeof isi === 'object') return Object.values(isi).some(punyaIsi);
+  return false;
+}
+
 // Menampilkan isi panduan.
 // Mendukung teks, array, dan objek materi.
 function TampilkanIsi({ isi }) {
@@ -113,25 +122,21 @@ export default async function TutorialModeVideoDetailPage({ params }) {
   }
 
   const videos = daftarVideo(item);
-  const links = daftarLink(item);
+
+  // Hanya link yang punya URL valid
+  const links = daftarLink(item).filter(
+    (link) =>
+      link &&
+      typeof link.url === 'string' &&
+      link.url.trim() !== ''
+  );
+
   const panduan = daftarPanduan(item);
   const prompts = daftarPrompt(item);
 
-  const tipe = String(item.tipe || '').toLowerCase();
-
-  const isVideo =
-    tipe.includes('video') || videos.length > 0;
-
-  const isPanduan =
-    tipe.includes('panduan') ||
-    tipe.includes('materi') ||
-    Boolean(panduan);
-
-  const isTools =
-    tipe.includes('tools') ||
-    tipe.includes('tool') ||
-    links.length > 0;
-
+  const isVideo = videos.length > 0;
+  const isPanduan = punyaIsi(panduan);
+  const isTools = links.length > 0;
   const isPrompt = prompts.length > 0;
 
   return (
@@ -168,7 +173,7 @@ export default async function TutorialModeVideoDetailPage({ params }) {
       </header>
 
       {/* Video */}
-      {isVideo && videos.length > 0 && (
+      {isVideo && (
         <section className="space-y-6">
 
           {videos.map((video, index) => (
@@ -207,16 +212,14 @@ export default async function TutorialModeVideoDetailPage({ params }) {
         </section>
       )}
 
-      {/* Panduan Materi */}
-      {isPanduan && panduan && (
+      {/* Panduan Materi: hanya muncul jika ada isi */}
+      {isPanduan && (
         <section className="mt-8">
 
-          {/* Judul tanpa kotak besar */}
           <h2 className="mb-4 text-xl font-bold text-white sm:text-2xl">
             Panduan Materi
           </h2>
 
-          {/* Isi panduan langsung */}
           <div className="rounded-xl border border-purple-300/20 bg-[#17101F] p-4 sm:p-5">
 
             <TampilkanIsi isi={panduan} />
@@ -245,8 +248,8 @@ export default async function TutorialModeVideoDetailPage({ params }) {
         </section>
       )}
 
-      {/* Tools */}
-      {isTools && links.length > 0 && (
+      {/* Tools: hanya muncul jika ada link di data */}
+      {isTools && (
         <section className="mt-8 space-y-4">
 
           {links.map((link, index) => (
