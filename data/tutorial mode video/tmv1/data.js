@@ -2,13 +2,13 @@
 
 const data = [
 {
-    judul: '',
+    judul: 'Tutorial Storybook by Generator',
     cover: '',
-    video: '',
+    video: 'https://youtu.be/o6-KnR9ejnU',
     videos: [
       {
-        judul: 'Tutorial Storybook by Generator',
-        url: 'https://youtu.be/o6-KnR9ejnU',
+        judul: '',
+        url: '',
       }
     ],
     tools: '',
