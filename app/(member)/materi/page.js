@@ -16,7 +16,7 @@ export default async function TutorialModeVideoPage() {
         </p>
 
         <h1 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl">
-          Tutorial Mode Video
+          Materi Pembelajaran
         </h1>
 
         <p className="mt-2 text-sm text-purple-100">
@@ -30,7 +30,7 @@ export default async function TutorialModeVideoPage() {
       {items.length === 0 ? (
         <div className="rounded-xl border border-purple-400/20 bg-white/5 p-6 text-center">
           <p className="text-sm text-purple-100">
-            Belum ada materi Tutorial Mode Video tersedia.
+            Belum ada materi Materi tersedia.
           </p>
         </div>
       ) : (
@@ -44,7 +44,7 @@ export default async function TutorialModeVideoPage() {
               '';
 
             const href =
-              `/tutorial-mode-video/${encodeURIComponent(item.id ?? index)}`;
+              `/materi/${encodeURIComponent(item.id ?? index)}`;
 
             return (
               <Link
