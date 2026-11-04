@@ -464,3 +464,7 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+.footer { border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.footer, .footer p { color: #d8b7f5; }
+.footer .strong { color: #f0abfc; }
