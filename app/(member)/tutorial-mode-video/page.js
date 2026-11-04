@@ -54,10 +54,10 @@ export default async function TutorialModeVideoPage() {
         <div className="mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
       </header>
 
-      {/* Daftar Materi Ecourse Canva */}
+      {/* Daftar Materi */}
       {items.length === 0 ? (
         <p className="text-sm text-purple-200/60">
-          Belum ada materi Ecourse Canva tersedia.
+          Belum ada materi Tutorial Mode Video tersedia.
         </p>
       ) : (
         <div className="flex flex-col gap-8">
@@ -67,10 +67,10 @@ export default async function TutorialModeVideoPage() {
             return (
               <article key={item.id}>
 
-                {/* Nomor dan Judul */}
+                {/* Nomor dan Judul Materi */}
                 <h2 className="mb-3 flex items-center gap-4 text-base font-bold text-white sm:text-lg">
 
-                  {/* Bulatan numbering */}
+                  {/* Numbering hanya untuk satu materi */}
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-base font-bold text-white">
                     {index + 1}
                   </span>
@@ -93,18 +93,10 @@ export default async function TutorialModeVideoPage() {
                     {videos.map((video, i) => (
                       <section key={video.id + i}>
 
-                        {/* Judul Video */}
+                        {/* Judul Video Tanpa Numbering */}
                         {(video.judul || videos.length > 1) && (
-                          <h3 className="mb-3 flex items-center gap-3 text-sm font-semibold text-white sm:text-base">
-                            {videos.length > 1 && (
-                              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#C026D3] to-[#8B5CF6] text-xs font-bold text-white">
-                                {i + 1}
-                              </span>
-                            )}
-
-                            <span className="min-w-0 break-words">
-                              {video.judul || `Video ${i + 1}`}
-                            </span>
+                          <h3 className="mb-3 text-sm font-semibold text-white sm:text-base">
+                            {video.judul || `Video ${i + 1}`}
                           </h3>
                         )}
 
@@ -136,4 +128,4 @@ export default async function TutorialModeVideoPage() {
 
     </main>
   );
-                                }
+}
