@@ -1,0 +1,69 @@
+// data/tools/t1/data.js
+
+const data = [
+   {
+     judul: 'Storybook Generator',
+     cover: '',
+     video: 'https://youtu.be/o6-KnR9ejnU',
+     tools: 'https://share.gemini.google/oshcXbaxcY3k',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+   {
+     judul: 'Edu Kuis Generator',
+     cover: '',
+     video: 'https://youtu.be/l6uqTlETjn0',
+     tools: 'https://evegrowgeneratoredukuis.netlify.app/',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: 'Media Ajar Generator',
+     cover: '',
+     video: '',
+     tools: 'https://mediaajargenerator.my.id',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: 'AI Content Creator',
+     cover: '',
+     video: '',
+     tools: 'https://ai-content-creator-tan.vercel.app/',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: 'GEM Copywriting Script',
+     cover: '',
+     video: 'https://youtu.be/yt-k5tH4DCA',
+     tools: 'https://gemini.google.com/gem/1L1dbFpOHKYHfUkOwlCYTU9k6cbDi57eS?usp=sharing',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: 'GEM Multishot Image',
+     cover: '',
+     video: 'https://youtu.be/tAWLPllcACc',
+     tools: 'https://gemini.google.com/gem/1SCNa9qr6wbBdwuF2Ec7HlZWrNZWq9E83?usp=sharing',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+  {
+     judul: 'AI IMAGE STUDIO',
+     cover: '',
+     video: 'https://youtu.be/aoK5fv-yj2w',
+     tools: 'https://gemini.google.com/share/73f0d92b7ca7?social_preview=false&skid=3973c760-2b11-41d5-aca5-cb1f8ef045eb',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
+];
+
+export default data;
