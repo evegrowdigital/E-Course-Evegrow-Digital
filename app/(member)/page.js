@@ -1,5 +1,4 @@
-
-import { getMember } from '@/lib/auth';
+import Image from 'next/image';
 import { getTotalMember } from '@/lib/members';
 import { getItems } from '@/lib/konten';
 import menu from '@/data/menu';
@@ -7,9 +6,7 @@ import MenuTile from '@/components/MenuTile';
 import MenuIcon from '@/components/MenuIcon';
 
 export default async function BerandaPage() {
-  const member = await getMember();
   const total = await getTotalMember();
-  const name = member?.nama || member?.email?.split('@')[0] || 'Member';
 
   // Menu dengan folder aktif otomatis jika sudah ada isinya
   const daftarMenu = menu.map((item) => ({
@@ -23,44 +20,31 @@ export default async function BerandaPage() {
 
   return (
     <>
-      {/* Judul Beranda */}
-      <h1 className="break-words text-2xl font-bold text-[#F5EAFB] sm:text-3xl">
-        Halo, {name}!
-      </h1>
-
-      {/* Kartu Sambutan */}
-      <div className="relative mt-4 overflow-hidden rounded-3xl border border-[#542264] bg-gradient-to-br from-[#2A1236] via-[#211329] to-[#160D1D] p-5 shadow-[0_12px_32px_-12px_rgba(208,0,245,0.22)] sm:p-6">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#D000F5]/10 blur-3xl"
+      {/* Gambar Beranda + Overlay Total Member */}
+      <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-[#542264] shadow-[0_12px_32px_-12px_rgba(208,0,245,0.22)]">
+        <Image
+          src="/beranda.jpg"
+          alt="E-course Mulai Penghasilan dengan Canva dan AI"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 768px"
+          className="object-cover"
         />
 
-        <p className="relative text-[15px] leading-relaxed text-[#D7C9E2] sm:text-base">
-          Terima kasih sudah mempercayakan proses belajar bersama Evegrow.digital. Semoga ini
-          menjadi peluang bagi teman-teman untuk upgrade skill dan membuka peluang penghasilan
-          dari rumah. Aamiin 🤲
-        </p>
-      </div>
+        {/* Overlay Total Member (kiri bawah) */}
+        <div className="absolute bottom-[6%] left-[3%] flex items-center gap-2 rounded-2xl border border-[#702486] bg-[#1B1024]/80 p-2 shadow-[0_8px_20px_-8px_rgba(208,0,245,0.45)] backdrop-blur-md sm:gap-3 sm:p-3">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#75418A] bg-[#211329] text-[#E45AFF] sm:h-10 sm:w-10">
+            <MenuIcon name="users" className="h-4 w-4 sm:h-5 sm:w-5" />
+          </span>
 
-      {/* Kartu Total Member */}
-      <div className="relative mt-4 flex items-center gap-4 overflow-hidden rounded-3xl border border-[#702486] bg-gradient-to-br from-[#3A1749] via-[#291332] to-[#1B1024] p-5 shadow-[0_12px_30px_-10px_rgba(208,0,245,0.28)]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#D000F5]/15 blur-3xl"
-        />
-
-        <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#75418A] bg-[#211329] text-[#E45AFF] shadow-[0_5px_16px_-5px_rgba(208,0,245,0.3)]">
-          <MenuIcon name="users" className="h-6 w-6" />
-        </span>
-
-        <div className="relative">
-          <p className="text-sm font-semibold text-[#E7A0FF]">
-            Total Member
-          </p>
-
-          <p className="text-2xl font-bold leading-tight text-white sm:text-3xl">
-            {total.toLocaleString('id-ID')}
-          </p>
+          <div>
+            <p className="text-[10px] font-semibold leading-tight text-[#E7A0FF] sm:text-xs">
+              Total Member
+            </p>
+            <p className="text-base font-bold leading-tight text-white sm:text-xl">
+              {total.toLocaleString('id-ID')}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -77,4 +61,4 @@ export default async function BerandaPage() {
       </div>
     </>
   );
-        }
+}
