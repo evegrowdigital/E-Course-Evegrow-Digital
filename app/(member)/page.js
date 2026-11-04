@@ -32,7 +32,7 @@ export default async function BerandaPage() {
         />
 
         {/* Overlay Total Member */}
-        <div className="absolute left-[3%] top-[66%] flex h-[20%] w-[34%] items-center gap-2 rounded-xl bg-gradient-to-br from-[#C026D3] via-[#A21CAF] to-[#86198F] px-2 shadow-[0_6px_16px_-4px_rgba(162,28,175,0.7)] sm:gap-3 sm:rounded-2xl sm:px-4">
+        <div className="absolute left-[3.5%] top-[67%] flex h-[19%] w-[29%] items-center gap-2 rounded-xl bg-gradient-to-br from-[#C026D3] via-[#A21CAF] to-[#86198F] px-2 shadow-[0_6px_16px_-4px_rgba(162,28,175,0.7)] sm:gap-3 sm:rounded-2xl sm:px-4">
           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-white/90 text-[#A21CAF] sm:h-9 sm:w-9 sm:rounded-xl">
             <MenuIcon name="users" className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
           </span>
@@ -61,4 +61,4 @@ export default async function BerandaPage() {
       </div>
     </>
   );
-}
+                        }
