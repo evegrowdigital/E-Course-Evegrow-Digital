@@ -30,22 +30,21 @@ export default async function BerandaPage() {
           className="object-cover"
         />
 
-        {/* Overlay Total Member (area biru) */}
-        <div className="absolute left-[2.5%] top-[57%] flex h-[29%] w-[39%] items-center gap-2 rounded-xl bg-gradient-to-br from-[#F5B8FF] via-[#E45AFF] to-[#D000F5] px-2 shadow-[0_6px_18px_-4px_rgba(208,0,245,0.7)] sm:gap-3 sm:rounded-2xl sm:px-4">
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/90 text-[#B800D9] sm:h-10 sm:w-10 sm:rounded-xl">
-            <MenuIcon name="users" className="h-4 w-4 sm:h-6 sm:w-6" />
-          </span>
+       {/* Overlay Total Member */}
+       <div className="absolute left-[3%] top-[66%] flex h-[20%] w-[34%] items-center gap-2 rounded-xl bg-gradient-to-br from-[#C026D3] via-[#A21CAF] to-[#86198F] px-2 shadow-[0_6px_16px_-4px_rgba(162,28,175,0.7)] sm:gap-3 sm:rounded-2xl sm:px-4">
+         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-white/90 text-[#A21CAF] sm:h-9 sm:w-9 sm:rounded-xl">
+         <MenuIcon name="users" className="h-3.5 w-3.5 sm:h-5 sm:w-5" />
+       </span>
 
-          <div className="min-w-0">
-            <p className="truncate text-[10px] font-semibold leading-tight text-white/95 sm:text-sm">
-              Total Member
-            </p>
-            <p className="text-lg font-extrabold leading-none text-white sm:text-3xl">
-              {total.toLocaleString('id-ID')}
-            </p>
-          </div>
-        </div>
-      </div>
+      <div className="min-w-0">
+       <p className="truncate text-[9px] font-semibold leading-tight text-white sm:text-sm">
+          Total Member
+      </p>
+      <p className="text-base font-extrabold leading-none text-white sm:text-2xl">
+         {total.toLocaleString('id-ID')}
+      </p>
+     </div>
+   </div>
 
       {/* Petunjuk Menu */}
       <p className="mt-3 text-sm font-medium text-[#C5A8D5] sm:text-base">
