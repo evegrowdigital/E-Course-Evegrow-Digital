@@ -22,7 +22,7 @@ const data = [
   {
      judul: 'Media Ajar Generator',
      cover: '',
-     video: '',
+     video: 'https://youtu.be/XoCHY1_snbs',
      tools: 'https://mediaajargenerator.my.id',
      prompt: '',
      panduan: [],
@@ -31,7 +31,7 @@ const data = [
   {
      judul: 'AI Content Creator',
      cover: '',
-     video: '',
+     video: 'https://youtu.be/oglZM0q05KQ',
      tools: 'https://ai-content-creator-tan.vercel.app/',
      prompt: '',
      panduan: [],
