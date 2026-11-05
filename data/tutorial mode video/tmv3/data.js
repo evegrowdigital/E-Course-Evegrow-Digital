@@ -7,7 +7,7 @@ const data = [
     video: 'https://youtu.be/XoCHY1_snbs',
     videos: [
     ],
-    tools: '',
+    tools: 'https://www.mediaajargenerator.my.id/',
     prompt: '',
     panduan: '',
     materi: '',
