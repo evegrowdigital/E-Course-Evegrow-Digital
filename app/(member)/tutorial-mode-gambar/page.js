@@ -1,184 +1,126 @@
 import path from 'path';
-import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 
-// Membaca seluruh data.js dalam folder Tutorial Mode Gambar
+// Membaca data.js dari folder TMG1, TMG2, TMG3, dan seterusnya.
 const files = require.context(
   '@/data/tutorial mode gambar',
   true,
-  /data\.js$/
+  /^\.\/[Tt][Mm][Gg]\d+\/data\.js$/
 );
 
-// Menggabungkan seluruh data dari setiap folder
-const daftarTutorial = files
-  .keys()
-  .sort((a, b) => {
-    return a.localeCompare(b, undefined, {
-      numeric: true,
-      sensitivity: 'base',
-    });
+// Urutkan file berdasarkan nomor folder.
+const daftarFile = [...new Set(files.keys())].sort((a, b) =>
+  a.localeCompare(b, undefined, {
+    numeric: true,
+    sensitivity: 'base',
   })
-  .flatMap((file) => {
-    const data = files(file).default;
+);
 
-    return data.map((item, index) => ({
-      ...item,
-      id: `${file}-${index}`,
-      folder: path.basename(path.dirname(file)),
-    }));
-  });
+// Gabungkan seluruh data tutorial gambar.
+const semuaTutorial = daftarFile.flatMap((file) => {
+  const data = files(file).default;
+
+  if (!Array.isArray(data)) {
+    return [];
+  }
+
+  return data.map((item, index) => ({
+    ...item,
+    id: `${file}-${index}`,
+    folder: path.basename(path.dirname(file)),
+  }));
+});
+
+// Hilangkan data yang memiliki URL sama.
+const daftarTutorial = [
+  ...new Map(
+    semuaTutorial.map((item) => [
+      item.url || item.id,
+      item,
+    ])
+  ).values(),
+];
 
 export default function TutorialModeGambarPage() {
   const items = daftarTutorial;
 
   return (
-    <main className="mx-auto w-full max-w-[1600px] px-4 pb-12 text-white sm:px-6 lg:px-8">
-
+    <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* Header */}
-      <header className="mb-6 sm:mb-8">
-
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-300">
-          Evegrow Digital Learning
+      <header className="mb-8">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 sm:text-sm">
+          EVEGROW DIGITAL LEARNING
         </p>
 
-        <h1 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Tutorial Mode Gambar
         </h1>
 
-        <p className="mt-2 text-sm text-purple-100">
-          Pilih materi untuk mulai belajar.
+        <p className="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">
+          Pilih tutorial gambar untuk mulai belajar.
         </p>
 
-        <div className="mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
-
+        {/* Garis dekorasi */}
+        <div className="mt-8 h-1.5 w-48 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-500" />
       </header>
 
-      {/* Daftar Tutorial */}
-      {items.length === 0 ? (
+      {/* Grid Tutorial */}
+      {items.length > 0 ? (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          {items.map((item) => {
+            const url = item.url?.trim();
 
-        <div className="rounded-xl border border-purple-400/20 bg-white/5 p-6 text-center">
-
-          <p className="text-sm text-purple-100">
-            Belum ada Tutorial Mode Gambar tersedia.
-          </p>
-
-        </div>
-
-      ) : (
-
-        <div className="grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-4">
-
-          {items.map((item, index) => {
-
-            // Cover tutorial
-            const cover =
-              item.cover ||
-              item.thumbnail ||
-              item.gambar ||
-              '';
-
-            // Mengambil link dari data
-            const href =
-              item.panduan?.find((p) => p.url)?.url ||
-              item.url ||
-              item.link ||
-              item.video ||
-              '';
-
-            // Menentukan jenis link
-            const isExternal =
-              href.startsWith('http://') ||
-              href.startsWith('https://');
-
-            // Kartu tutorial
-            const card = (
-
-              <div className="group block min-w-0 overflow-hidden rounded-xl border border-purple-300/20 bg-[#17101F] shadow-[0_8px_24px_-14px_rgba(0,0,0,0.8)] transition duration-300 hover:border-purple-400/50 hover:shadow-[0_12px_30px_-12px_rgba(168,85,247,0.25)]">
-
-                {/* Cover 16:9 */}
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-[#7024A8] via-[#9837D9] to-[#B75AFF]">
-
-                  {cover ? (
-
-                    <img
-                      src={cover}
-                      alt={item.judul || 'Cover tutorial'}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                    />
-
-                  ) : (
-
-                    <div className="flex h-full w-full items-center justify-center">
-
-                      <span className="text-4xl font-bold text-white/30 sm:text-5xl">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-
-                    </div>
-
-                  )}
-
-                </div>
-
-                {/* Judul */}
-                <div className="flex min-h-[56px] items-center px-3 py-2.5 sm:min-h-[64px] sm:px-4">
-
-                  <h2 className="line-clamp-2 break-words text-[13px] font-semibold leading-[1.45] text-white sm:text-sm md:text-[15px]">
-                    {item.judul || 'Tutorial Tanpa Judul'}
-                  </h2>
-
-                </div>
-
-              </div>
-
-            );
-
-            // Link eksternal
-            if (isExternal) {
-              return (
-                <a
-                  key={item.id}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block min-w-0"
-                >
-                  {card}
-                </a>
-              );
-            }
-
-            // Link internal
-            if (href) {
-              return (
-                <Link
-                  key={item.id}
-                  href={href}
-                  className="block min-w-0"
-                >
-                  {card}
-                </Link>
-              );
-            }
-
-            // Jika link belum tersedia
             return (
-              <div
+              <a
                 key={item.id}
-                className="cursor-not-allowed opacity-60"
+                href={url || undefined}
+                target={url ? '_blank' : undefined}
+                rel={url ? 'noopener noreferrer' : undefined}
+                className={`group block overflow-hidden rounded-2xl border border-white/10 bg-[#17121d] transition-all duration-300 ${
+                  url
+                    ? 'cursor-pointer hover:-translate-y-1 hover:border-purple-400/40 hover:shadow-lg hover:shadow-purple-500/10'
+                    : 'cursor-default'
+                }`}
               >
-                {card}
-              </div>
+                {/* Cover */}
+                <div className="aspect-video overflow-hidden bg-white/5">
+                  {item.cover ? (
+                    <img
+                      src={item.cover.replaceAll('&amp;', '&')}
+                      alt={item.judul || 'Cover tutorial gambar'}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="text-3xl">🖼️</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Judul Tutorial */}
+                <div className="px-3 pb-3 pt-2 sm:px-4 sm:pb-3 sm:pt-2">
+                  <h2 className="line-clamp-2 text-sm font-semibold leading-5 text-white sm:text-base sm:leading-6">
+                    {item.judul || 'Tutorial tanpa judul'}
+                  </h2>
+                </div>
+              </a>
             );
-
           })}
-
         </div>
+      ) : (
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-12 text-center">
+          <h2 className="text-base font-semibold text-white">
+            Belum ada tutorial gambar
+          </h2>
 
+          <p className="mt-2 text-sm text-white/50">
+            Pastikan file data.js tersedia di folder
+            data/tutorial mode gambar/tmg1, tmg2, dan seterusnya.
+          </p>
+        </div>
       )}
-
     </main>
   );
 }
