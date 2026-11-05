@@ -49,10 +49,25 @@ export default function MateriPage() {
     <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* Header */}
       <header className="mb-8">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 sm:text-sm">
+          EVEGROW DIGITAL LEARNING
+        </p>
+
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          Materi
+        </h1>
+
+        <p className="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">
+          Pilih materi untuk mulai belajar.
+        </p>
+
+        {/* Garis dekorasi */}
+        <div className="mt-8 h-1.5 w-48 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-500" />
+
         {/* Tombol kembali ke beranda */}
         <a
           href="/"
-          className="mb-6 inline-flex items-center gap-2 rounded-xl border border-purple-400/20 bg-purple-500/10 px-4 py-2.5 text-sm font-semibold text-purple-200 transition hover:border-purple-400/40 hover:bg-purple-500/20"
+          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-purple-400/20 bg-purple-500/10 px-4 py-2.5 text-sm font-semibold text-purple-200 transition hover:border-purple-400/40 hover:bg-purple-500/20"
         >
           <svg
             viewBox="0 0 24 24"
@@ -71,21 +86,6 @@ export default function MateriPage() {
 
           Kembali ke Beranda
         </a>
-
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 sm:text-sm">
-          EVEGROW DIGITAL LEARNING
-        </p>
-
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Materi
-        </h1>
-
-        <p className="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">
-          Pilih materi untuk mulai belajar.
-        </p>
-
-        {/* Garis dekorasi */}
-        <div className="mt-8 h-1.5 w-48 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-500" />
       </header>
 
       {/* Grid Materi */}
@@ -146,4 +146,4 @@ export default function MateriPage() {
       )}
     </main>
   );
-}
+                        }
