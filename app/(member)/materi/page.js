@@ -2,7 +2,7 @@ import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
-// Ambil data.js dari folder M1, M2, M3, dan seterusnya.
+// Membaca data.js dari folder M1, M2, M3, dan seterusnya.
 const files = require.context(
   '@/data/materi',
   true,
@@ -17,7 +17,7 @@ const daftarFile = [...new Set(files.keys())].sort((a, b) =>
   })
 );
 
-// Gabungkan data dari setiap file.
+// Gabungkan seluruh data materi.
 const semuaMateri = daftarFile.flatMap((file) => {
   const data = files(file).default;
 
@@ -33,7 +33,6 @@ const semuaMateri = daftarFile.flatMap((file) => {
 });
 
 // Hilangkan data yang memiliki URL sama.
-// Materi dengan URL berbeda tetap ditampilkan meskipun judulnya sama.
 const daftarMateri = [
   ...new Map(
     semuaMateri.map((item) => [
@@ -72,22 +71,7 @@ export default function MateriPage() {
 
           Kembali ke Beranda
         </a>
- 
-  <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 sm:text-sm">
-    EVEGROW DIGITAL LEARNING
-  </p>
 
-  <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-    Materi
-  </h1>
-
-  <p className="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">
-    Pilih materi untuk mulai belajar.
-  </p>
-
-  {/* Garis dekorasi */}
-  <div className="mt-8 h-1.5 w-48 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-500" />
-</header>
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300 sm:text-sm">
           EVEGROW DIGITAL LEARNING
         </p>
@@ -138,7 +122,7 @@ export default function MateriPage() {
                   )}
                 </div>
 
-                {/* Judul */}
+                {/* Judul Materi */}
                 <div className="px-3 pb-3 pt-2 sm:px-4 sm:pb-3 sm:pt-2">
                   <h2 className="line-clamp-2 text-sm font-semibold leading-5 text-white sm:text-base sm:leading-6">
                     {item.judul || 'Materi tanpa judul'}
