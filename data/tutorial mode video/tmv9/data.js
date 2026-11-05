@@ -11,7 +11,7 @@ const data = [
         url: '',
       }
     ],
-    tools: '',
+    tools: 'https://kumpulantools.vercel.app/',
     prompt: '',
     prompts: [
     ],
