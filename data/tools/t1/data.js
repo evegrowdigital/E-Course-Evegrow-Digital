@@ -64,6 +64,15 @@ const data = [
      panduan: [],
      materi: ``,
   },
+  {
+     judul: 'Kumpulan Tools',
+     cover: '',
+     video: '',
+     tools: 'https://kumpulantools.vercel.app/',
+     prompt: '',
+     panduan: [],
+     materi: ``,
+  },
 ];
 
 export default data;
