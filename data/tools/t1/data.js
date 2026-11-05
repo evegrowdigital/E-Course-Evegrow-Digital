@@ -67,7 +67,7 @@ const data = [
   {
      judul: 'Kumpulan Tools',
      cover: '',
-     video: '',
+     video: 'https://youtu.be/9BE9wyIpO5g',
      tools: 'https://kumpulantools.vercel.app/',
      prompt: '',
      panduan: [],
