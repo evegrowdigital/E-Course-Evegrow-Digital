@@ -3,173 +3,144 @@ import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 
-// Membaca seluruh data.js dalam folder materi
+// Membaca data.js dari folder M1, M2, M3, dan seterusnya.
+// Hanya membaca satu tingkat folder agar file lain tidak ikut terambil.
 const files = require.context(
   '@/data/materi',
   true,
-  /data\.js$/
+  /^\.\/[Mm]\d+\/data\.js$/
 );
 
-const daftarMateri = files
-  .keys()
-  .sort((a, b) => {
-    return a.localeCompare(b, undefined, {
-      numeric: true,
-      sensitivity: 'base',
-    });
+// Ambil daftar file dan pastikan setiap path hanya diproses sekali.
+const daftarFile = [...new Set(files.keys())].sort((a, b) =>
+  a.localeCompare(b, undefined, {
+    numeric: true,
+    sensitivity: 'base',
   })
-  .flatMap((file) => {
-    const data = files(file).default;
+);
 
-    return data.map((item, index) => ({
-      ...item,
-      id: `${file}-${index}`,
-      folder: path.basename(path.dirname(file)),
-    }));
-  });
+// Gabungkan seluruh data materi.
+const daftarMateri = daftarFile.flatMap((file) => {
+  const moduleData = files(file);
+  const data = moduleData.default;
+
+  if (!Array.isArray(data)) {
+    console.warn(`Data materi harus berupa array: ${file}`);
+    return [];
+  }
+
+  return data.map((item, index) => ({
+    ...item,
+    id: `${file}-${index}`,
+    folder: path.basename(path.dirname(file)),
+  }));
+});
 
 export default function MateriPage() {
   const items = daftarMateri;
 
   return (
-    <main className="mx-auto w-full max-w-[1600px] px-4 pb-12 text-white sm:px-6 lg:px-8">
-
+    <main className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* Header */}
-      <header className="mb-6 sm:mb-8">
-
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-300">
-          Evegrow Digital Learning
+      <header className="mb-6">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300">
+          EVEGROW DIGITAL
         </p>
 
-        <h1 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl">
+        <h1 className="text-2xl font-bold text-white sm:text-3xl">
           Materi
         </h1>
 
-        <p className="mt-2 text-sm text-purple-100">
-          Pilih materi untuk mulai belajar.
+        <p className="mt-2 text-sm text-white/60">
+          Kumpulan materi untuk membantu kamu belajar dan mengembangkan bisnis
+          digital.
         </p>
-
-        <div className="mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-[#C026D3] to-[#8B5CF6]" />
-
       </header>
 
       {/* Daftar Materi */}
-      {items.length === 0 ? (
+      {items.length > 0 ? (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          {items.map((item) => (
+            <Link
+              key={item.id}
+              href={item.url || '#'}
+              target={item.url ? '_blank' : undefined}
+              rel={item.url ? 'noopener noreferrer' : undefined}
+              className={`group block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition duration-300 ${
+                item.url
+                  ? 'cursor-pointer hover:-translate-y-1 hover:border-purple-400/40 hover:bg-white/[0.07]'
+                  : 'cursor-default'
+              }`}
+            >
+              {/* Cover */}
+              <div className="relative aspect-video overflow-hidden bg-white/5">
+                {item.cover ? (
+                  <img
+                    src={item.cover.replaceAll('&amp;', '&')}
+                    alt={item.judul || 'Cover materi'}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center">
+                    <span className="text-3xl">📚</span>
+                  </div>
+                )}
+              </div>
 
-        <div className="rounded-xl border border-purple-400/20 bg-white/5 p-6 text-center">
-          <p className="text-sm text-purple-100">
-            Belum ada materi tersedia.
+              {/* Informasi Materi */}
+              <div className="p-3 sm:p-4">
+                <h2 className="line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-5 text-white sm:text-base">
+                  {item.judul || 'Materi tanpa judul'}
+                </h2>
+
+                {item.deskripsi && (
+                  <p className="mt-2 line-clamp-2 text-xs leading-5 text-white/50">
+                    {item.deskripsi}
+                  </p>
+                )}
+
+                <div className="mt-3 flex items-center justify-between gap-2">
+                  <span className="text-[11px] font-medium text-purple-300 sm:text-xs">
+                    {item.folder}
+                  </span>
+
+                  <span className="flex items-center gap-1 text-xs font-semibold text-white/70 transition group-hover:text-purple-300">
+                    Akses
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4.166 10h11.667M10 4.167 15.833 10 10 15.833"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-12 text-center">
+          <div className="mb-3 text-3xl">📚</div>
+
+          <h2 className="text-base font-semibold text-white">
+            Belum ada materi
+          </h2>
+
+          <p className="mt-2 text-sm text-white/50">
+            Pastikan file data.js tersedia di folder data/materi/M1,
+            data/materi/M2, dan seterusnya.
           </p>
         </div>
-
-      ) : (
-
-        <div className="grid grid-cols-2 items-start gap-3 sm:gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-4">
-
-          {items.map((item, index) => {
-
-            const cover =
-              item.cover ||
-              item.thumbnail ||
-              item.gambar ||
-              '';
-
-            const href =
-              item.panduan?.find((p) => p.url)?.url ||
-              item.url ||
-              item.link ||
-              '';
-
-            const isExternal =
-              href.startsWith('http://') ||
-              href.startsWith('https://');
-
-            const card = (
-
-              <div className="group block min-w-0 overflow-hidden rounded-xl border border-purple-300/20 bg-[#17101F] shadow-[0_8px_24px_-14px_rgba(0,0,0,0.8)] transition duration-300 hover:border-purple-400/50 hover:shadow-[0_12px_30px_-12px_rgba(168,85,247,0.25)]">
-
-                {/* Cover 16:9 */}
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-[#7024A8] via-[#9837D9] to-[#B75AFF]">
-
-                  {cover ? (
-
-                    <img
-                      src={cover}
-                      alt={item.judul || 'Cover materi'}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                    />
-
-                  ) : (
-
-                    <div className="flex h-full w-full items-center justify-center">
-
-                      <span className="text-4xl font-bold text-white/30 sm:text-5xl">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-
-                    </div>
-
-                  )}
-
-                </div>
-
-                {/* Judul */}
-                <div className="flex min-h-[56px] items-center px-3 py-2.5 sm:min-h-[64px] sm:px-4">
-
-                  <h2 className="line-clamp-2 break-words text-[13px] font-semibold leading-[1.45] text-white sm:text-sm md:text-[15px]">
-                    {item.judul || 'Materi Tanpa Judul'}
-                  </h2>
-
-                </div>
-
-              </div>
-
-            );
-
-            return href ? (
-
-              isExternal ? (
-
-                <a
-                  key={item.id}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block min-w-0"
-                >
-                  {card}
-                </a>
-
-              ) : (
-
-                <Link
-                  key={item.id}
-                  href={href}
-                  className="block min-w-0"
-                >
-                  {card}
-                </Link>
-
-              )
-
-            ) : (
-
-              <div
-                key={item.id}
-                className="cursor-not-allowed opacity-60"
-              >
-                {card}
-              </div>
-
-            );
-
-          })}
-
-        </div>
-
       )}
-
     </main>
   );
         }
