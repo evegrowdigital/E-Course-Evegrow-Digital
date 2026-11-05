@@ -60,17 +60,17 @@ export default async function BlueprintBisnisPage() {
               href={`/blueprint-bisnis/${item.id}`}
               className="group block overflow-hidden rounded-2xl border border-white/10 bg-[#17121d] transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40 hover:shadow-lg hover:shadow-purple-500/10"
             >
-              {/* Cover */}
-              <div className="aspect-video overflow-hidden bg-white/5">
-                {item.cover && (
+              {/* Cover (kotak hanya muncul jika ada datanya) */}
+              {item.cover && (
+                <div className="aspect-video overflow-hidden bg-white/5">
                   <img
                     src={item.cover.replaceAll('&amp;', '&')}
                     alt={item.judul || 'Cover tutorial'}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Judul */}
               <div className="px-3 pb-3 pt-2 sm:px-4 sm:pb-3 sm:pt-2">
