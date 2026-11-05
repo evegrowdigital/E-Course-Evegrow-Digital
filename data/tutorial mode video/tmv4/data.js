@@ -11,7 +11,7 @@ const data = [
         url: '',
       }
     ],
-    tools: '',
+    tools: 'https://gemini.google.com/share/7c167e5c4741?social_preview=false&skid=1a665b56-db24-4956-b476-a86a956108b1',
     prompt: '',
     prompts: [
     ],
