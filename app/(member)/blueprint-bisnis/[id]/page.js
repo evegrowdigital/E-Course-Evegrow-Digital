@@ -44,6 +44,7 @@ export default async function BlueprintDetailPage({ params }) {
 
   const video = typeof item.video === 'string' ? item.video.trim() : '';
   const embedUrl = video ? getEmbedUrl(video) : null;
+  const materi = typeof item.materi === 'string' ? item.materi.trim() : '';
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-6 text-white sm:px-6 lg:px-8">
@@ -75,11 +76,11 @@ export default async function BlueprintDetailPage({ params }) {
         </div>
       )}
 
-      {/* Deskripsi */}
-      {item.deskripsi && (
-        <p className="mt-6 whitespace-pre-line text-base leading-relaxed text-white/80">
-          {renderBold(item.deskripsi)}
-        </p>
+      {/* Materi */}
+      {materi && (
+        <div className="mt-6 whitespace-pre-wrap text-base leading-relaxed text-white/80">
+          {renderBold(materi)}
+        </div>
       )}
     </main>
   );
