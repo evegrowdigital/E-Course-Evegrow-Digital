@@ -101,8 +101,8 @@ export default function MateriPage() {
                 </div>
 
                 {/* Judul */}
-                <div className="p-3 sm:p-4">
-                  <h2 className="line-clamp-2 min-h-[2.5rem] text-sm font-semibold leading-5 text-white sm:text-base sm:leading-6">
+                <div className="px-3 pb-3 pt-2 sm:px-4 sm:pb-3 sm:pt-2">
+                  <h2 className="line-clamp-2 text-sm font-semibold leading-5 text-white sm:text-base sm:leading-6">
                     {item.judul || 'Materi tanpa judul'}
                   </h2>
                 </div>
