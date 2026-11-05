@@ -23,6 +23,68 @@ function punyaIsi(isi) {
   return false;
 }
 
+// Cek apakah teks terlihat seperti URL (http(s):// atau domain.com).
+function miripUrl(teks) {
+  return (
+    /^https?:\/\//i.test(teks) ||
+    /^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)+(\/\S*)?$/i.test(teks)
+  );
+}
+
+function ambilUrl(x) {
+  return String(
+    x.url || x.link || x.href || x.tautan || x.akses || ''
+  ).trim();
+}
+
+// Ubah berbagai bentuk data tools menjadi [{ judul, url }].
+function normalisasiTools(sumber) {
+  if (!sumber) return [];
+
+  if (typeof sumber === 'string') {
+    // Boleh satu link, atau beberapa link dipisah baris/koma/spasi.
+    // Teks biasa yang bukan URL (mis. "link tools") diabaikan.
+    return sumber
+      .split(/[\n,\s]+/)
+      .map((s) => s.trim())
+      .filter((s) => s && miripUrl(s))
+      .map((url) => ({
+        judul: '',
+        url: /^https?:\/\//i.test(url) ? url : `https://${url}`,
+      }));
+  }
+
+  if (Array.isArray(sumber)) {
+    return sumber.flatMap((x) => normalisasiTools(x));
+  }
+
+  if (typeof sumber === 'object') {
+    const mentah = ambilUrl(sumber);
+
+    if (mentah && miripUrl(mentah)) {
+      return [
+        {
+          ...sumber,
+          judul:
+            sumber.judul ||
+            sumber.nama ||
+            sumber.title ||
+            sumber.label ||
+            '',
+          url: /^https?:\/\//i.test(mentah) ? mentah : `https://${mentah}`,
+        },
+      ];
+    }
+
+    // Objek pembungkus (mis. { tools: [...] })
+    return Object.values(sumber)
+      .filter((v) => v && typeof v === 'object')
+      .flatMap((v) => normalisasiTools(v));
+  }
+
+  return [];
+}
+
 // Menampilkan isi panduan.
 // Mendukung teks, array, dan objek materi.
 function TampilkanIsi({ isi }) {
@@ -123,13 +185,22 @@ export default async function TutorialModeVideoDetailPage({ params }) {
 
   const videos = daftarVideo(item);
 
-  // Hanya link yang punya URL valid
-  const links = daftarLink(item).filter(
-    (link) =>
-      link &&
-      typeof link.url === 'string' &&
-      link.url.trim() !== ''
-  );
+  // Gabungkan link dari daftarLink + field tools di data, buang duplikat
+  const kandidatLink = [
+    ...normalisasiTools(daftarLink(item)),
+    ...normalisasiTools(item.tools),
+    ...normalisasiTools(item.tool),
+    ...normalisasiTools(item.linkTools),
+    ...normalisasiTools(item.link_tools),
+  ];
+
+  const sudahAda = new Set();
+  const links = kandidatLink.filter((link) => {
+    if (!link.url) return false;
+    if (sudahAda.has(link.url)) return false;
+    sudahAda.add(link.url);
+    return true;
+  });
 
   const panduan = daftarPanduan(item);
   const prompts = daftarPrompt(item);
@@ -244,7 +315,7 @@ export default async function TutorialModeVideoDetailPage({ params }) {
         </section>
       )}
 
-      {/* Tools: hanya muncul jika ada link di data */}
+      {/* Tools: muncul jika ada link tools di data */}
       {isTools && (
         <section className="mt-8 space-y-4">
 
@@ -276,4 +347,4 @@ export default async function TutorialModeVideoDetailPage({ params }) {
 
     </main>
   );
-}
+    }
