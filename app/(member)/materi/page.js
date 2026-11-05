@@ -63,29 +63,6 @@ export default function MateriPage() {
 
         {/* Garis dekorasi */}
         <div className="mt-8 h-1.5 w-48 rounded-full bg-gradient-to-r from-fuchsia-500 to-purple-500" />
-
-        {/* Tombol kembali ke beranda */}
-        <a
-          href="/"
-          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-purple-400/20 bg-purple-500/10 px-4 py-2.5 text-sm font-semibold text-purple-200 transition hover:border-purple-400/40 hover:bg-purple-500/20"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            className="h-4 w-4"
-            aria-hidden="true"
-          >
-            <path
-              d="M15 18L9 12L15 6"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-
-          Kembali ke Beranda
-        </a>
       </header>
 
       {/* Grid Materi */}
@@ -146,4 +123,4 @@ export default function MateriPage() {
       )}
     </main>
   );
-                        }
+}
