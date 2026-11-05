@@ -10,7 +10,9 @@ function renderBold(text) {
   }
 
   return text.split(/(\*\*.*?\*\*)/gs).map((part, index) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
+    const isBold = part.startsWith('**') && part.endsWith('**');
+
+    if (isBold) {
       return (
         <strong key={index} className="font-bold">
           {part.slice(2, -2)}
@@ -73,7 +75,7 @@ export default async function BlueprintBisnisPage() {
               {/* Judul */}
               <div className="px-3 pb-3 pt-2 sm:px-4 sm:pb-3 sm:pt-2">
                 <h2 className="line-clamp-2 text-sm font-semibold leading-5 text-white sm:text-base sm:leading-6">
-                  {item.judul}
+                  {renderBold(item.judul)}
                 </h2>
               </div>
             </Link>
