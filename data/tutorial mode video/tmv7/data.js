@@ -3,7 +3,7 @@
 const data= [
     {
     judul: 'Motion Control Omni',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792373025338_2548597.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/05-11-2026/1793868128863_4897168.jpeg?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/H6Kda2AB-pc?si=OeQYJgtlY95E9-Ba',
     videos: [
       {
