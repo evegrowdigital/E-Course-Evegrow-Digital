@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Strategi Bikin Konten',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372350667_5503861.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793930499287_7195768.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
