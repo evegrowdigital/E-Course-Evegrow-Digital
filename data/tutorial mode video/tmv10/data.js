@@ -3,7 +3,7 @@
 const data = [
 {
     judul: 'Tutorial Talking Head Rebahan Di Sofa',
-    cover: '',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793925433344_1162498.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/6gce3CBLwcY',
     videos: [
       {
