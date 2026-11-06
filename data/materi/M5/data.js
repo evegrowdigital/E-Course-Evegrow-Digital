@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Framing Sheet',
-    cover: 'https://cdn.lynkid.my.id/draft-products/05-11-2026/1793869771064_9475454.jpeg?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793927829810_6174654.jpeg?width=630&amp;quality=90&amp;format=webp',
     url: 'https://drive.google.com/file/d/1zRjU2z_0sIf5IFzjTTetspveHIok2bte/view?usp=drivesdk',
     video: '',
     videos: [
