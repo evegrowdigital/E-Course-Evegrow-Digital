@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Konten Bernyayi',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372819354_9796364.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793925811909_2250691.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       { judul: '', url: 'video' },
