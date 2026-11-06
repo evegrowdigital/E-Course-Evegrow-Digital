@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Tutorial Generate',
-    cover: 'https://cdn.lynkid.my.id/draft-products/05-11-2026/1793867660657_6262810.jpeg?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793925259640_4534819.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       { judul: 'Tutorial Leonardo.ai', url: 'https://youtu.be/9pt2ErBzjs4?si=AGeSklzSC5oOcaWT' },
