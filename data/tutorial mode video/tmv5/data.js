@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Konten Edukasi',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372718094_2374707.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793925672983_4990647.png?width=630&amp;quality=90&amp;format=webp',
     video: 'https://youtu.be/zhrOnJ7gLig?si=Lc_bB_sK-ILVgXf_',
     videos: [
       { judul: '', url: 'video' },
