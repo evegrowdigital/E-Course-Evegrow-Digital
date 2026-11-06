@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Strategi Live di TikTok',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372437962_2741255.png?width=630&quality=90&format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793930271280_1178710.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [],
     tools: '',
