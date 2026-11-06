@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Membuat MPI Canva + AI',
-    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793925672983_4990647.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793980484785_1930842.png?width=630&amp;quality=90&amp;format=webp',
     video: 'l',
     videos: [
       { judul: 'Membuat Prompt MPI', url: 'https://youtu.be/uvgO8qLSh3E' },
