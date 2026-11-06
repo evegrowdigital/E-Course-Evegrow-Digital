@@ -3,7 +3,7 @@
 const data= [
   {
     judul: 'Siapkan Toko Digital',
-    cover: 'https://cdn.lynkid.my.id/draft-products/19-10-2026/1792372133160_9086152.png?width=630&amp;quality=90&amp;format=webp',
+    cover: 'https://cdn.lynkid.my.id/draft-products/06-11-2026/1793930134716_6175864.png?width=630&amp;quality=90&amp;format=webp',
     video: '',
     videos: [
       {
